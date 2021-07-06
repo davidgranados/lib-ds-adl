@@ -1,0 +1,29 @@
+{
+  "name": "test-multi-lib-node",
+  "version": "1.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avaldigitallabs/devops-pipeline-node-multi-lib-example.git"
+  },
+  "scripts": {
+    "postinstall": "subpkg install",
+    "test": "subpkg test",
+    "audit": "subpkg run audit",
+    "build": "subpkg run build",
+    "sonar": "subpkg run sonar",
+    "lint": "subpkg run lint",
+    "lint:fix": "subpkg run lint:fix",
+    "prettier:list": "subpkg run prettier:list",
+    "prettier:write": "subpkg run prettier:write",
+    "prettier": "subpkg run prettier",
+    "customScript": "echo 'Developed with all ❤️ in the world by ADL DevOps team'"
+  },
+  "subPackages": [
+    "test-lib-blue",
+    "test-lib-green"
+  ],
+  "devDependencies": {
+    "subpackage": "^1.1.0"
+  }
+}
