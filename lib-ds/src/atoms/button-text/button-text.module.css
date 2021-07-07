@@ -1,0 +1,43 @@
+.default {
+  border: none;
+  font-family: var(--font-family-sans-inter);
+  font-weight: var(--font-weight-button);
+}
+
+.primary {
+  background-color: var(--background-color-button-text-primary);
+  color: var(--font-color-button-text-primary-enabled);
+}
+
+.primary:focus {
+  text-decoration: underline;
+}
+
+.primary:disabled {
+  color: var(--font-color-button-text-primary-disabled);
+}
+
+.secondary {
+  background-color: var(--background-color-button-text-secondary);
+  color: var(--font-color-button-text-secondary-enabled);
+}
+
+.secondary:focus {
+  text-decoration: underline;
+}
+
+.secondary:disabled {
+  color: var(--font-color-button-text-secondary-disabled);
+}
+
+.size-sm {
+  font-size: var(--font-size-button-text-sm);
+}
+
+.size-md {
+  font-size: var(--font-size-button-text-md);
+}
+
+.size-lg {
+  font-size: var(--font-size-button-text-lg);
+}

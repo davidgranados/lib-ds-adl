@@ -20,8 +20,7 @@
     "customScript": "echo 'Developed with all ❤️ in the world by ADL DevOps team'"
   },
   "subPackages": [
-    "test-lib-blue",
-    "test-lib-green"
+    "lib-ds"
   ],
   "devDependencies": {
     "subpackage": "^1.1.0"

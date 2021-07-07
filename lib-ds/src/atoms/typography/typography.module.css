@@ -1,0 +1,148 @@
+.default {
+  margin: 0;
+  font-family: var(--font-family-sans-inter);
+}
+
+.highlight-900 {
+  color: var(--color-highlight-900);
+}
+
+.highlight-600 {
+  color: var(--color-highlight-600);
+}
+
+.highlight-400 {
+  color: var(--color-highlight-400);
+}
+
+.accent-900 {
+  color: var(--color-accent-900);
+}
+
+.carbon-900 {
+  color: var(--color-carbon-900);
+}
+
+.carbon-mid-600 {
+  color: var(--color-carbon-mid-600);
+}
+
+.carbon-mid-400 {
+  color: var(--color-carbon-mid-400);
+}
+
+.carbon-mid-100 {
+  color: var(--color-carbon-mid-100);
+}
+
+.carbon-light-100 {
+  color: var(--color-carbon-light-100);
+}
+
+.error-600 {
+  color: var(--color-semantic-error-600);
+}
+
+.warning-600 {
+  color: var(--color-semantic-warning-600);
+}
+
+.success-600 {
+  color: var(--color-semantic-success-600);
+}
+
+.info-600 {
+  color: var(--color-semantic-info-600);
+}
+
+.overline {
+  font-size: var(--font-size-overline);
+}
+
+.caption {
+  font-size: var(--font-size-caption);
+}
+
+.body-sm {
+  font-size: var(--font-size-body-sm);
+}
+
+.body-md {
+  font-size: var(--font-size-body-md);
+}
+
+.body-lg {
+  font-size: var(--font-size-body-lg);
+}
+
+.button-xs {
+  font-size: var(--font-size-button-xs);
+}
+
+.button-sm {
+  font-size: var(--font-size-button-sm);
+}
+
+.button-md {
+  font-size: var(--font-size-button-md);
+}
+
+.button-lg {
+  font-size: var(--font-size-button-lg);
+}
+
+.subtitle-md {
+  font-size: var(--font-size-subtitle-md);
+}
+
+.subtitle-lg {
+  font-size: var(--font-size-subtitle-lg);
+}
+
+.h6 {
+  font-size: var(--font-size-h6);
+}
+
+.h5 {
+  font-size: var(--font-size-h5);
+}
+
+.h4 {
+  font-size: var(--font-size-h4);
+}
+
+.h3 {
+  font-size: var(--font-size-h3);
+}
+
+.h2 {
+  font-size: var(--font-size-h2);
+}
+
+.h1 {
+  font-size: var(--font-size-h1);
+}
+
+.weight-light {
+  font-weight: 300;
+}
+
+.weight-regular {
+  font-weight: 400;
+}
+
+.weight-medium {
+  font-weight: 500;
+}
+
+.weight-semi-bold {
+  font-weight: 600;
+}
+
+.weight-bold {
+  font-weight: 700;
+}
+
+.weight-extra-bold {
+  font-weight: 800;
+}
