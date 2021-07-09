@@ -1,1 +1,1 @@
-export { ButtonText } from "./button-text";
+export { default as ButtonText } from "./button-text";

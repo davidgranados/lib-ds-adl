@@ -1,18 +1,51 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { Button } from "./button";
+import { ButtonVariant } from "../../types";
+
+import Button from "./button";
+import { ButtonSize } from "./types";
+
+const variants: ButtonVariant[] = ["primary", "secondary"];
+const sizes: ButtonSize[] = ["xs", "sm", "md", "lg"];
 
 export default {
   title: "Atoms/Button",
   component: Button,
   args: {
     disabled: false,
-    label: "Button",
+    text: "Button",
+    onClick: () => {
+      console.log("button clicked");
+    },
+    onFocus: () => {
+      console.log("button focused");
+    },
+    onBlur: () => {
+      console.log("button blurred");
+    },
+    onMouseDown: () => {
+      console.log("button mouse down");
+    },
+    onMouseUp: () => {
+      console.log("button mouse up");
+    },
+    onMouseEnter: () => {
+      console.log("button mouse enter");
+    },
+    onMouseLeave: () => {
+      console.log("button mouse leave");
+    },
+    onTouchStart: () => {
+      console.log("button touch start");
+    },
+    onTouchEnd: () => {
+      console.log("button touch0 end");
+    },
   },
   argTypes: {
-    variant: { control: "select" },
-    size: { control: "select" },
+    variant: { options: variants, control: "select" },
+    size: { options: sizes, control: "select" },
     disabled: { control: "boolean" },
   },
 } as ComponentMeta<typeof Button>;
