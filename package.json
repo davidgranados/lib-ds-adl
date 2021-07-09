@@ -20,7 +20,7 @@
     "customScript": "echo 'Developed with all ❤️ in the world by ADL DevOps team'"
   },
   "subPackages": [
-    "lib-ds"
+    "bpop-hipotecario-lib-ds"
   ],
   "devDependencies": {
     "subpackage": "^1.1.0"

@@ -23,12 +23,19 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
   "settings": {
     "react": {
       "version": "detect",
       "prettier/prettier": "error",
-      "max-len": [2, 120, 8]
+      "max-len": [
+        2,
+        120,
+        8
+      ]
     }
   },
   "rules": {
@@ -36,7 +43,9 @@
   },
   "overrides": [
     {
-      "files": ["**/*.stories.*"],
+      "files": [
+        "**/*.stories.*"
+      ],
       "rules": {
         "import/no-anonymous-default-export": "off"
       }
@@ -44,7 +53,13 @@
     {
       "files": "src/tokens/**/*.js",
       "rules": {
-        "quote-props": ["error", "always", { "numbers": true }]
+        "quote-props": [
+          "error",
+          "always",
+          {
+            "numbers": true
+          }
+        ]
       }
     }
   ]
