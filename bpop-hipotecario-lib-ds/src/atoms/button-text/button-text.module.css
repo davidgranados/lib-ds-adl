@@ -1,7 +1,5 @@
 .default {
   border: none;
-  font-family: var(--font-family-sans-inter);
-  font-weight: var(--font-weight-button);
 }
 
 .primary {
@@ -9,7 +7,7 @@
   color: var(--font-color-button-text-primary-enabled);
 }
 
-.primary:focus {
+.primary-focus {
   text-decoration: underline;
 }
 
@@ -22,22 +20,10 @@
   color: var(--font-color-button-text-secondary-enabled);
 }
 
-.secondary:focus {
+.secondary-focus {
   text-decoration: underline;
 }
 
 .secondary:disabled {
   color: var(--font-color-button-text-secondary-disabled);
-}
-
-.size-sm {
-  font-size: var(--font-size-button-text-sm);
-}
-
-.size-md {
-  font-size: var(--font-size-button-text-md);
-}
-
-.size-lg {
-  font-size: var(--font-size-button-text-lg);
 }

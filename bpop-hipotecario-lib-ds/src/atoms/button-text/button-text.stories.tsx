@@ -1,18 +1,33 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ButtonText } from "./button-text";
+import { ButtonVariant } from "../../types";
+
+import ButtonText from "./button-text";
+import { ButtonTextSize } from "./types";
+
+const variants: ButtonVariant[] = ["primary", "secondary"];
+const sizes: ButtonTextSize[] = ["sm", "md", "lg"];
 
 export default {
   title: "Atoms/ButtonText",
   component: ButtonText,
   args: {
     disabled: false,
-    label: "Button",
+    text: "Button",
+    onClick: () => {
+      console.log("button text clicked");
+    },
+    onFocus: () => {
+      console.log("button text focused");
+    },
+    onBlur: () => {
+      console.log("button text blurred");
+    },
   },
   argTypes: {
-    variant: { control: "select" },
-    size: { control: "select" },
+    variant: { options: variants, control: "select" },
+    size: { options: sizes, control: "select" },
     disabled: { control: "boolean" },
   },
 } as ComponentMeta<typeof ButtonText>;

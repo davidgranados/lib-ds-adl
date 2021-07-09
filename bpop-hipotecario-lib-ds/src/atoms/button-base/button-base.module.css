@@ -1,0 +1,21 @@
+.default {
+  font-family: var(--font-family-sans-inter);
+  font-weight: var(--font-weight-button);
+  user-select: none;
+}
+
+.font-size-xs {
+  font-size: var(--font-size-button-xs);
+}
+
+.font-size-sm {
+  font-size: var(--font-size-button-sm);
+}
+
+.font-size-md {
+  font-size: var(--font-size-button-md);
+}
+
+.font-size-lg {
+  font-size: var(--font-size-button-lg);
+}
