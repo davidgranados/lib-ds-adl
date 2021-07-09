@@ -1,0 +1,109 @@
+.dropdown {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+  border: solid 1px var(--color-carbon-light-900);
+}
+
+.dropdown.open .expanded-section {
+  display: flex;
+}
+
+.dropdown.error {
+  background-color: rgba(var(--color-semantic-error-100-rgb), 0.32);
+  border: solid 1px var(--color-semantic-error-600);
+}
+
+.dropdown.disabled {
+  background-color: var(--color-carbon-light-400);
+  border: solid 1px var(--color-carbon-light-600);
+}
+
+.dropdown.disabled .content .name {
+  color: var(--color-carbon-mid-100);
+}
+
+.dropdown .content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown .content .name {
+  margin: 0 0.75rem;
+  color: var(--color-carbon-900);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-sans-inter);
+}
+
+.dropdown .expanded-section {
+  left: 0;
+  width: 100%;
+  display: none;
+  position: absolute;
+  border-radius: 8px;
+  align-items: center;
+  top: calc(100% + 2px);
+  justify-content: center;
+  height: calc(9rem + 1rem);
+  background-color: var(--color-carbon-light-100);
+  border: solid 1px var(--color-carbon-light-900);
+}
+
+.dropdown .expanded-section .expanded-content {
+  width: 100%;
+  height: 9rem;
+  overflow-y: scroll;
+  flex-direction: column;
+}
+
+.dropdown .expanded-section .expanded-content::-webkit-scrollbar {
+  width: 0.25rem;
+  border-radius: 1rem;
+}
+ 
+.dropdown .expanded-section .expanded-content::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 4px solid transparent;
+  background-color: var(--color-highlight-600);
+}
+
+.dropdown .expanded-section .item {
+  height: 3rem;
+  flex: 0 0 auto;
+  display: flex;
+  cursor: pointer;
+  padding: 0 1rem;
+  margin: 0 0.5rem;
+  border-radius: 8px;
+  align-items: center;
+  background-color: white;
+  justify-content: flex-start;
+}
+
+.dropdown .expanded-section .item .name {
+  color: var(--color-carbon-900);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-sans-inter);
+}
+
+.dropdown .expanded-section .item .name.selected {
+  font-weight: 600;
+}
+
+.dropdown .expanded-section .item:hover {
+  background-color: rgba(var(--color-carbon-400-rgb), 0.72);
+}
+
+.caption {
+  color: var(--color-carbon-900);
+  font-size: var(--font-size-3xs);
+  font-family: var(--font-family-sans-inter);
+}
+
+.caption.error {
+  color: var(--color-semantic-error-600);
+}

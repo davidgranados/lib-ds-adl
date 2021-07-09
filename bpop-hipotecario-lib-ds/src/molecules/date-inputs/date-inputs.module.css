@@ -1,0 +1,30 @@
+.wrapper .inputs {
+  display: flex;
+}
+
+.wrapper .inputs .input {
+  flex: 1;
+  margin: 0 .25rem;
+}
+
+.wrapper .inputs .input.month {
+  flex: 2;
+}
+
+.wrapper .inputs .input:first-child {
+  margin: 0 .25rem 0 0;
+}
+
+.wrapper .inputs .input:last-child {
+  margin: 0 0 0 .25rem;
+}
+
+.wrapper .caption {
+  color: var(--color-carbon-900);
+  font-size: var(--font-size-3xs);
+  font-family: var(--font-family-sans-inter);
+}
+
+.wrapper .caption.error {
+  color: var(--color-semantic-error-600);
+}
