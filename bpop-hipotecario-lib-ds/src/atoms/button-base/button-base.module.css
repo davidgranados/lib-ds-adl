@@ -4,10 +4,6 @@
   user-select: none;
 }
 
-.font-size-xs {
-  font-size: var(--font-size-button-xs);
-}
-
 .font-size-sm {
   font-size: var(--font-size-button-sm);
 }

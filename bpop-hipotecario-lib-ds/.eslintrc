@@ -39,7 +39,8 @@
     }
   },
   "rules": {
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "require-jsdoc": "off"
   },
   "overrides": [
     {
@@ -60,6 +61,12 @@
             "numbers": true
           }
         ]
+      }
+    },
+    {
+      "files": "*.d.ts",
+      "rules": {
+        "spaced-comment": "off"
       }
     }
   ]

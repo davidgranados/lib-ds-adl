@@ -1,11 +1,10 @@
 import classNames from "classnames";
-import React from "react";
+import React, { forwardRef } from "react";
 
-import { ButtonBaseProps } from "./types";
-
+import { ButtonBaseProps } from "./button-base.d";
 import buttonBaseStyles from "./button-base.module.css";
 
-const ButtonBase = React.forwardRef<HTMLButtonElement, ButtonBaseProps>(
+const ButtonBase = forwardRef<HTMLButtonElement, ButtonBaseProps>(
   ({ children, className, type = "button", fontSize = "md", ...props }, ref) => {
     const buttonTextClassName = classNames(
       buttonBaseStyles["default"],

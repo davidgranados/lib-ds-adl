@@ -1,4 +1,4 @@
-import { ButtonBaseProps } from "../atoms/button-base";
+import { ButtonBaseProps } from "../atoms/button-base/button-base";
 
 export type ButtonVariant = "primary" | "secondary";
 

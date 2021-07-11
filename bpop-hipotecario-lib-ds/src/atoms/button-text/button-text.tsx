@@ -2,10 +2,9 @@ import classNames from "classnames";
 import React, { useRef } from "react";
 
 import { addClassToElement, removeClassFromElement } from "../../helpers";
-import ButtonBase from "../button-base/button-base";
+import { ButtonBase } from "../button-base";
 
-import { ButtonTextProps } from "./types";
-
+import { ButtonTextProps } from "./button-text.d";
 import buttonTextStyles from "./button-text.module.css";
 
 const ButtonText: React.FC<ButtonTextProps> = ({
@@ -20,11 +19,11 @@ const ButtonText: React.FC<ButtonTextProps> = ({
   const buttonTextClassName = classNames(buttonTextStyles["default"], buttonTextStyles[variant]);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const handleFocus = (event: React.FocusEvent<HTMLButtonElement>) => {
-    addClassToElement(buttonRef, buttonTextStyles[`${variant}-focus`]);
+    addClassToElement(buttonRef.current, buttonTextStyles[`${variant}-focus`]);
     onFocus && onFocus(event);
   };
   const handleBlur = (event: React.FocusEvent<HTMLButtonElement>) => {
-    removeClassFromElement(buttonRef, buttonTextStyles[`${variant}-focus`]);
+    removeClassFromElement(buttonRef.current, buttonTextStyles[`${variant}-focus`]);
     onBlur && onBlur(event);
   };
   return (

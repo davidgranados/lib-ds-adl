@@ -1,14 +1,14 @@
-import React, { useRef } from "react";
 import classNames from "classnames";
+import React, { FC, FocusEvent, MouseEvent, TouchEvent, useRef } from "react";
 
 import { addClassToElement, removeClassFromElement } from "../../helpers";
-import ButtonBase from "../button-base/button-base";
+import { ButtonBase } from "../button-base";
 
-import { ButtonProps } from "./types";
-
+import { ButtonProps } from "./button.d";
+import { fontSizeMapping } from "./helpers";
 import buttonStyles from "./button.module.css";
 
-const Button: React.FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   text,
   onMouseEnter,
   onMouseLeave,
@@ -25,50 +25,51 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const buttonClassName = classNames(buttonStyles["default"], buttonStyles[variant], buttonStyles[`size-${size}`]);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const fontSize = fontSizeMapping[size];
 
   const addActiveClass = () => {
-    addClassToElement(buttonRef, buttonStyles[`${variant}-active`]);
+    addClassToElement(buttonRef.current, buttonStyles[`${variant}-active`]);
   };
   const removeActiveClass = () => {
-    removeClassFromElement(buttonRef, buttonStyles[`${variant}-active`]);
+    removeClassFromElement(buttonRef.current, buttonStyles[`${variant}-active`]);
   };
-  const handleMouseEnter = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    addClassToElement(buttonRef, buttonStyles[`${variant}-hover`]);
+  const handleMouseEnter = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
+    addClassToElement(buttonRef.current, buttonStyles[`${variant}-hover`]);
     onMouseEnter && onMouseEnter(event);
   };
-  const handleMouseLeave = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    removeClassFromElement(buttonRef, buttonStyles[`${variant}-hover`]);
+  const handleMouseLeave = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
+    removeClassFromElement(buttonRef.current, buttonStyles[`${variant}-hover`]);
     onMouseLeave && onMouseLeave(event);
   };
-  const handleMouseDown = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleMouseDown = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
     addActiveClass();
     onMouseDown && onMouseDown(event);
   };
-  const handleMouseUp = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleMouseUp = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
     removeActiveClass();
     onMouseUp && onMouseUp(event);
   };
-  const handleTouchStart = (event: React.TouchEvent<HTMLButtonElement>) => {
+  const handleTouchStart = (event: TouchEvent<HTMLButtonElement>) => {
     addActiveClass();
     onTouchStart && onTouchStart(event);
   };
-  const handleTouchEnd = (event: React.TouchEvent<HTMLButtonElement>) => {
+  const handleTouchEnd = (event: TouchEvent<HTMLButtonElement>) => {
     removeActiveClass();
     onTouchEnd && onTouchEnd(event);
   };
-  const handleFocus = (event: React.FocusEvent<HTMLButtonElement>) => {
-    addClassToElement(buttonRef, buttonStyles[`${variant}-focus`]);
+  const handleFocus = (event: FocusEvent<HTMLButtonElement>) => {
+    addClassToElement(buttonRef.current, buttonStyles[`${variant}-focus`]);
     onFocus && onFocus(event);
   };
-  const handleBlur = (event: React.FocusEvent<HTMLButtonElement>) => {
-    removeClassFromElement(buttonRef, buttonStyles[`${variant}-focus`]);
+  const handleBlur = (event: FocusEvent<HTMLButtonElement>) => {
+    removeClassFromElement(buttonRef.current, buttonStyles[`${variant}-focus`]);
     onBlur && onBlur(event);
   };
 
   return (
     <ButtonBase
       ref={buttonRef}
-      fontSize={size}
+      fontSize={fontSize}
       className={buttonClassName}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

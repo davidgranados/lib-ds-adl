@@ -102,11 +102,8 @@ module.exports = {
     },
     "size": {
       "button": {
-        "xs": {
-          "value": "{font.size.3xs.value}",
-        },
         "sm": {
-          "value": "{font.size.xs.value}",
+          "value": "{font.size.3xs.value}",
         },
         "md": {
           "value": "{font.size.xs.value}",

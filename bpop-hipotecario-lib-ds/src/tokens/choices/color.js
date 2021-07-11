@@ -67,6 +67,9 @@ module.exports = {
         "100": {
           "value": "#FDEAAE",
         },
+        "100-rgb": {
+          "value": "253, 234, 174",
+        },
         "400": {
           "value": "#FECE49",
         },
@@ -80,6 +83,9 @@ module.exports = {
       "success": {
         "100": {
           "value": "#C5ECBF",
+        },
+        "100-rgb": {
+          "value": "197, 236, 191",
         },
         "400": {
           "value": "#50B946",
