@@ -1,44 +1,36 @@
-import React from "react";
 import classNames from "classnames";
+import React from "react";
 
-import { TypographyProps, TypographyJSXElements, VariantMappingType } from ".";
-
+import { defaultVariantMapping } from "./helpers";
+import { TypographyProps } from "./typography.d";
 import typographyStyles from "./typography.module.css";
 
-const defaultVariantMapping: VariantMappingType = {
-  overline: "span",
-  caption: "span",
-  "body-sm": "p",
-  "body-md": "p",
-  "body-lg": "p",
-  "subtitle-md": "h6",
-  "subtitle-lg": "h6",
-  h6: "h6",
-  h5: "h5",
-  h4: "h4",
-  h3: "h3",
-  h2: "h2",
-  h1: "h1",
-};
-
-export const Typography: React.FC<TypographyProps> = ({
+const Typography: React.FC<TypographyProps> = ({
   variant,
   component,
   children,
-  color = "carbon-900",
+  color,
+  status,
+  lineHeight,
   weight = "regular",
-  ...props
 }) => {
+  let fontColor = "carbon-900";
+  if (status) {
+    fontColor = `${status}-600`;
+  } else if (color) {
+    fontColor = color;
+  }
   const textClassName = classNames(
     typographyStyles["default"],
     typographyStyles[variant],
-    typographyStyles[color],
-    typographyStyles[`weight-${weight}`]
+    typographyStyles[`weight-${weight}`],
+    typographyStyles[fontColor],
+    {
+      [typographyStyles[`line-height-${lineHeight}`]]: lineHeight,
+    }
   );
-  const Tag = `${component || defaultVariantMapping[variant]}` as keyof TypographyJSXElements;
-  return (
-    <Tag className={textClassName} {...props}>
-      {children}
-    </Tag>
-  );
+  const Tag = `${component || defaultVariantMapping[variant]}` as keyof JSX.IntrinsicElements;
+  return <Tag className={textClassName}>{children}</Tag>;
 };
+
+export default Typography;

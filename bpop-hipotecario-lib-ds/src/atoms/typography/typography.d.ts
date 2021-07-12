@@ -1,5 +1,4 @@
-export type FontWeight = "light" | "regular" | "medium" | "semi-bold" | "bold" | "extra-bold";
-export type FontColor =
+export type TypographyColor =
   | "highlight-900"
   | "highlight-600"
   | "highlight-400"
@@ -13,6 +12,7 @@ export type FontColor =
   | "warning-600"
   | "success-600"
   | "info-600";
+
 export type TypographyVariant =
   | "overline"
   | "caption"
@@ -27,15 +27,32 @@ export type TypographyVariant =
   | "h3"
   | "h2"
   | "h1";
+
+export type TypographyLineHeight =
+  | "overline"
+  | "caption"
+  | "body-sm"
+  | "body-md"
+  | "body-lg"
+  | "subtitle-md"
+  | "subtitle-lg"
+  | "h6"
+  | "h5"
+  | "h4"
+  | "h3"
+  | "h2"
+  | "h1";
+
+export type TypographyWeight = "light" | "regular" | "medium" | "semi-bold" | "bold" | "extra-bold";
 export type TypographyComponent = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
-export type TypographyJSXElements = Pick<JSX.IntrinsicElements, TypographyComponent>;
+export type TypographyStatus = "success" | "warning" | "error";
 export type VariantMappingType = Record<TypographyVariant, TypographyComponent>;
 
-export interface TypographyProps extends TypographyJSXElements {
+export interface TypographyProps {
   variant: TypographyVariant;
   component?: TypographyComponent;
-  color?: FontColor;
-  weight?: FontWeight;
+  status?: TypographyStatus;
+  color?: TypographyColor;
+  weight?: TypographyWeight;
+  lineHeight?: TypographyLineHeight;
 }
-
-export { Typography } from "./typography";
