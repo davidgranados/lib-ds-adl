@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import DateInputs from "./date-inputs";
 
 export default {
-  title: "Atoms/DateInputs",
+  title: "Molecules/DateInputs",
   component: DateInputs,
 } as ComponentMeta<typeof DateInputs>;
 
