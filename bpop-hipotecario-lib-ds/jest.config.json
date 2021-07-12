@@ -2,20 +2,16 @@
   "setupFiles": ["<rootDir>/src/setupTests.js"],
   "testRegex": "/*.test.tsx$",
   "collectCoverage": true,
-  "collectCoverageFrom": [
-    "**/*.{js}",
-    "!**/node_modules/**",
-    "!**/vendor/**"
-  ],
+  "collectCoverageFrom": ["**/*.{js}", "!**/node_modules/**", "!**/vendor/**"],
   "coverageReporters": ["lcov"],
   "coverageDirectory": "test-coverage",
   "coverageThreshold": {
-   "global": {
-   "branches": 0,
-   "functions": 0,
-   "lines": 0,
-   "statements": 0
-   }
+    "global": {
+      "branches": 0,
+      "functions": 0,
+      "lines": 0,
+      "statements": 0
+    }
   },
   "moduleDirectories": ["node_modules", "src"]
- }
+}
