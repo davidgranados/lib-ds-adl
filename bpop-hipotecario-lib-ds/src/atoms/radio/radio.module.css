@@ -1,0 +1,68 @@
+
+.wrapper {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.wrapper.disabled {
+  cursor: not-allowed;
+}
+
+.wrapper.disabled .radio {
+  cursor: not-allowed;
+  background-color: var(--color-carbon-mid-100);
+}
+
+.wrapper.error .radio {
+  border: solid 1px var(--color-semantic-error-600);
+  background-color: rgba(var(--color-semantic-error-100-rgb), 0.32);
+}
+
+.wrapper .input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+.wrapper .radio {
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-carbon-light-900);
+}
+
+.wrapper .radio .circle {
+  width: .625rem;
+  height: .625rem;
+  border-radius: 50%;
+  background-color: var(--color-carbon-light-100);
+}
+
+.wrapper.enabled:hover .input ~ .radio {
+  border: 1px solid var(--color-highlight-600);
+  background-color: rgba(var(--color-highlight-100-rgb), .24);
+}
+
+.wrapper.enabled .input:checked ~ .radio {
+  border: 1px solid var(--color-highlight-600);
+  background-color: var(--color-highlight-600);
+}
+
+.wrapper.disabled .input:checked ~ .radio {
+  border: 1px solid var(--color-carbon-mid-100);
+  background-color: var(--color-carbon-mid-100);
+}

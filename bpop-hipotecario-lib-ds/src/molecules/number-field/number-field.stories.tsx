@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import NumberField from "./number-field";
 
 export default {
-  title: "Atoms/NumberField",
+  title: "Molecules/NumberField",
   component: NumberField,
 } as ComponentMeta<typeof NumberField>;
 

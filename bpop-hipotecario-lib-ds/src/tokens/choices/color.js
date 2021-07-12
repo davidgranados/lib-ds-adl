@@ -18,6 +18,9 @@ module.exports = {
       "100": {
         "value": "#C4E9C0",
       },
+      "100-rgb": {
+        "value": "196, 233, 192",
+      },
       "400": {
         "value": "#0ACC13",
       },

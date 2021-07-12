@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .label {
+  padding-left: .5rem;
+  color: var(--color-carbon-900);
+  font-size: var(--font-size-3xs);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-sans-inter);
+}
