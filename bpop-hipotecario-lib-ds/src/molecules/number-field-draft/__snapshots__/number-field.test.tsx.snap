@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NumberField /> <NumberField /> with empty value should match snapshot 1`] = `
+<div
+  className="wrapper"
+>
+  <label
+    className="default"
+    htmlFor="test-number-field-id"
+  >
+    test number field label
+  </label>
+  <input
+    className="default size-md"
+    id="test-number-field-id"
+    maxLength={10}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    placeholder="test placeholder"
+    type="tel"
+    value=""
+  />
+</div>
+`;
+
+exports[`<NumberField /> <NumberField /> with error caption should match snapshot 1`] = `
+<div
+  className="wrapper"
+>
+  <label
+    className="default"
+    htmlFor="test-number-field-id"
+  >
+    test number field label
+  </label>
+  <input
+    className="default size-md error"
+    id="test-number-field-id"
+    maxLength={10}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    placeholder="test placeholder"
+    type="tel"
+    value=""
+  />
+  <span
+    className="default body-sm weight-regular error-600 line-height-body-sm"
+  >
+    test caption
+  </span>
+</div>
+`;
+
+exports[`<NumberField /> <NumberField /> with initial value should match snapshot 1`] = `
+<div
+  className="wrapper"
+>
+  <label
+    className="default"
+    htmlFor="test-number-field-id"
+  >
+    test number field label
+  </label>
+  <input
+    className="default size-md filled"
+    id="test-number-field-id"
+    maxLength={10}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    placeholder="test placeholder"
+    type="tel"
+    value={123}
+  />
+</div>
+`;

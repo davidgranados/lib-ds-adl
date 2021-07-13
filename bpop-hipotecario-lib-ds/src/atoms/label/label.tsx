@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./label.module.css";
-import { LabelProps } from "./label.d";
+import { HTMLPropsFor } from "../../types";
 
-const Label: React.FC<LabelProps> = ({ children, id, ...props }) => {
+const Label: React.FC<HTMLPropsFor<"label">> = ({ children, ...props }) => {
   return (
-    <label htmlFor={id} className={styles["label"]} {...props}>
+    <label className={styles["default"]} {...props}>
       {children}
     </label>
   );

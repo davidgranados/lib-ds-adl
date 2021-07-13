@@ -1,8 +1,8 @@
-.label {
-  margin: 0 0 0.25rem 0;
+.default {
+  margin-bottom: 0.25rem;
   color: var(--color-carbon-900);
   font-family: var(--font-family-sans-inter);
   font-size: var(--font-size-3xs);
   font-weight: var(--font-weight-medium);
-  line-height: 2;
+  line-height: var(--line-height-7xl);
 }
