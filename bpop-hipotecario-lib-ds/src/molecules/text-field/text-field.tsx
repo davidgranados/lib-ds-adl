@@ -1,37 +1,42 @@
-import React from "react";
+import React, { memo } from "react";
 
-import styles from "./text-field.module.css";
-import { Label } from "../../atoms/label";
+import { InputFieldBase } from "../input-field-base";
 
-export interface IProps {
-  id: string;
-  label: string;
-  isDisabled?: boolean;
-  hasError?: boolean;
-  caption?: string;
-  placeholder?: string;
-  value?: string | number;
-  onChange: (v: string | number) => void;
-}
+import { TextFieldProps } from "./text-field.d";
 
-const TextField: React.FC<IProps> = ({ id, label, isDisabled, hasError, caption, placeholder, value, onChange }) => {
+const TextField: React.FC<TextFieldProps> = ({
+  id,
+  label,
+  status,
+  caption,
+  placeholder,
+  size,
+  maxLength,
+  disabled,
+  validateInputValue,
+  onChange,
+  onFocus,
+  onBlur,
+  value = "",
+}) => {
   return (
-    <div>
-      <Label id={id}>{label}</Label>
-      <div className={`${styles["input-wrapper"]} ${isDisabled && styles["disabled"]} ${hasError && styles["error"]}`}>
-        <input
-          data-testid="input"
-          id={id}
-          value={value}
-          disabled={isDisabled}
-          placeholder={placeholder}
-          onChange={(v) => onChange(v.target.value)}
-          className={styles["input"]}
-        />
-      </div>
-      {caption && <span className={`${styles["caption"]} ${hasError && styles["error"]}`}>{caption}</span>}
-    </div>
+    <InputFieldBase
+      id={id}
+      type={"text"}
+      label={label}
+      caption={caption}
+      size={size}
+      value={value}
+      placeholder={placeholder}
+      status={status}
+      maxLength={maxLength}
+      disabled={disabled}
+      validateInputValue={validateInputValue}
+      onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
+    />
   );
 };
 
-export default React.memo(TextField);
+export default memo(TextField);

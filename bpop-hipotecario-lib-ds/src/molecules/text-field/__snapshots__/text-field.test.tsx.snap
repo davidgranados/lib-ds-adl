@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NumberField /> <NumberField /> with error should match snapshot 1`] = `
+exports[`<TextField /> <TextField /> with error should match snapshot 1`] = `
 <div
   className="wrapper"
 >
@@ -19,7 +19,7 @@ exports[`<NumberField /> <NumberField /> with error should match snapshot 1`] = 
     onFocus={[Function]}
     onInput={[Function]}
     placeholder="test placeholder"
-    type="tel"
+    type="text"
     value=""
   />
   <span
@@ -30,7 +30,7 @@ exports[`<NumberField /> <NumberField /> with error should match snapshot 1`] = 
 </div>
 `;
 
-exports[`<NumberField /> <NumberField /> with initial value and caption should match snapshot 1`] = `
+exports[`<TextField /> <TextField /> with initial value and caption should match snapshot 1`] = `
 <div
   className="wrapper"
 >
@@ -49,8 +49,8 @@ exports[`<NumberField /> <NumberField /> with initial value and caption should m
     onFocus={[Function]}
     onInput={[Function]}
     placeholder="test placeholder"
-    type="tel"
-    value={123}
+    type="text"
+    value="initial value"
   />
   <span
     className="default body-sm weight-regular carbon-900 line-height-body-sm"
@@ -60,7 +60,7 @@ exports[`<NumberField /> <NumberField /> with initial value and caption should m
 </div>
 `;
 
-exports[`<NumberField /> <NumberField /> without initial value or caption should match snapshot 1`] = `
+exports[`<TextField /> <TextField /> without initial value or caption should match snapshot 1`] = `
 <div
   className="wrapper"
 >
@@ -79,7 +79,7 @@ exports[`<NumberField /> <NumberField /> without initial value or caption should
     onFocus={[Function]}
     onInput={[Function]}
     placeholder="test placeholder"
-    type="tel"
+    type="text"
     value=""
   />
 </div>

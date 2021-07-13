@@ -1,13 +1,12 @@
-
 .wrapper {
+  position: relative;
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
-  user-select: none;
-  position: relative;
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+  user-select: none;
 }
 
 .wrapper.disabled {
@@ -15,8 +14,8 @@
 }
 
 .wrapper.disabled .checkmark {
-  cursor: not-allowed;
   background-color: var(--color-carbon-light-400);
+  cursor: not-allowed;
 }
 
 .wrapper.error .checkmark {
@@ -25,35 +24,35 @@
 }
 
 .wrapper .input {
+  position: absolute;
   width: 0;
   height: 0;
-  opacity: 0;
   cursor: pointer;
-  position: absolute;
+  opacity: 0;
 }
 
 .wrapper .checkmark {
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 6px;
-  position: absolute;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-carbon-light-900);
+  border-radius: 6px;
 }
 
 .wrapper .checkmark .icon-check {
   display: none;
-  font-size: 24px;
   color: var(--color-carbon-light-100);
+  font-size: 24px;
 }
 
 .wrapper.enabled:hover .input ~ .checkmark {
   border: 1px solid var(--color-highlight-600);
-  background-color: rgba(var(--color-highlight-100-rgb), .24);
+  background-color: rgba(var(--color-highlight-100-rgb), 0.24);
 }
 
 .wrapper.enabled .input:checked ~ .checkmark {

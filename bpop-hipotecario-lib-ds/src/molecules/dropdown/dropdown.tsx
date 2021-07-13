@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
-import styles from "./dropdown.module.css";
-import { DropdownProps } from "./dropdown.d";
 import { Label } from "../../atoms/label";
+import { FieldCaption } from "../../atoms/caption-field";
+
+import { DropdownProps } from "./dropdown.d";
+import styles from "./dropdown.module.css";
 
 const Dropdown: React.FC<DropdownProps> = ({
   id,
@@ -17,6 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   const [open, setOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(value);
+  const captionStatus = hasError ? "error" : undefined;
 
   const isSelected = (v: string | number) => v === selectedValue;
   const toggleOpen = () => !isDisabled && setOpen(!open);
@@ -58,7 +61,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
         </div>
       </div>
-      {caption && <span className={`${styles["caption"]} ${hasError && styles["error"]}`}>{caption}</span>}
+      {caption && <FieldCaption status={captionStatus}>{caption}</FieldCaption>}
     </div>
   );
 };

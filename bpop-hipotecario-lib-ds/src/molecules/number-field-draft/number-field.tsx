@@ -1,13 +1,9 @@
-import classNames from "classnames";
-import React, { useRef, useState } from "react";
+import React, { memo } from "react";
 
-import { InputBase } from "../../atoms/input-base";
-import { Label } from "../../atoms/label";
-import { Typography, validStatuses as typographyValidStatuses } from "../../atoms/typography";
+import { InputFieldBase } from "../input-field-base";
 
 import { validateNumberFieldValue } from "./helpers";
 import { NumberFieldProps } from "./number-field.d";
-import textFieldStyles from "./number-field.module.css";
 
 const NumberField: React.FC<NumberFieldProps> = ({
   id,
@@ -23,41 +19,24 @@ const NumberField: React.FC<NumberFieldProps> = ({
   onBlur,
   value = "",
 }) => {
-  const textFieldClassname = classNames(textFieldStyles["wrapper"]);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const showCaption = caption && status && typographyValidStatuses.includes(status);
-  const [localValue, setLocalValue] = useState(value);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value === "" || validateNumberFieldValue(event.target.value)) {
-      setLocalValue(event.target.value);
-    }
-    onChange && onChange(event);
-  };
   return (
-    <div className={textFieldClassname}>
-      <Label htmlFor={id}>{label}</Label>
-      <InputBase
-        ref={inputRef}
-        type={"tel"}
-        id={id}
-        size={size}
-        value={localValue}
-        placeholder={placeholder}
-        status={status}
-        maxLength={maxLength}
-        disabled={disabled}
-        onChange={handleChange}
-        onFocus={onFocus}
-        onBlur={onBlur}
-      />
-      {showCaption && (
-        <Typography variant={"body-sm"} component={"span"} lineHeight={"body-sm"} status={status}>
-          {caption}
-        </Typography>
-      )}
-    </div>
+    <InputFieldBase
+      id={id}
+      type={"tel"}
+      label={label}
+      caption={caption}
+      size={size}
+      value={value}
+      placeholder={placeholder}
+      status={status}
+      maxLength={maxLength}
+      disabled={disabled}
+      validateInputValue={validateNumberFieldValue}
+      onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
+    />
   );
 };
 
-export default React.memo(NumberField);
+export default memo(NumberField);

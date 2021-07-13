@@ -4,32 +4,32 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { validSizes, validStatuses } from "../../atoms/input-base";
 
-import TextField from "./text-field";
+import InputFieldBase from "./input-field-base";
 
 export default {
-  title: "Molecules/TextFieldDraft",
-  component: TextField,
+  title: "Molecules/InputFieldBase",
+  component: InputFieldBase,
   args: {
-    id: "default-text-field-id",
+    id: "default-input-field-id",
     label: "Label",
     caption: "Caption Message",
-    value: undefined,
     status: undefined,
     disabled: false,
     placeholder: "Input Base",
     size: "md",
+    maxLength: 10,
   },
   argTypes: {
     status: { options: [undefined, ...validStatuses], control: "select" },
     size: { options: validSizes, control: "select" },
-    value: { control: "text" },
+    maxLength: { control: "number" },
     onFocus: { action: "focused" },
     onBlur: { action: "blurred" },
     onInput: { action: "typing" },
     onChange: { action: "changed" },
   },
-} as ComponentMeta<typeof TextField>;
+} as ComponentMeta<typeof InputFieldBase>;
 
-const Template: ComponentStory<typeof TextField> = (args) => <TextField {...args} />;
+const Template: ComponentStory<typeof InputFieldBase> = (args) => <InputFieldBase {...args} />;
 
 export const Default = Template.bind({});
