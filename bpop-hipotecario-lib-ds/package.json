@@ -28,7 +28,7 @@
     "start": "react-scripts start",
     "test:watch": "react-scripts test",
     "test:watch:coverage": "react-scripts test --coverage",
-    "test": "react-scripts test --coverage --collectCoverageFrom=**/*.{ts,tsx} --collectCoverageFrom=!src/**/*.stories.tsx --collectCoverageFrom=!src/**/*.d.ts --collectCoverageFrom=**/atoms/** --watchAll=false",
+    "test": "react-scripts test --coverage --collectCoverageFrom=**/*.{ts,tsx} --collectCoverageFrom=!src/**/*.stories.tsx --collectCoverageFrom=!src/**/index.ts --collectCoverageFrom=!src/**/*.d.ts --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build:cra": "react-scripts build",
