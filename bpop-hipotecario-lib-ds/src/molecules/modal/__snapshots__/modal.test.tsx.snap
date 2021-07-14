@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal /> Should match snapshot 1`] = `
+<div
+  className="wrapper show false"
+>
+  <div
+    className="overflow"
+    onClick={[Function]}
+  />
+  <div
+    className="modal"
+  >
+    <div
+      className="header"
+    >
+      <div
+        className="close"
+      >
+        <span
+          className="icon icon-close"
+          onClick={[Function]}
+        />
+      </div>
+      <div
+        className="title"
+      >
+        <h6
+          className="default h6 weight-bold carbon-900 line-height-h6"
+        >
+          title
+        </h6>
+      </div>
+    </div>
+    <div
+      className="content"
+    />
+    <div
+      className="footer"
+    >
+      <button
+        className="default font-size-lg default primary size-lg"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        type="button"
+      >
+        ok
+      </button>
+    </div>
+  </div>
+</div>
+`;
