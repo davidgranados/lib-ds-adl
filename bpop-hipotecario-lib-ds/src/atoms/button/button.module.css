@@ -23,6 +23,7 @@
 }
 
 .primary:disabled {
+  cursor: default;
   background-color: var(--background-color-button-primary-disabled);
   color: var(--font-color-button-primary-disabled);
 }
@@ -47,6 +48,7 @@
 }
 
 .secondary:disabled {
+  cursor: default;
   background-color: var(--background-color-button-secondary-disabled);
   color: var(--font-color-button-secondary-disabled);
 }
