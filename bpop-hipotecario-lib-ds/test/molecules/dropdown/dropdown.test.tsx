@@ -1,4 +1,4 @@
-
+import * as React from "react";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import Dropdown from "../../../src/molecules/dropdown/dropdown";
 

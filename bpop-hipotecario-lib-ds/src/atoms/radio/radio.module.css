@@ -1,13 +1,12 @@
-
 .wrapper {
+  position: relative;
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
-  user-select: none;
-  position: relative;
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+  user-select: none;
 }
 
 .wrapper.disabled {
@@ -15,8 +14,8 @@
 }
 
 .wrapper.disabled .radio {
-  cursor: not-allowed;
   background-color: var(--color-carbon-mid-100);
+  cursor: not-allowed;
 }
 
 .wrapper.error .radio {
@@ -25,36 +24,36 @@
 }
 
 .wrapper .input {
+  position: absolute;
   width: 0;
   height: 0;
-  opacity: 0;
   cursor: pointer;
-  position: absolute;
+  opacity: 0;
 }
 
 .wrapper .radio {
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 50%;
-  position: absolute;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-carbon-light-900);
+  border-radius: 50%;
 }
 
 .wrapper .radio .circle {
-  width: .625rem;
-  height: .625rem;
-  border-radius: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
   background-color: var(--color-carbon-light-100);
+  border-radius: 50%;
 }
 
 .wrapper.enabled:hover .input ~ .radio {
   border: 1px solid var(--color-highlight-600);
-  background-color: rgba(var(--color-highlight-100-rgb), .24);
+  background-color: rgba(var(--color-highlight-100-rgb), 0.24);
 }
 
 .wrapper.enabled .input:checked ~ .radio {

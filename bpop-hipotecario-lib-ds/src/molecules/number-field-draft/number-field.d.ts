@@ -1,6 +1,5 @@
-import { DefaultFieldProps } from "../../types";
+import { TextFieldProps } from "../text-field";
 
-export interface NumberFieldProps extends DefaultFieldProps {
+export interface NumberFieldProps extends Omit<TextFieldProps, "validateInputValue"> {
   value?: number;
-  maxLength?: number;
 }
