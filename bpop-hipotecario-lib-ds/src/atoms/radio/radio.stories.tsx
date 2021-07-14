@@ -15,5 +15,5 @@ Default.args = {
   id: "id",
   isDisabled: false,
   hasError: false,
-  onChange: (v) => console.log(v.target.value),
+  onChange: (v: any) => console.log(v.target.value),
 };
