@@ -15,5 +15,5 @@ Default.args = {
   id: "date-inputs-birthday",
   caption: "This is a caption",
   hasError: false,
-  onChange: (v) => console.log(v),
+  onChange: (v: any) => console.log(v),
 };

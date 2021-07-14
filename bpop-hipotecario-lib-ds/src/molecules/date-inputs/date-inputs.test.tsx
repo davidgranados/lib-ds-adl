@@ -19,7 +19,9 @@ test("DateInputs should renders ok", async () => {
 test("DateInputs day and year emits null", async () => {
   let result;
   const expectedResult = { day: 0, month: 0, year: 0 };
-  const x = render(<DateInputs caption="This is a caption" id="date-inputs-birthday" onChange={(v) => (result = v)} />);
+  const x = render(
+    <DateInputs caption="This is a caption" id="date-inputs-birthday" onChange={(v: any) => (result = v)} />
+  );
   const dayInput = x.container.getElementsByTagName("input")[0];
   const yearInput = x.container.getElementsByTagName("input")[1];
 

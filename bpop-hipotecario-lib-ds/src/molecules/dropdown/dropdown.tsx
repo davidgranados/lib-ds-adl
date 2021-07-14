@@ -23,7 +23,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   const isSelected = (v: string | number) => v === selectedValue;
   const toggleOpen = () => !isDisabled && setOpen(!open);
-  const selectedLabel = () => items.find((v) => v.value === selectedValue)?.label;
+  const selectedLabel = () => items.find((v: any) => v.value === selectedValue)?.label;
   const selectValue = (item: { label: string; value: string | number }) => {
     setSelectedValue(item.value);
     onChange(item.value);

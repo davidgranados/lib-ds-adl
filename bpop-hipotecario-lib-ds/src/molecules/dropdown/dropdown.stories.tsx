@@ -34,5 +34,5 @@ Default.args = {
   isDisabled: false,
   hasError: false,
   items: months.map((v, i) => ({ label: v, value: i })),
-  onChange: (v) => console.log(v),
+  onChange: (v: any) => console.log(v),
 };
