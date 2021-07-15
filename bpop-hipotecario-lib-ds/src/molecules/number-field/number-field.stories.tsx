@@ -19,5 +19,5 @@ Default.args = {
   isDisabled: false,
   maxLength: 5,
   hasError: false,
-  onChange: (v: any) => console.log(v),
+  onChange: (v) => console.log(v),
 };
