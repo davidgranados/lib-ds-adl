@@ -1,8 +1,7 @@
 import React from "react";
 import { mount, ReactWrapper, shallow } from "enzyme";
 
-import { ButtonTextSize } from "../button-text";
-import { ButtonSize } from "../button";
+import { ButtonSize, ButtonTextSize } from "../../types";
 
 import ButtonBase from "./button-base";
 

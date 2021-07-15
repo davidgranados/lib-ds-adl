@@ -1,4 +1,4 @@
-export interface DropdownProps {
+export declare interface DropdownProps {
   id: string;
   label: string;
   items: { label: string; value: string | number }[];

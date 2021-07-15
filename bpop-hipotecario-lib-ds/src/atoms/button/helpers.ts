@@ -1,6 +1,4 @@
-import { ButtonVariant } from "../../types";
-import { ButtonSize } from "./index";
-import { ButtonFontSize } from "../button-base";
+import { ButtonFontSize, ButtonSize, ButtonVariant } from "../../types";
 
 export const validSizes: ButtonSize[] = ["xs", "sm", "md", "lg"];
 export const validVariants: ButtonVariant[] = ["primary", "secondary"];
