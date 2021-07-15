@@ -59,12 +59,6 @@
       "rules": {
         "spaced-comment": "off"
       }
-    },
-    {
-      "files": "webpack.*",
-      "rules": {
-        "@typescript-eslint/no-var-requires": "off"
-      }
     }
   ]
 }
