@@ -40,11 +40,7 @@
   },
   "rules": {
     "react/prop-types": 0,
-    "require-jsdoc": "off",
-    "no-explicit-any": 0,
-    "@typescript-eslint/ban-ts-ignore": "off",
-    "react/react-in-jsx-scope": "off",
-    "no-unused-vars": "off"
+    "require-jsdoc": "off"
   },
   "overrides": [
     {

@@ -43,7 +43,7 @@ const DateInputs: React.FC<DateInputsProps> = ({ caption, hasError, onChange }) 
             maxLength={2}
             placeholder="Day"
             hasError={hasError}
-            onChange={(v: any) => handleDayChange(v)}
+            onChange={(v) => handleDayChange(v)}
           />
         </div>
         <div className={`${styles["input"]} ${styles["month"]}`}>
@@ -53,7 +53,7 @@ const DateInputs: React.FC<DateInputsProps> = ({ caption, hasError, onChange }) 
             label="Month"
             value={month}
             hasError={hasError}
-            onChange={(v: any) => handleMonthChange(v)}
+            onChange={(v) => handleMonthChange(v)}
           />
         </div>
         <div className={styles["input"]}>
@@ -63,7 +63,7 @@ const DateInputs: React.FC<DateInputsProps> = ({ caption, hasError, onChange }) 
             maxLength={4}
             placeholder="Year"
             hasError={hasError}
-            onChange={(v: any) => handleYearChange(v)}
+            onChange={(v) => handleYearChange(v)}
           />
         </div>
       </div>

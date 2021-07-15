@@ -15,5 +15,5 @@ Default.args = {
   id: "id",
   text: "This is a label",
   isDisabled: false,
-  onChange: (v: any) => console.log(v),
+  onChange: (v) => console.log(v),
 };
