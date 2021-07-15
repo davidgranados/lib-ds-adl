@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import { Label } from "../../atoms/label";
 import { FieldCaption } from "../../atoms/caption-field";
+import { DropdownProps } from "../../types";
 
-import { DropdownProps } from "./dropdown.d";
 import styles from "./dropdown.module.css";
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -31,7 +31,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   return (
     <div>
-      <Label data-testid="dropdown-label" id={id} onClick={() => toggleOpen()}>
+      <Label data-testid="dropdown-label" htmlFor={id} onClick={() => toggleOpen()}>
         {label}
       </Label>
       <div

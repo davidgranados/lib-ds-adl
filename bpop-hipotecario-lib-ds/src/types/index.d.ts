@@ -5,7 +5,11 @@ export type {
   ButtonBaseProps,
   DefaultButtonProps,
   ButtonFontSize,
+  ButtonTextSize,
+  ButtonTextProps,
 } from "./button";
+
+export type { DropdownProps } from "./dropdown";
 
 export type { HTMLPropsFor, CombinedRef } from "./global";
 

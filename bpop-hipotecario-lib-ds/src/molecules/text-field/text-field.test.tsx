@@ -1,8 +1,7 @@
 import React from "react";
 import { mount, ReactWrapper } from "enzyme";
 
-import { InputBaseSize } from "../../atoms/input-base";
-import { InputFieldType } from "../input-field-base";
+import { InputBaseSize, InputFieldType } from "../../types";
 
 import TextField from "./text-field";
 
