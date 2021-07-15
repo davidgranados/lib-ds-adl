@@ -1,15 +1,16 @@
 import React from "react";
 
+import { HiddenInputFieldProps } from "../../types";
+
 import styles from "./checkbox-field.module.css";
-import { CheckboxFieldProps } from "./checkbox-field.d";
 import { Checkbox } from "../../atoms/checkbox";
 
-const CheckboxField: React.FC<CheckboxFieldProps> = ({ id, isDisabled, text, onChange }) => {
+const CheckboxField: React.FC<HiddenInputFieldProps> = ({ id, disabled, label, onChange }) => {
   return (
     <div className={styles["wrapper"]}>
-      <Checkbox id={id} isDisabled={isDisabled} onChange={onChange} />
+      <Checkbox id={id} disabled={disabled} onChange={onChange} />
       <label htmlFor={id} className={styles["label"]}>
-        {text}
+        {label}
       </label>
     </div>
   );

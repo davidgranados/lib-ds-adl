@@ -3,16 +3,39 @@ import React, { forwardRef, useRef } from "react";
 
 import { addClassToElement, removeClassFromElement } from "../../helpers";
 import { useCombinedRefs } from "../../hooks";
+import { InputBaseProps } from "../../types";
 
-import { InputBaseProps } from "./input-base.d";
 import inputStyles from "./input-base.module.css";
 
 const InputBase = forwardRef<HTMLInputElement, InputBaseProps>(
-  ({ onFocus, onBlur, onInput, status, disabled, value, size = "md", ...props }, ref) => {
-    const inputClassName = classNames(inputStyles["default"], inputStyles[`size-${size}`], {
-      [inputStyles[`${status}`]]: status,
+  (
+    {
+      id,
+      type,
+      status,
+      disabled,
+      value,
+      placeholder,
+      hidden,
+      maxLength,
+      minLength,
+      onFocus,
+      onBlur,
+      onInput,
+      onChange,
+      onClick,
+      fillable = true,
+      size = "md",
+    },
+    ref
+  ) => {
+    const inputClassName = classNames({
+      [inputStyles["fillable"]]: fillable,
+      [inputStyles[`size-${size}`]]: fillable,
+      [inputStyles["filled"]]: fillable && value,
+      [inputStyles["hidden"]]: hidden,
+      [inputStyles[`${status}`]]: !hidden && status,
       [inputStyles["disabled"]]: disabled,
-      [inputStyles["filled"]]: value,
     });
     const innerInputRef = useRef(null);
     const combinedRef = useCombinedRefs<HTMLInputElement>([ref, innerInputRef]);
@@ -22,27 +45,33 @@ const InputBase = forwardRef<HTMLInputElement, InputBaseProps>(
     };
     const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       removeClassFromElement(combinedRef.current, inputStyles["focus"]);
-      removeClassFromElement(combinedRef.current, inputStyles["typing"]);
+      removeClassFromElement(combinedRef.current, inputStyles["typing"], fillable);
       if (combinedRef.current?.value) {
-        addClassToElement(combinedRef.current, inputStyles["filled"]);
+        addClassToElement(combinedRef.current, inputStyles["filled"], fillable);
       } else {
-        removeClassFromElement(combinedRef.current, inputStyles["filled"]);
+        removeClassFromElement(combinedRef.current, inputStyles["filled"], fillable);
       }
       onBlur && onBlur(event);
     };
     const handleInput = (event: React.FormEvent<HTMLInputElement>) => {
-      addClassToElement(combinedRef.current, inputStyles["typing"]);
+      fillable && addClassToElement(combinedRef.current, inputStyles["typing"], fillable);
       onInput && onInput(event);
     };
     return (
       <input
         ref={combinedRef}
+        type={type}
+        id={id}
         className={inputClassName}
+        value={value}
+        placeholder={placeholder}
+        maxLength={maxLength}
+        minLength={minLength}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onInput={handleInput}
-        value={value}
-        {...props}
+        onChange={onChange}
+        onClick={onClick}
         disabled={disabled}
       />
     );

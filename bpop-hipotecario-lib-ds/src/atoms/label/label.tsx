@@ -1,13 +1,27 @@
-import React from "react";
-import styles from "./label.module.css";
-import { HTMLPropsFor } from "../../types";
+import classNames from "classnames";
+import React, { forwardRef } from "react";
 
-const Label: React.FC<HTMLPropsFor<"label">> = ({ children, ...props }) => {
-  return (
-    <label className={styles["default"]} {...props}>
-      {children}
-    </label>
-  );
-};
+import { LabelProps } from "../../types";
+import { Typography } from "../typography";
 
-export default React.memo(Label);
+import labelStyles from "./label.module.css";
+
+const Label = forwardRef<HTMLLabelElement, LabelProps>(
+  ({ children, variant, htmlFor, fontWeight, lineHeight }, ref) => {
+    const labelClassName = classNames(labelStyles["default"], { [labelStyles[`${variant}`]]: variant });
+    return (
+      <label ref={ref} className={labelClassName} htmlFor={htmlFor}>
+        <Typography
+          data-testid={"span-inside-label"}
+          variant={"body-sm"}
+          component={"span"}
+          weight={fontWeight}
+          lineHeight={lineHeight}
+        >
+          {children}
+        </Typography>
+      </label>
+    );
+  }
+);
+export default Label;

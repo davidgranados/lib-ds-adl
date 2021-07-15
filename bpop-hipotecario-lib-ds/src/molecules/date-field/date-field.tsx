@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { DateInputsProps } from "./date-inputs.d";
-import styles from "./date-inputs.module.css";
-import Dropdown from "../dropdown/dropdown";
-import NumberField from "../number-field/number-field";
 
-const DateInputs: React.FC<DateInputsProps> = ({ caption, hasError, onChange }) => {
+import Dropdown from "../dropdown/dropdown";
+import { NumberField } from "../number-field";
+
+import { DateFieldProps } from "../../types";
+
+import styles from "./date-field.module.css";
+
+const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) => {
   const months = [
     "January",
     "February",
@@ -19,6 +22,7 @@ const DateInputs: React.FC<DateInputsProps> = ({ caption, hasError, onChange }) 
     "November",
     "December",
   ];
+  const inputsStatus = hasError ? "error" : undefined;
 
   const [day, setDay] = useState<number>(0);
   const [month, setMonth] = useState<number>(0);
@@ -37,18 +41,19 @@ const DateInputs: React.FC<DateInputsProps> = ({ caption, hasError, onChange }) 
       <div className={styles["inputs"]}>
         <div className={styles["input"]}>
           <NumberField
-            data-testid="date-inputs-day"
-            id="date-inputs-day"
+            data-testid="date-field-day"
+            id="date-field-day"
             label="Day"
             maxLength={2}
             placeholder="Day"
-            hasError={hasError}
-            onChange={(v) => handleDayChange(v)}
+            size={"lg"}
+            status={inputsStatus}
+            onChange={(v) => handleDayChange(parseInt(v.target.value))}
           />
         </div>
         <div className={`${styles["input"]} ${styles["month"]}`}>
           <Dropdown
-            id="date-inputs-month"
+            id="date-field-month"
             items={months.map((v, i) => ({ label: v, value: i }))}
             label="Month"
             value={month}
@@ -58,12 +63,13 @@ const DateInputs: React.FC<DateInputsProps> = ({ caption, hasError, onChange }) 
         </div>
         <div className={styles["input"]}>
           <NumberField
-            id="date-inputs-year"
+            id="date-field-year"
             label="Year"
             maxLength={4}
             placeholder="Year"
-            hasError={hasError}
-            onChange={(v) => handleYearChange(v)}
+            size={"lg"}
+            status={inputsStatus}
+            onChange={(v) => handleYearChange(parseInt(v.target.value))}
           />
         </div>
       </div>
@@ -72,4 +78,4 @@ const DateInputs: React.FC<DateInputsProps> = ({ caption, hasError, onChange }) 
   );
 };
 
-export default DateInputs;
+export default DateField;

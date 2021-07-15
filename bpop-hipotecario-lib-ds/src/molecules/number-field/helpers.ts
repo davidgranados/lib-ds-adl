@@ -1,4 +1,4 @@
-import { validateInput } from "../input-field-base";
+import { validateInput } from "../../types";
 
 export const ONLY_NUMBERS_REGEX = /^\d*$/;
 export const validateNumberFieldValue: validateInput = (value) => {

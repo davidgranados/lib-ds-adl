@@ -5,6 +5,6 @@ import { CheckboxField } from ".";
 afterEach(cleanup);
 
 test("CheckboxField should renders ok", () => {
-  const x = render(<CheckboxField id="id" text="Hi" isDisabled={false} onChange={() => null} />);
+  const x = render(<CheckboxField id="id" label="Hi" disabled={false} onChange={() => null} />);
   expect(x.container).toBeInTheDocument();
 });

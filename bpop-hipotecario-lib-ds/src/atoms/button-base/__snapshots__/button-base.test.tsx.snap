@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ButtonBase /> rendered in HOC <ButtonBase /> rendered in <Button /> should match snapshot 1`] = `
+exports[`<ButtonBase /> rendered in HOC  -> <Button /> should match snapshot 1`] = `
 <button
   className="default font-size-md buttonClassname"
   onBlur={[MockFunction]}
@@ -18,7 +18,7 @@ exports[`<ButtonBase /> rendered in HOC <ButtonBase /> rendered in <Button /> sh
 </button>
 `;
 
-exports[`<ButtonBase /> rendered in HOC <ButtonBase /> rendered in <ButtonText /> should match snapshot 1`] = `
+exports[`<ButtonBase /> rendered in HOC  -> <ButtonText /> should match snapshot 1`] = `
 <button
   className="default font-size-md buttonTextClassname"
   onBlur={[MockFunction]}

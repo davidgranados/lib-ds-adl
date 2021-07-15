@@ -1,64 +1,42 @@
-import React from "react";
+import React, { memo } from "react";
 
-import styles from "./number-field.module.css";
-import { Label } from "../../atoms/label";
+import { NumberFieldProps } from "../../types";
+import { InputFieldBase } from "../input-field-base";
 
-const ONLY_NUMBERS = /^\d*(?:[.,]\d*)?$/;
+import { validateNumberFieldValue } from "./helpers";
 
-export interface IProps {
-  id: string;
-  label: string;
-  isDisabled?: boolean;
-  maxLength?: number;
-  hasError?: boolean;
-  caption?: string;
-  placeholder?: string;
-  value?: number;
-  onChange: (v: number | null) => void;
-}
-
-const NumberField: React.FC<IProps> = ({
+const NumberField: React.FC<NumberFieldProps> = ({
   id,
   label,
-  isDisabled,
-  hasError,
-  maxLength,
+  status,
   caption,
   placeholder,
-  value,
+  size,
+  maxLength,
+  disabled,
   onChange,
+  onFocus,
+  onBlur,
+  value = "",
 }) => {
-  let lastValue = value || null;
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    validateInputType(event);
-    onChange(lastValue);
-  };
-
-  const validateInputType = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (!ONLY_NUMBERS.test(event.target.value)) {
-      event.target.value = lastValue ? `${lastValue}` : "";
-      lastValue = event.target.value === "" ? null : +event.target.value;
-    } else lastValue = event.target.value === "" ? null : +event.target.value;
-  };
-
   return (
-    <div>
-      <Label id={id}>{label}</Label>
-      <div className={`${styles["input-wrapper"]} ${isDisabled && styles["disabled"]} ${hasError && styles["error"]}`}>
-        <input
-          data-testid="input"
-          id={id}
-          type="text"
-          maxLength={maxLength}
-          disabled={isDisabled}
-          placeholder={placeholder}
-          onChange={(e) => handleChange(e)}
-          className={styles["input"]}
-        />
-      </div>
-      {caption && <span className={`${styles["caption"]} ${hasError && styles["error"]}`}>{caption}</span>}
-    </div>
+    <InputFieldBase
+      id={id}
+      type={"tel"}
+      label={label}
+      caption={caption}
+      size={size}
+      value={value}
+      placeholder={placeholder}
+      status={status}
+      maxLength={maxLength}
+      disabled={disabled}
+      validateInputValue={validateNumberFieldValue}
+      onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
+    />
   );
 };
 
-export default React.memo(NumberField);
+export default memo(NumberField);

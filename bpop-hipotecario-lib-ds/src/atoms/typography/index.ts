@@ -8,13 +8,3 @@ export {
   validVariants,
   validWeights,
 } from "./helpers";
-
-export type {
-  TypographyColor,
-  TypographyComponent,
-  TypographyProps,
-  TypographyStatus,
-  TypographyWeight,
-  TypographyVariant,
-  VariantMappingType,
-} from "./typography.d";

@@ -1,10 +1,8 @@
 {
   "name": "@avaldigitallabs/bpop-hipotecario-lib-ds",
   "version": "1.0.0",
-  "main": "src/lib.js",
-  "files": [
-    "/src"
-  ],
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "prettier:list": "prettier --list-different \"./{test,src}/**/*.js\" || ECHO .",
     "prettier:write": "prettier --write  \"./{test,src}/**/*.js\"",
@@ -12,7 +10,7 @@
     "lint:css:prettier:fix": "yarn lint:css:prettier --write",
     "lint:css:prettier": "prettier '**/*.css' --list-different --ignore-path .gitignore",
     "lint:css:stylelint:fix": "yarn lint:css:stylelint --fix",
-    "lint:css:stylelint": "stylelint '**/*.css' --ignore-path .gitignore",
+    "lint:css:stylelint": "stylelint '**/*.css' --ignore-path .gitignore --cache ",
     "lint:css": "run-s lint:css:stylelint lint:css:prettier",
     "lint:css:fix": "yarn lint:css:prettier:fix && yarn lint:css:stylelint:fix",
     "lint:ts": "eslint --cache --ignore-path .gitignore '**/*.ts*'",

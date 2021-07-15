@@ -1,18 +1,21 @@
-import React from "react";
+import React, { memo, useRef } from "react";
+
+import { Radio } from "../../atoms/radio";
+import { Label } from "../../atoms/label";
+import { HiddenInputFieldProps } from "../../types";
 
 import styles from "./radio-field.module.css";
-import { RadioFieldProps } from "./radio-field.d";
-import { Radio } from "../../atoms/radio";
 
-const RadioField: React.FC<RadioFieldProps> = ({ id, isDisabled, text, onChange }) => {
+const RadioField: React.FC<HiddenInputFieldProps> = ({ id, disabled, label, onChange }) => {
+  const labelRef = useRef<HTMLLabelElement>(null);
   return (
     <div className={styles["wrapper"]}>
-      <Radio id={id} isDisabled={isDisabled} onChange={onChange} />
-      <label htmlFor={id} className={styles["label"]}>
-        {text}
-      </label>
+      <Radio id={id} disabled={disabled} onChange={onChange} />
+      <Label ref={labelRef} htmlFor={id} variant={"radio-field"} lineHeight={"body-sm"}>
+        {label}
+      </Label>
     </div>
   );
 };
 
-export default RadioField;
+export default memo(RadioField);

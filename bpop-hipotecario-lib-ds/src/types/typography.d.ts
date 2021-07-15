@@ -55,4 +55,7 @@ export interface TypographyProps {
   color?: TypographyColor;
   weight?: TypographyWeight;
   lineHeight?: TypographyLineHeight;
+  children?: ReactNode;
 }
+
+export type FieldCaptionProps = Pick<TypographyProps, "status">;

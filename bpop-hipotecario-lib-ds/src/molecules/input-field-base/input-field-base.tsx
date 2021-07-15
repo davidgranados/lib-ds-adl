@@ -4,8 +4,8 @@ import React, { useRef, useState, memo } from "react";
 import { FieldCaption } from "../../atoms/caption-field";
 import { InputBase } from "../../atoms/input-base";
 import { Label } from "../../atoms/label";
+import { InputFieldBaseProps } from "../../types";
 
-import { InputFieldBaseProps } from "./input-field-base.d";
 import InputFieldStyles from "./input-field-base.module.css";
 
 const InputFieldBase: React.FC<InputFieldBaseProps> = ({
@@ -36,7 +36,9 @@ const InputFieldBase: React.FC<InputFieldBaseProps> = ({
   };
   return (
     <div className={textFieldClassname}>
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id} variant={"input-field-base"} fontWeight={"medium"}>
+        {label}
+      </Label>
       <InputBase
         ref={inputRef}
         type={type}

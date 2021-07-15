@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio /> with error should match snapshot 1`] = `
+<label
+  className="wrapper wrapper--error"
+>
+  <input
+    className="hidden"
+    id="id"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    type="radio"
+  />
+  <span
+    className="control"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="control__circle"
+    />
+  </span>
+</label>
+`;
+
+exports[`<Radio /> with initial value should match snapshot 1`] = `
+<label
+  className="wrapper wrapper--enabled"
+>
+  <input
+    className="hidden"
+    id="id"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    type="radio"
+    value="test radio-old value"
+  />
+  <span
+    className="control"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="control__circle"
+    />
+  </span>
+</label>
+`;
+
+exports[`<Radio /> without initial value should match snapshot 1`] = `
+<label
+  className="wrapper wrapper--enabled"
+>
+  <input
+    className="hidden"
+    id="id"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onInput={[Function]}
+    type="radio"
+  />
+  <span
+    className="control"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="control__circle"
+    />
+  </span>
+</label>
+`;

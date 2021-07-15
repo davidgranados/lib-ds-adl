@@ -3,8 +3,8 @@ import React, { FC, FocusEvent, MouseEvent, TouchEvent, useRef } from "react";
 
 import { addClassToElement, removeClassFromElement } from "../../helpers";
 import { ButtonBase } from "../button-base";
+import { ButtonProps } from "../../types";
 
-import { ButtonProps } from "./button.d";
 import { fontSizeMapping } from "./helpers";
 import buttonStyles from "./button.module.css";
 
@@ -28,17 +28,17 @@ const Button: FC<ButtonProps> = ({
   const fontSize = fontSizeMapping[size];
 
   const addActiveClass = () => {
-    addClassToElement(buttonRef.current, buttonStyles[`${variant}-active`]);
+    addClassToElement(buttonRef.current, buttonStyles[`${variant}--active`]);
   };
   const removeActiveClass = () => {
-    removeClassFromElement(buttonRef.current, buttonStyles[`${variant}-active`]);
+    removeClassFromElement(buttonRef.current, buttonStyles[`${variant}--active`]);
   };
   const handleMouseEnter = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
-    addClassToElement(buttonRef.current, buttonStyles[`${variant}-hover`]);
+    addClassToElement(buttonRef.current, buttonStyles[`${variant}--hover`]);
     onMouseEnter && onMouseEnter(event);
   };
   const handleMouseLeave = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
-    removeClassFromElement(buttonRef.current, buttonStyles[`${variant}-hover`]);
+    removeClassFromElement(buttonRef.current, buttonStyles[`${variant}--hover`]);
     onMouseLeave && onMouseLeave(event);
   };
   const handleMouseDown = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
@@ -58,11 +58,11 @@ const Button: FC<ButtonProps> = ({
     onTouchEnd && onTouchEnd(event);
   };
   const handleFocus = (event: FocusEvent<HTMLButtonElement>) => {
-    addClassToElement(buttonRef.current, buttonStyles[`${variant}-focus`]);
+    addClassToElement(buttonRef.current, buttonStyles[`${variant}--focus`]);
     onFocus && onFocus(event);
   };
   const handleBlur = (event: FocusEvent<HTMLButtonElement>) => {
-    removeClassFromElement(buttonRef.current, buttonStyles[`${variant}-focus`]);
+    removeClassFromElement(buttonRef.current, buttonStyles[`${variant}--focus`]);
     onBlur && onBlur(event);
   };
 
