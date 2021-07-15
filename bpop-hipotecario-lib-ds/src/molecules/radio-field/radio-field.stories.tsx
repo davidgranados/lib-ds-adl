@@ -6,14 +6,16 @@ import RadioField from "./radio-field";
 export default {
   title: "Molecules/RadioField",
   component: RadioField,
+  args: {
+    id: "id",
+    label: "This is a label",
+    disabled: false,
+  },
+  argTypes: {
+    onChange: { action: "changed" },
+  },
 } as ComponentMeta<typeof RadioField>;
 
 const Template: ComponentStory<typeof RadioField> = (args) => <RadioField {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  id: "id",
-  text: "This is a label",
-  isDisabled: false,
-  onChange: (v) => console.log(v),
-};

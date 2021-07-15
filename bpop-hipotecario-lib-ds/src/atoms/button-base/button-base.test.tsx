@@ -24,7 +24,7 @@ describe("<ButtonBase /> rendered in HOC", () => {
   const handleMouseUp = jest.fn();
   const handleTouchStart = jest.fn();
   const handleTouchEnd = jest.fn();
-  describe("<ButtonBase /> rendered in <ButtonText />", () => {
+  describe(" -> <ButtonText />", () => {
     beforeEach(() => {
       jest.clearAllMocks();
       // given
@@ -65,7 +65,7 @@ describe("<ButtonBase /> rendered in HOC", () => {
       expect(onClick).toBeCalled();
     });
   });
-  describe("<ButtonBase /> rendered in <Button />", () => {
+  describe(" -> <Button />", () => {
     beforeEach(() => {
       jest.clearAllMocks();
       // given

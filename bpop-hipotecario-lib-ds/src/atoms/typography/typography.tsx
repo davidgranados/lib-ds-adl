@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import React from "react";
 
+import { TypographyProps } from "../../types";
+
 import { defaultVariantMapping } from "./helpers";
-import { TypographyProps } from "./typography.d";
 import typographyStyles from "./typography.module.css";
 
 const Typography: React.FC<TypographyProps> = ({

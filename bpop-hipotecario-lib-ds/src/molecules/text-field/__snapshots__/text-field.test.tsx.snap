@@ -1,18 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextField /> <TextField /> with error should match snapshot 1`] = `
+exports[`<TextField /> with error should match snapshot 1`] = `
 <div
   className="wrapper"
 >
   <label
-    className="default"
-    htmlFor="test-number-field-id"
+    className="default input-field-base"
+    htmlFor="test-number-field-old-id"
   >
-    test number field label
+    <span
+      className="default body-sm weight-medium carbon-900"
+    >
+      test number field label
+    </span>
   </label>
   <input
-    className="default size-md error"
-    id="test-number-field-id"
+    className="fillable size-md error"
+    id="test-number-field-old-id"
     maxLength={10}
     onBlur={[Function]}
     onChange={[Function]}
@@ -30,19 +34,23 @@ exports[`<TextField /> <TextField /> with error should match snapshot 1`] = `
 </div>
 `;
 
-exports[`<TextField /> <TextField /> with initial value and caption should match snapshot 1`] = `
+exports[`<TextField /> with initial value and caption should match snapshot 1`] = `
 <div
   className="wrapper"
 >
   <label
-    className="default"
-    htmlFor="test-number-field-id"
+    className="default input-field-base"
+    htmlFor="test-number-field-old-id"
   >
-    test number field label
+    <span
+      className="default body-sm weight-medium carbon-900"
+    >
+      test number field label
+    </span>
   </label>
   <input
-    className="default size-md filled"
-    id="test-number-field-id"
+    className="fillable size-md filled"
+    id="test-number-field-old-id"
     maxLength={10}
     onBlur={[Function]}
     onChange={[Function]}
@@ -60,19 +68,23 @@ exports[`<TextField /> <TextField /> with initial value and caption should match
 </div>
 `;
 
-exports[`<TextField /> <TextField /> without initial value or caption should match snapshot 1`] = `
+exports[`<TextField /> without initial value or caption should match snapshot 1`] = `
 <div
   className="wrapper"
 >
   <label
-    className="default"
-    htmlFor="test-number-field-id"
+    className="default input-field-base"
+    htmlFor="test-number-field-old-id"
   >
-    test number field label
+    <span
+      className="default body-sm weight-medium carbon-900"
+    >
+      test number field label
+    </span>
   </label>
   <input
-    className="default size-md"
-    id="test-number-field-id"
+    className="fillable size-md"
+    id="test-number-field-old-id"
     maxLength={10}
     onBlur={[Function]}
     onChange={[Function]}

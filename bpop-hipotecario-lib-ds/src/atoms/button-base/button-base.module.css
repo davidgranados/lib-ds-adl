@@ -1,8 +1,12 @@
 .default {
   cursor: pointer;
-  user-select: none;
-  font-weight: var(--font-weight-button);
   font-family: var(--font-family-sans-inter);
+  font-weight: var(--font-weight-button);
+  user-select: none;
+}
+
+.disabled {
+  cursor: not-allowed;
 }
 
 .font-size-sm {

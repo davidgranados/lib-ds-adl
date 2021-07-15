@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import "../../icons/icomoon.css";
+import { ModalProps } from "../../types";
 import styles from "./modal.module.css";
-import { ModalProps } from "./modal.d";
 import { Typography } from "../../atoms/typography";
 import { Button } from "../../atoms/button";
+import "../../icons/icomoon.css";
 
 const Modal: React.FC<ModalProps> = ({ title, show, buttonText, isDisabledButton, onToggle, children }) => {
   const [wasClosed, setWasClosed] = useState(false);

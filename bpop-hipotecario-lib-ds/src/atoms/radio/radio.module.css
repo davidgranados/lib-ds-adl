@@ -1,7 +1,10 @@
 .wrapper {
+  --radio-width: 1.5rem;
+  --radio-height: 1.5rem;
+
   position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--radio-width);
+  height: var(--radio-height);
   cursor: pointer;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -9,59 +12,58 @@
   user-select: none;
 }
 
-.wrapper.disabled {
-  cursor: not-allowed;
-}
-
-.wrapper.disabled .radio {
-  background-color: var(--color-carbon-mid-100);
-  cursor: not-allowed;
-}
-
-.wrapper.error .radio {
-  border: solid 1px var(--color-semantic-error-600);
-  background-color: rgba(var(--color-semantic-error-100-rgb), 0.32);
-}
-
-.wrapper .input {
-  position: absolute;
-  width: 0;
-  height: 0;
-  cursor: pointer;
-  opacity: 0;
-}
-
-.wrapper .radio {
+.control {
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--radio-width);
+  height: var(--radio-height);
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-carbon-light-900);
   border-radius: 50%;
 }
 
-.wrapper .radio .circle {
+.control__circle {
   width: 0.625rem;
   height: 0.625rem;
   background-color: var(--color-carbon-light-100);
   border-radius: 50%;
 }
 
-.wrapper.enabled:hover .input ~ .radio {
+.wrapper--enabled .control--hover {
   border: 1px solid var(--color-highlight-600);
   background-color: rgba(var(--color-highlight-100-rgb), 0.24);
 }
 
-.wrapper.enabled .input:checked ~ .radio {
+.wrapper--disabled {
+  cursor: not-allowed;
+}
+
+.wrapper--enabled .control--checked {
   border: 1px solid var(--color-highlight-600);
   background-color: var(--color-highlight-600);
 }
 
-.wrapper.disabled .input:checked ~ .radio {
+.wrapper--disabled .control {
+  background-color: var(--color-carbon-light-400);
+}
+
+.wrapper--disabled .control--checked {
   border: 1px solid var(--color-carbon-mid-100);
   background-color: var(--color-carbon-mid-100);
+}
+
+.wrapper--disabled .control__circle {
+  background-color: var(--color-carbon-light-400);
+}
+
+.wrapper--error .control {
+  border: solid 1px var(--color-semantic-error-100);
+  background-color: rgba(var(--color-semantic-error-100-rgb), 0.32);
+}
+
+.wrapper--error .control--hover {
+  border: solid 1px var(--color-semantic-error-600);
 }

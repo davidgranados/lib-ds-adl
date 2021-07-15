@@ -1,11 +1,12 @@
 import React from "react";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import DateInputs from "./date-inputs";
+
+import DateField from "./date-field";
 
 afterEach(cleanup);
 
-test("DateInputs should renders ok", async () => {
-  const x = render(<DateInputs caption="This is a caption" id="date-inputs-birthday" onChange={() => null} />);
+test("DateField should renders ok", async () => {
+  const x = render(<DateField caption="This is a caption" id="date-field-birthday" onChange={() => null} />);
   const dayInput = x.container.getElementsByTagName("input")[0];
   const yearInput = x.container.getElementsByTagName("input")[1];
   const firstDropdownItem = x.container.getElementsByClassName("item")[0];
@@ -16,10 +17,12 @@ test("DateInputs should renders ok", async () => {
   expect(screen.getByText("Day")).toBeInTheDocument();
 });
 
-test("DateInputs day and year emits null", async () => {
+test("DateField day and year emits null", async () => {
   let result;
   const expectedResult = { day: 0, month: 0, year: 0 };
-  const x = render(<DateInputs caption="This is a caption" id="date-inputs-birthday" onChange={(v) => (result = v)} />);
+  const x = render(
+    <DateField caption="This is a caption" id="date-field-birthday" onChange={(v: unknown) => (result = v)} />
+  );
   const dayInput = x.container.getElementsByTagName("input")[0];
   const yearInput = x.container.getElementsByTagName("input")[1];
 
@@ -30,7 +33,7 @@ test("DateInputs day and year emits null", async () => {
   expect(expectedResult).toEqual(result);
 });
 
-test("DateInputs should has caption with error", async () => {
-  render(<DateInputs caption="This is a caption" id="date-inputs-birthday" hasError={true} onChange={() => null} />);
+test("DateField should has caption with error", async () => {
+  render(<DateField caption="This is a caption" id="date-field-birthday" hasError={true} onChange={() => null} />);
   expect(screen.getByText("This is a caption")).toHaveClass("error");
 });

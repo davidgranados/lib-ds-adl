@@ -6,7 +6,7 @@ const months = ["January", "February"];
 
 afterEach(cleanup);
 
-test("DateInputs should renders ok", async () => {
+test("DateField should renders ok", async () => {
   render(
     <Dropdown
       id="id"

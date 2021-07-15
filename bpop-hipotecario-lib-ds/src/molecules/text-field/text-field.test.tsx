@@ -12,7 +12,7 @@ describe("<TextField />", () => {
   const size: InputBaseSize = "md";
   const caption = "test caption";
   const props = {
-    id: "test-number-field-id",
+    id: "test-number-field-old-id",
     label: "test number field label",
     type: type,
     maxLength: 10,
@@ -24,7 +24,7 @@ describe("<TextField />", () => {
     onChange: jest.fn(),
     onInput: jest.fn(),
   };
-  describe("<TextField /> with initial value and caption", () => {
+  describe("with initial value and caption", () => {
     const initialValue = "initial value";
     beforeEach(() => {
       jest.clearAllMocks();
@@ -41,7 +41,16 @@ describe("<TextField />", () => {
         // then
         expect(labelElement.exists()).toBe(true);
         expect(labelElement.prop("htmlFor")).toEqual(props.id);
-        expect(labelElement.prop("children")).toEqual(props.label);
+      });
+    });
+
+    describe("<span /> inside <label />", () => {
+      it("should render correctly", () => {
+        // when
+        const spanElement = wrapper.find('[data-testid="span-inside-label"]');
+        // then
+        expect(spanElement.exists()).toBe(true);
+        expect(spanElement.prop("children")).toEqual(props.label);
       });
     });
     describe("<input />", () => {
@@ -61,14 +70,14 @@ describe("<TextField />", () => {
     describe("<span />", () => {
       it("should render correctly", () => {
         // when
-        const spanElement = wrapper.find("span");
+        const spanElement = wrapper.find('[data-testid="field-caption"]');
         // then
         expect(spanElement.exists()).toBe(true);
         expect(spanElement.prop("children")).toEqual(caption);
       });
     });
   });
-  describe("<TextField /> without initial value or caption", () => {
+  describe("without initial value or caption", () => {
     beforeEach(() => {
       jest.clearAllMocks();
       // given
@@ -91,13 +100,13 @@ describe("<TextField />", () => {
     describe("<span />", () => {
       it("shouldn't render", () => {
         // when
-        const spanElement = wrapper.find("span");
+        const spanElement = wrapper.find('[data-testid="field-caption"]');
         // then
         expect(spanElement.exists()).toBe(false);
       });
     });
   });
-  describe("<TextField /> with error", () => {
+  describe("with error", () => {
     beforeEach(() => {
       jest.clearAllMocks();
       // given
@@ -117,10 +126,10 @@ describe("<TextField />", () => {
     describe("<span />", () => {
       it("should render correctly", () => {
         // when
-        const spanElement = wrapper.find("span");
+        const spanElement = wrapper.find('[data-testid="field-caption"]');
         // then
         expect(spanElement.exists()).toBe(true);
-        expect(spanElement.hasClass(/\W*(error)\W*/)).toBe(true);
+        expect(spanElement.prop("status")).toEqual("error");
         expect(spanElement.prop("children")).toEqual(caption);
       });
     });

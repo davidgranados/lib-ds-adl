@@ -1,8 +1,7 @@
 import React, { memo } from "react";
 
+import { TextFieldProps } from "../../types";
 import { InputFieldBase } from "../input-field-base";
-
-import { TextFieldProps } from "./text-field.d";
 
 const TextField: React.FC<TextFieldProps> = ({
   id,

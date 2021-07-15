@@ -3,11 +3,8 @@
   font-family: "icomoon";
   font-style: normal;
   font-weight: initial;
-  src:
-    url("./icomoon.woff") format("woff"),
-    url("./icomoon.eot"),
-    url("./icomoon.eot?#iefix") format("embedded-opentype"),
-    url("./icomoon.ttf") format("truetype"),
+  src: url("./icomoon.woff") format("woff"), url("./icomoon.eot"),
+    url("./icomoon.eot?#iefix") format("embedded-opentype"), url("./icomoon.ttf") format("truetype"),
     url("./icomoon.svg#svgFontName") format("svg");
 }
 
