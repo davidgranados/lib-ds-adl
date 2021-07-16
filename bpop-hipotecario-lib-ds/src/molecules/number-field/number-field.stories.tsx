@@ -2,7 +2,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { validSizes, validStatuses } from "../../atoms/input-base";
+import { validSizes } from "../../atoms/input-base";
 
 import NumberField from "./number-field";
 
@@ -13,14 +13,14 @@ export default {
     id: "default-text-field-id",
     label: "Label",
     caption: "Caption Message",
-    status: undefined,
+    hasError: false,
     disabled: false,
     placeholder: "Input Base",
     size: "md",
     maxLength: 10,
   },
   argTypes: {
-    status: { options: [undefined, ...validStatuses], control: "select" },
+    hasError: { control: "boolean" },
     size: { options: validSizes, control: "select" },
     maxLength: { control: "number" },
     onFocus: { action: "focused" },

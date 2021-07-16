@@ -110,7 +110,7 @@ describe("<InputFieldBase />", () => {
     beforeEach(() => {
       jest.clearAllMocks();
       // given
-      wrapper = mount<typeof InputFieldBase>(<InputFieldBase {...props} status={"error"} caption={caption} />);
+      wrapper = mount<typeof InputFieldBase>(<InputFieldBase {...props} hasError={true} caption={caption} />);
     });
     it("should match snapshot", () => {
       expect(wrapper).toMatchSnapshot();

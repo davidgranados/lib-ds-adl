@@ -2,7 +2,7 @@
 
 exports[`<InputBase /> should match snapshot 1`] = `
 <input
-  className="fillable size-md"
+  className="fillable size-lg"
   id="input-test-id"
   onBlur={[Function]}
   onFocus={[Function]}

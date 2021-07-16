@@ -22,7 +22,6 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) =>
     "November",
     "December",
   ];
-  const inputsStatus = hasError ? "error" : undefined;
 
   const [day, setDay] = useState<number>(0);
   const [month, setMonth] = useState<number>(0);
@@ -47,7 +46,7 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) =>
             maxLength={2}
             placeholder="Day"
             size={"lg"}
-            status={inputsStatus}
+            hasError={hasError}
             onChange={(v) => handleDayChange(parseInt(v.target.value))}
           />
         </div>
@@ -68,7 +67,7 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) =>
             maxLength={4}
             placeholder="Year"
             size={"lg"}
-            status={inputsStatus}
+            hasError={hasError}
             onChange={(v) => handleYearChange(parseInt(v.target.value))}
           />
         </div>

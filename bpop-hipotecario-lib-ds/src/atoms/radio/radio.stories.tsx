@@ -8,6 +8,7 @@ export default {
   component: Radio,
   args: {
     id: "id",
+    name: "radio-name",
     disabled: false,
     hasError: false,
     value: "radio-old test value",

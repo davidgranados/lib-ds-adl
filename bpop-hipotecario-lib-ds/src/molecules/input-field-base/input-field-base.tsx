@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { useRef, useState, memo } from "react";
+import React, { useRef, useState } from "react";
 
 import { FieldCaption } from "../../atoms/caption-field";
 import { InputBase } from "../../atoms/input-base";
@@ -9,22 +9,18 @@ import { InputFieldBaseProps } from "../../types";
 import InputFieldStyles from "./input-field-base.module.css";
 
 const InputFieldBase: React.FC<InputFieldBaseProps> = ({
+  onChange,
   id,
   label,
-  status,
   caption,
-  placeholder,
-  size,
-  maxLength,
-  disabled,
   validateInputValue,
-  onChange,
-  onFocus,
-  onBlur,
   type = "text",
   value = "",
+  hasError = false,
+  ...props
 }) => {
   const textFieldClassname = classNames(InputFieldStyles["wrapper"]);
+  const inputStatus = hasError ? "error" : undefined;
   const inputRef = useRef<HTMLInputElement>(null);
   const [localValue, setLocalValue] = useState(value);
 
@@ -41,21 +37,16 @@ const InputFieldBase: React.FC<InputFieldBaseProps> = ({
       </Label>
       <InputBase
         ref={inputRef}
-        type={type}
         id={id}
-        size={size}
-        value={localValue}
-        placeholder={placeholder}
-        status={status}
-        maxLength={maxLength}
-        disabled={disabled}
+        type={type}
+        specialStatus={inputStatus}
         onChange={handleChange}
-        onFocus={onFocus}
-        onBlur={onBlur}
+        value={localValue}
+        {...props}
       />
-      {caption && <FieldCaption status={status}>{caption}</FieldCaption>}
+      {caption && <FieldCaption status={inputStatus}>{caption}</FieldCaption>}
     </div>
   );
 };
 
-export default memo(InputFieldBase);
+export default InputFieldBase;

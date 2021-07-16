@@ -6,11 +6,11 @@ import { HiddenInputFieldProps } from "../../types";
 
 import styles from "./radio-field.module.css";
 
-const RadioField: React.FC<HiddenInputFieldProps> = ({ id, disabled, label, onChange }) => {
+const RadioField: React.FC<HiddenInputFieldProps> = ({ id, name, disabled, label, onChange }) => {
   const labelRef = useRef<HTMLLabelElement>(null);
   return (
     <div className={styles["wrapper"]}>
-      <Radio id={id} disabled={disabled} onChange={onChange} />
+      <Radio id={id} name={name} disabled={disabled} onChange={onChange} />
       <Label ref={labelRef} htmlFor={id} variant={"radio-field"} lineHeight={"body-sm"}>
         {label}
       </Label>
