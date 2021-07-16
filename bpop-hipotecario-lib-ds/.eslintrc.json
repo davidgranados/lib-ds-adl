@@ -11,9 +11,10 @@
   "extends": [
     "eslint:recommended",
     "google",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -23,7 +24,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "settings": {
     "react": {
       "version": "detect",
@@ -33,6 +34,7 @@
   },
   "rules": {
     "react/prop-types": 0,
+    "react-hooks/rules-of-hooks": 2,
     "require-jsdoc": "off"
   },
   "overrides": [

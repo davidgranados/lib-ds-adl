@@ -11,7 +11,7 @@ export type {
 
 export type { DropdownProps } from "./dropdown";
 
-export type { HTMLPropsFor, CombinedRef } from "./global";
+export type { CombinedRef } from "./global";
 
 export type {
   DateFieldProps,
