@@ -107,7 +107,7 @@ describe("<NumberField />", () => {
     beforeEach(() => {
       jest.clearAllMocks();
       // given
-      wrapper = mount<typeof NumberField>(<NumberField {...props} status={"error"} caption={caption} />);
+      wrapper = mount<typeof NumberField>(<NumberField {...props} hasError={true} caption={caption} />);
     });
     it("should match snapshot", () => {
       expect(wrapper).toMatchSnapshot();

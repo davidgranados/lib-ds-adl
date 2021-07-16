@@ -109,7 +109,7 @@ describe("<TextField />", () => {
     beforeEach(() => {
       jest.clearAllMocks();
       // given
-      wrapper = mount<typeof TextField>(<TextField {...props} status={"error"} caption={caption} />);
+      wrapper = mount<typeof TextField>(<TextField {...props} hasError={true} caption={caption} />);
     });
     it("should match snapshot", () => {
       expect(wrapper).toMatchSnapshot();

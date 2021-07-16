@@ -8,6 +8,7 @@ export default {
   component: RadioField,
   args: {
     id: "id",
+    name: "radio-field",
     label: "This is a label",
     disabled: false,
   },

@@ -32,27 +32,12 @@
   border-radius: 50%;
 }
 
-.wrapper--enabled .control--hover {
-  border: 1px solid var(--color-highlight-600);
-  background-color: rgba(var(--color-highlight-100-rgb), 0.24);
-}
-
 .wrapper--disabled {
   cursor: not-allowed;
 }
 
-.wrapper--enabled .control--checked {
-  border: 1px solid var(--color-highlight-600);
-  background-color: var(--color-highlight-600);
-}
-
 .wrapper--disabled .control {
   background-color: var(--color-carbon-light-400);
-}
-
-.wrapper--disabled .control--checked {
-  border: 1px solid var(--color-carbon-mid-100);
-  background-color: var(--color-carbon-mid-100);
 }
 
 .wrapper--disabled .control__circle {
@@ -64,6 +49,21 @@
   background-color: rgba(var(--color-semantic-error-100-rgb), 0.32);
 }
 
-.wrapper--error .control--hover {
+.wrapper--enabled .control:hover {
+  border: 1px solid var(--color-highlight-600);
+  background-color: rgba(var(--color-highlight-100-rgb), 0.24);
+}
+
+.wrapper--error .control:hover {
   border: solid 1px var(--color-semantic-error-600);
+}
+
+.wrapper--enabled input:checked ~ .control {
+  border: 1px solid var(--color-highlight-600);
+  background-color: var(--color-highlight-600);
+}
+
+.wrapper--disabled input:checked ~ .control {
+  border: 1px solid var(--color-carbon-mid-100);
+  background-color: var(--color-carbon-mid-100);
 }

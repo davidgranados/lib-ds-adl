@@ -2,7 +2,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { validSizes, validStatuses } from "../../atoms/input-base";
+import { validSizes } from "../../atoms/input-base";
 
 import TextField from "./text-field";
 
@@ -15,13 +15,13 @@ export default {
     caption: "Caption Message",
     maxLength: 30,
     value: undefined,
-    status: undefined,
+    hasError: false,
     disabled: false,
     placeholder: "Text Field",
     size: "md",
   },
   argTypes: {
-    status: { options: [undefined, ...validStatuses], control: "select" },
+    hasError: { control: "boolean" },
     size: { options: validSizes, control: "select" },
     value: { control: "text" },
     maxLength: { control: "number" },

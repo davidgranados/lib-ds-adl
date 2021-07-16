@@ -11,8 +11,9 @@ const InputBase = forwardRef<HTMLInputElement, InputBaseProps>(
   (
     {
       id,
+      name,
       type,
-      status,
+      specialStatus,
       disabled,
       value,
       placeholder,
@@ -25,7 +26,7 @@ const InputBase = forwardRef<HTMLInputElement, InputBaseProps>(
       onChange,
       onClick,
       fillable = true,
-      size = "md",
+      size = "lg",
     },
     ref
   ) => {
@@ -34,7 +35,7 @@ const InputBase = forwardRef<HTMLInputElement, InputBaseProps>(
       [inputStyles[`size-${size}`]]: fillable,
       [inputStyles["filled"]]: fillable && value,
       [inputStyles["hidden"]]: hidden,
-      [inputStyles[`${status}`]]: !hidden && status,
+      [inputStyles[`${specialStatus}`]]: !hidden && specialStatus,
       [inputStyles["disabled"]]: disabled,
     });
     const innerInputRef = useRef(null);
@@ -62,6 +63,7 @@ const InputBase = forwardRef<HTMLInputElement, InputBaseProps>(
         ref={combinedRef}
         type={type}
         id={id}
+        name={name}
         className={inputClassName}
         value={value}
         placeholder={placeholder}

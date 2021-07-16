@@ -1,13 +1,14 @@
 import { ChangeEventHandler, FocusEventHandler, FormEventHandler, MouseEventHandler } from "react";
 
 export declare type InputBaseSize = "md" | "lg";
-export declare type InputBaseStatus = "success" | "warning" | "error";
+export declare type InputBaseSpecialStatus = "success" | "warning" | "error";
 export declare type InputFieldType = "text" | "tel";
 export declare type validateInput = (value?: string | number) => boolean;
 
 export declare interface InputBaseProps {
   id?: string;
   type?: string;
+  name?: string;
   value?: string | number | readonly string[];
   placeholder?: string;
   disabled?: boolean;
@@ -16,7 +17,7 @@ export declare interface InputBaseProps {
   maxLength?: number;
   minLength?: number;
   size?: InputBaseSize;
-  status?: InputBaseStatus;
+  specialStatus?: InputBaseSpecialStatus;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
@@ -30,7 +31,7 @@ type HiddenInputPropsOmits =
   | "fillable"
   | "placeholder"
   | "size"
-  | "status"
+  | "specialStatus"
   | "onInput"
   | "minLength"
   | "maxLength";
@@ -39,8 +40,9 @@ export declare interface HiddenInputProps extends Omit<InputBaseProps, HiddenInp
   hasError?: boolean;
 }
 
-export declare interface InputFieldBaseProps extends InputBaseProps {
+export declare interface InputFieldBaseProps extends Omit<InputBaseProps, "specialStatus"> {
   label: string;
+  hasError?: boolean;
   caption?: string;
   type?: InputFieldType;
   validateInputValue?: validateInput;
