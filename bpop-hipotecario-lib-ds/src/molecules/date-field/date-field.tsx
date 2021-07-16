@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Dropdown from "../dropdown/dropdown";
+import { Dropdown } from "../dropdown/";
 import { NumberField } from "../number-field";
 
 import { DateFieldProps } from "../../types";
