@@ -9,7 +9,7 @@ export default {
   args: {
     id: "id",
     name: "radio-field",
-    label: "This is a label",
+    label: "Radio Button Label",
     disabled: false,
   },
   argTypes: {

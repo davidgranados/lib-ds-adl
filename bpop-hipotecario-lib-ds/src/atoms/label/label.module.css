@@ -1,8 +1,4 @@
 .input-field-base {
   margin-bottom: 0.25rem;
-}
-
-.radio-field,
-.checkbox-field {
-  margin-left: 0.5rem;
+  cursor: pointer;
 }

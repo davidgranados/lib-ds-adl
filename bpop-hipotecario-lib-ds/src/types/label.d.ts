@@ -2,7 +2,7 @@ import { MouseEventHandler } from "react";
 
 import { TypographyLineHeight, TypographyWeight } from "../types";
 
-export declare type LabelVariant = "input-field-base" | "radio-field" | "checkbox-field";
+export declare type LabelVariant = "input-field-base";
 
 export declare interface LabelProps {
   htmlFor?: string;
