@@ -2,36 +2,15 @@ import classNames from "classnames";
 import React, { forwardRef, useImperativeHandle, useRef } from "react";
 
 import { addClassToElement, removeClassFromElement } from "../../helpers";
-import { InputBaseProps, InputRef } from "../../types";
+import { InputRef, InputTextBaseProps } from "../../types";
 
 import inputStyles from "./input-base.module.css";
 
-const InputBase = forwardRef<InputRef, InputBaseProps>(
-  (
-    {
-      id,
-      name,
-      value,
-      type,
-      specialStatus,
-      onFocus,
-      onBlur,
-      onInput,
-      disabled,
-      variant = "fillable",
-      size = "lg",
-      ...props
-    },
-    ref
-  ) => {
-    const isFillable = variant === "fillable";
-    const isHidden = variant === "hidden";
-    const inputClassName = classNames({
-      [inputStyles["fillable"]]: isFillable,
-      [inputStyles[`size-${size}`]]: isFillable,
-      [inputStyles["filled"]]: isFillable && value,
-      [inputStyles["hidden"]]: isHidden,
-      [inputStyles[`${specialStatus}`]]: !isHidden && specialStatus,
+const InputBase = forwardRef<InputRef, InputTextBaseProps>(
+  ({ id, name, value, type, specialStatus, onFocus, onBlur, onInput, disabled, size = "lg", ...props }, ref) => {
+    const inputClassName = classNames(inputStyles["default"], inputStyles[`size-${size}`], {
+      [inputStyles["filled"]]: value,
+      [inputStyles[`${specialStatus}`]]: specialStatus,
       [inputStyles["disabled"]]: disabled,
     });
     const inputRef = useRef<HTMLInputElement>(null);
@@ -48,16 +27,16 @@ const InputBase = forwardRef<InputRef, InputBaseProps>(
 
     const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
       removeClassFromElement(inputRef.current, inputStyles["focus"]);
-      removeClassFromElement(inputRef.current, inputStyles["typing"], isFillable);
+      removeClassFromElement(inputRef.current, inputStyles["typing"]);
       if (inputRef.current?.value) {
-        addClassToElement(inputRef.current, inputStyles["filled"], isFillable);
+        addClassToElement(inputRef.current, inputStyles["filled"]);
       } else {
-        removeClassFromElement(inputRef.current, inputStyles["filled"], isFillable);
+        removeClassFromElement(inputRef.current, inputStyles["filled"]);
       }
       onBlur && onBlur(event);
     };
     const handleInput = (event: React.FormEvent<HTMLInputElement>) => {
-      isFillable && addClassToElement(inputRef.current, inputStyles["typing"], isFillable);
+      addClassToElement(inputRef.current, inputStyles["typing"]);
       onInput && onInput(event);
     };
     return (

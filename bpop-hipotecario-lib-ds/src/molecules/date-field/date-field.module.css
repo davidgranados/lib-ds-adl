@@ -1,22 +1,18 @@
 .wrapper .inputs {
   display: flex;
+  gap: 16px;
 }
 
-.wrapper .inputs .input {
-  flex: 1;
-  margin: 0 0.25rem;
+.wrapper .inputs .input.day {
+  flex: 1 1 56px;
 }
 
 .wrapper .inputs .input.month {
-  flex: 2;
+  flex: 2 1 128px;
 }
 
-.wrapper .inputs .input:first-child {
-  margin: 0 0.25rem 0 0;
-}
-
-.wrapper .inputs .input:last-child {
-  margin: 0 0 0 0.25rem;
+.wrapper .inputs .input.year {
+  flex: 1 1 64px;
 }
 
 .wrapper .caption {

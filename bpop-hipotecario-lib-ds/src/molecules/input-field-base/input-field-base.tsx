@@ -1,12 +1,9 @@
-import classNames from "classnames";
 import React, { useState } from "react";
 
 import { FieldCaption } from "../../atoms/caption-field";
 import { InputBase } from "../../atoms/input-base";
 import { Label } from "../../atoms/label";
 import { InputFieldBaseProps } from "../../types";
-
-import InputFieldStyles from "./input-field-base.module.css";
 
 const InputFieldBase: React.FC<InputFieldBaseProps> = ({
   onChange,
@@ -19,7 +16,6 @@ const InputFieldBase: React.FC<InputFieldBaseProps> = ({
   hasError = false,
   ...props
 }) => {
-  const textFieldClassname = classNames(InputFieldStyles["wrapper"]);
   const inputStatus = hasError ? "error" : undefined;
   const [localValue, setLocalValue] = useState(value);
 
@@ -30,7 +26,7 @@ const InputFieldBase: React.FC<InputFieldBaseProps> = ({
     onChange && onChange(event);
   };
   return (
-    <div className={textFieldClassname}>
+    <div>
       <Label htmlFor={id} variant={"input-field-base"} fontWeight={"medium"}>
         {label}
       </Label>

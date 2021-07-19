@@ -26,6 +26,14 @@
   user-select: none;
 }
 
+.input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
 .control {
   position: absolute;
   top: 0;

@@ -31,8 +31,8 @@
 }
 
 .wrapper {
-  display: flex;
   position: fixed;
+  display: flex;
   overflow: hidden;
   align-items: center;
   justify-content: center;
@@ -58,8 +58,8 @@
 }
 
 .wrapper .overflow {
-  width: 100vw;
   position: absolute;
+  width: 100vw;
   background-color: rgba(0, 0, 0, 0.8);
 }
 

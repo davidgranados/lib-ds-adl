@@ -1,11 +1,11 @@
 import React from "react";
 
-import { HiddenInputProps } from "../../types";
+import { CheckboxProps } from "../../types";
 import "../../icons/icomoon.css";
 
 import styles from "./checkbox.module.css";
 
-const Checkbox: React.FC<HiddenInputProps> = ({ id, disabled, hasError, onChange }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ id, disabled, hasError, onChange }) => {
   return (
     <label
       className={`${styles["wrapper"]} ${disabled ? styles["disabled"] : styles["enabled"]} ${

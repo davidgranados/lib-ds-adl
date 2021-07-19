@@ -1,8 +1,7 @@
-import { ChangeEventHandler, FocusEventHandler, FormEventHandler, MouseEventHandler } from "react";
+import { ChangeEventHandler, FocusEventHandler, FormEventHandler, MouseEventHandler, ReactNode } from "react";
 
-export declare type InputBaseVariant = "fillable" | "hidden";
-export declare type InputBaseSize = "md" | "lg";
-export declare type InputBaseSpecialStatus = "success" | "warning" | "error";
+export declare type InputTextBaseSize = "md" | "lg";
+export declare type InputTextBaseSpecialStatus = "success" | "warning" | "error";
 export declare type InputFieldType = "text" | "tel";
 export declare type validateInput = (value?: string | number) => boolean;
 
@@ -11,35 +10,23 @@ export declare interface InputBaseProps {
   type?: string;
   name?: string;
   value?: string | number | readonly string[];
-  placeholder?: string;
-  variant?: InputBaseVariant;
   disabled?: boolean;
-  maxLength?: number;
-  minLength?: number;
-  size?: InputBaseSize;
-  specialStatus?: InputBaseSpecialStatus;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
-  onInput?: FormEventHandler<HTMLInputElement>;
   onClick?: MouseEventHandler<HTMLInputElement>;
 }
 
-type HiddenInputPropsOmits =
-  | "type"
-  | "variant"
-  | "placeholder"
-  | "size"
-  | "onInput"
-  | "specialStatus"
-  | "minLength"
-  | "maxLength";
-
-export declare interface HiddenInputProps extends Omit<InputBaseProps, HiddenInputPropsOmits> {
-  hasError?: boolean;
+export declare interface InputTextBaseProps extends InputBaseProps {
+  placeholder?: string;
+  maxLength?: number;
+  minLength?: number;
+  size?: InputTextBaseSize;
+  specialStatus?: InputTextBaseSpecialStatus;
+  onInput?: FormEventHandler<HTMLInputElement>;
 }
 
-export declare interface InputFieldBaseProps extends Omit<InputBaseProps, "specialStatus" | "variant"> {
+export declare interface InputFieldBaseProps extends Omit<InputTextBaseProps, "specialStatus" | "variant"> {
   label: string;
   hasError?: boolean;
   caption?: string;
@@ -53,10 +40,16 @@ export declare interface NumberFieldProps extends Omit<TextFieldProps, "validate
   value?: number;
 }
 
-export declare interface HiddenInputFieldProps extends HiddenInputProps {
-  label?: string;
-  children?: ReactNode;
-  isChecked?: boolean;
+export declare interface RadioFieldProps extends InputBaseProps {
+  label: string;
+}
+
+export declare interface CheckboxProps extends InputBaseProps {
+  hasError?: boolean;
+}
+
+export declare interface CheckboxFieldProps extends InputBaseProps {
+  children: ReactNode;
 }
 
 export declare interface DateFieldProps {
