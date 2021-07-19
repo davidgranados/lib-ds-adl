@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Tooltip from "./tooltip";
 import { Button } from "../../lib";
+import { Icon } from "../icon";
 
 export default {
   title: "Atoms/Tooltip",
@@ -19,7 +20,7 @@ export default {
 const Template: ComponentStory<typeof Tooltip> = (args) => (
   <div style={{ marginTop: "250px", marginLeft: "100px" }}>
     <Tooltip {...args}>
-      <Button variant={"primary"} text={"Click Me!"} />
+      <Icon name={"close"}></Icon>
     </Tooltip>
   </div>
 );

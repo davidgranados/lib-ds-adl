@@ -7,3 +7,6 @@ export { RadioField } from "./molecules/radio-field";
 export { DateField } from "./molecules/date-field";
 export { TextField } from "./molecules/text-field";
 export { NumberField } from "./molecules/number-field";
+export { Modal } from "./molecules/modal";
+export { Tooltip } from "./atoms/tooltip";
+export { Icon } from "./atoms/icon";

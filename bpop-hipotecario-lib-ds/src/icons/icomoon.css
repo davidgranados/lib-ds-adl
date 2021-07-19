@@ -38,3 +38,7 @@
 .icon-exclamation-open-circle::before {
   content: "\e903";
 }
+
+.icon-logout::before {
+  content: "\e904";
+}
