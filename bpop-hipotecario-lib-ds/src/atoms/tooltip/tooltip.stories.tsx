@@ -3,7 +3,6 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Tooltip from "./tooltip";
-import { Button } from "../../lib";
 import { Icon } from "../icon";
 
 export default {
@@ -20,7 +19,7 @@ export default {
 const Template: ComponentStory<typeof Tooltip> = (args) => (
   <div style={{ marginTop: "250px", marginLeft: "100px" }}>
     <Tooltip {...args}>
-      <Icon name={"close"}></Icon>
+      <Icon name={"close"} />
     </Tooltip>
   </div>
 );

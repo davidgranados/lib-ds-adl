@@ -15,15 +15,17 @@ export type { CombinedRef } from "./global";
 
 export type {
   DateFieldProps,
-  HiddenInputProps,
-  HiddenInputFieldProps,
+  CheckboxProps,
+  CheckboxFieldProps,
   InputFieldType,
   InputBaseSize,
   InputBaseStatus,
   InputBaseProps,
   InputFieldBaseProps,
+  InputTextBaseProps,
   InputRef,
   NumberFieldProps,
+  RadioFieldProps,
   TextFieldProps,
   validateInput,
 } from "./input-field";

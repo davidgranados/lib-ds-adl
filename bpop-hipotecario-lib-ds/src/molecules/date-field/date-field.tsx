@@ -29,7 +29,7 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) =>
 
   useEffect(() => {
     onChange({ day, month, year });
-  }, [day, month, year]);
+  }, [day, month, year, onChange]);
 
   const handleDayChange = (v: number | null) => setDay(v || 0);
   const handleMonthChange = (v: string | number) => setMonth(+v);
@@ -38,7 +38,7 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) =>
   return (
     <div className={styles["wrapper"]}>
       <div className={styles["inputs"]}>
-        <div className={styles["input"]}>
+        <div className={`${styles["input"]} ${styles["day"]}`}>
           <NumberField
             data-testid="date-field-day"
             id="date-field-day"
@@ -60,7 +60,7 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) =>
             onChange={(v) => handleMonthChange(v)}
           />
         </div>
-        <div className={styles["input"]}>
+        <div className={`${styles["input"]} ${styles["year"]}`}>
           <NumberField
             id="date-field-year"
             label="Year"

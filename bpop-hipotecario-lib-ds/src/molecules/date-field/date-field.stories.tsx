@@ -16,6 +16,10 @@ export default {
   },
 } as ComponentMeta<typeof DateField>;
 
-const Template: ComponentStory<typeof DateField> = (args) => <DateField {...args} />;
+const Template: ComponentStory<typeof DateField> = (args) => (
+  <div style={{ width: "320px", border: "1px solid red", padding: "20px", boxSizing: "border-box" }}>
+    <DateField {...args} />
+  </div>
+);
 
-export const Default = Template.bind({});
+export const Mobile320px = Template.bind({});
