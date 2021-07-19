@@ -10,6 +10,7 @@ export default {
     id: "id",
     label: "This is a label",
     disabled: false,
+    children: "label",
   },
   argTypes: {
     onChange: { action: "changed" },

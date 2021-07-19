@@ -10,6 +10,7 @@ import buttonStyles from "./button.module.css";
 
 const Button: FC<ButtonProps> = ({
   text,
+  type,
   onMouseEnter,
   onMouseLeave,
   onMouseDown,
@@ -69,6 +70,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <ButtonBase
       ref={buttonRef}
+      type={type}
       fontSize={fontSize}
       className={buttonClassName}
       onMouseEnter={handleMouseEnter}

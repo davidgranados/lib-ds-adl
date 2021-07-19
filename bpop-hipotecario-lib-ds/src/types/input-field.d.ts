@@ -54,7 +54,8 @@ export declare interface NumberFieldProps extends Omit<TextFieldProps, "validate
 }
 
 export declare interface HiddenInputFieldProps extends HiddenInputProps {
-  label: string;
+  label?: string;
+  children?: ReactNode;
   isChecked?: boolean;
 }
 
