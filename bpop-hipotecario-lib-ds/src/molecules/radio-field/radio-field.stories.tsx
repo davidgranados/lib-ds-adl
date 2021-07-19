@@ -3,11 +3,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import RadioField from "./radio-field";
 
-export default {
+const meta = {
   title: "Molecules/RadioField",
   component: RadioField,
   args: {
-    id: "id",
     name: "radio-field",
     label: "Radio Button Label",
     disabled: false,
@@ -15,8 +14,16 @@ export default {
   argTypes: {
     onChange: { action: "changed" },
   },
-} as ComponentMeta<typeof RadioField>;
+};
 
-const Template: ComponentStory<typeof RadioField> = (args) => <RadioField {...args} />;
+export default meta as ComponentMeta<typeof RadioField>;
+
+const Template: ComponentStory<typeof RadioField> = (args) => (
+  <div style={{ display: "flex", gap: "16px" }}>
+    <RadioField {...args} />
+    <RadioField {...args} label={`${meta.args.label} 2`} />
+    <RadioField {...args} label={`${meta.args.label} 3`} />
+  </div>
+);
 
 export const Default = Template.bind({});
