@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 14 Jul 2021 00:08:38 GMT
+ * Generated on Mon, 19 Jul 2021 16:30:57 GMT
  */
 
 :root {
@@ -122,6 +122,12 @@
   --color-brand-100: #97d39f;
   --border-width-md: 1.5px;
   --border-radius-md: 8px;
+  --font-size-h1: var(--font-size-6xl);
+  --font-size-h2: var(--font-size-5xl);
+  --font-size-h3: var(--font-size-4xl);
+  --font-size-h4: var(--font-size-3xl);
+  --font-size-h5: var(--font-size-2xl);
+  --font-size-h6: var(--font-size-xl);
   --font-size-subtitle-lg: var(--font-size-lg);
   --font-size-subtitle-md: var(--font-size-base);
   --font-size-body-lg: var(--font-size-xs);
@@ -129,12 +135,6 @@
   --font-size-body-sm: var(--font-size-3xs);
   --font-size-caption: var(--font-size-4xs);
   --font-size-overline: var(--font-size-5xs);
-  --font-size-h1: var(--font-size-6xl);
-  --font-size-h2: var(--font-size-5xl);
-  --font-size-h3: var(--font-size-4xl);
-  --font-size-h4: var(--font-size-3xl);
-  --font-size-h5: var(--font-size-2xl);
-  --font-size-h6: var(--font-size-xl);
   --border-width-button: var(--border-width-md);
   --border-radius-button: var(--border-radius-md);
   --border-color-button-secondary: var(--color-highlight-600);
@@ -151,6 +151,12 @@
   --background-color-button-primary-focus: var(--color-highlight-600);
   --background-color-button-primary-hover: var(--color-highlight-900);
   --background-color-button-primary-enabled: var(--color-highlight-600);
+  --line-height-h1: var(--line-height-base);
+  --line-height-h2: var(--line-height-lg);
+  --line-height-h3: var(--line-height-base);
+  --line-height-h4: var(--line-height-xl);
+  --line-height-h5: var(--line-height-2xl);
+  --line-height-h6: var(--line-height-3xl);
   --line-height-subtitle-lg: var(--line-height-4xl);
   --line-height-subtitle-md: var(--line-height-5xl);
   --line-height-body-lg: var(--line-height-7xl);
@@ -158,12 +164,6 @@
   --line-height-body-sm: var(--line-height-7xl);
   --line-height-caption: var(--line-height-6xl);
   --line-height-overline: var(--line-height-9xl);
-  --line-height-h1: var(--line-height-base);
-  --line-height-h2: var(--line-height-lg);
-  --line-height-h3: var(--line-height-base);
-  --line-height-h4: var(--line-height-xl);
-  --line-height-h5: var(--line-height-2xl);
-  --line-height-h6: var(--line-height-3xl);
   --letter-spacing-h1: var(--letter-spacing-2xs);
   --letter-spacing-h2: var(--letter-spacing-base);
   --letter-spacing-h3: var(--letter-spacing-base);

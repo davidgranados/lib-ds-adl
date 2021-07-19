@@ -31,6 +31,10 @@
   content: "\e901";
 }
 
-.icon-close:before {
+.icon-close::before {
   content: "\e902";
+}
+
+.icon-exclamation-open-circle::before {
+  content: "\e903";
 }

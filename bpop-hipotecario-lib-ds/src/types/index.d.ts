@@ -22,6 +22,7 @@ export type {
   InputBaseStatus,
   InputBaseProps,
   InputFieldBaseProps,
+  InputRef,
   NumberFieldProps,
   TextFieldProps,
   validateInput,
@@ -30,6 +31,8 @@ export type {
 export type { LabelProps, LabelVariant } from "./label";
 
 export type { ModalProps } from "./modal";
+
+export type { TooltipProps } from "./tooltip";
 
 export type {
   TypographyColor,

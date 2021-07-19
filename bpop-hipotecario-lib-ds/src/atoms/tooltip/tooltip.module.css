@@ -1,0 +1,60 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-wrapper {
+  --tooltip-width: 264px;
+
+  position: absolute;
+  z-index: 1;
+  bottom: calc(100% + 24px);
+  left: calc(50% - var(--tooltip-width) / 2);
+  background-color: #00c000;
+  border-radius: 8px;
+  inline-size: var(--tooltip-width);
+  visibility: hidden;
+}
+
+.tooltip-wrapper::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 12px 12px 0 12px;
+  border-style: solid;
+  border-color: #00c000 transparent transparent transparent;
+  margin-left: -12px;
+  content: "";
+}
+
+.tooltip-body {
+  position: relative;
+}
+
+.icon-wrapper {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.icon-wrapper i {
+  font-size: 32px;
+}
+
+.tooltip-text {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px 24px 28px;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  gap: 1rem;
+  text-align: left;
+}
+
+.tooltip-wrapper.visible {
+  visibility: visible;
+}

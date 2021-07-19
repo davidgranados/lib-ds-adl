@@ -1,80 +1,78 @@
 import classNames from "classnames";
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef, useImperativeHandle, useRef } from "react";
 
 import { addClassToElement, removeClassFromElement } from "../../helpers";
-import { useCombinedRefs } from "../../hooks";
-import { InputBaseProps } from "../../types";
+import { InputBaseProps, InputRef } from "../../types";
 
 import inputStyles from "./input-base.module.css";
 
-const InputBase = forwardRef<HTMLInputElement, InputBaseProps>(
+const InputBase = forwardRef<InputRef, InputBaseProps>(
   (
     {
       id,
       name,
+      value,
       type,
       specialStatus,
-      disabled,
-      value,
-      placeholder,
-      hidden,
-      maxLength,
-      minLength,
       onFocus,
       onBlur,
       onInput,
-      onChange,
-      onClick,
-      fillable = true,
+      disabled,
+      variant = "fillable",
       size = "lg",
+      ...props
     },
     ref
   ) => {
+    const isFillable = variant === "fillable";
+    const isHidden = variant === "hidden";
     const inputClassName = classNames({
-      [inputStyles["fillable"]]: fillable,
-      [inputStyles[`size-${size}`]]: fillable,
-      [inputStyles["filled"]]: fillable && value,
-      [inputStyles["hidden"]]: hidden,
-      [inputStyles[`${specialStatus}`]]: !hidden && specialStatus,
+      [inputStyles["fillable"]]: isFillable,
+      [inputStyles[`size-${size}`]]: isFillable,
+      [inputStyles["filled"]]: isFillable && value,
+      [inputStyles["hidden"]]: isHidden,
+      [inputStyles[`${specialStatus}`]]: !isHidden && specialStatus,
       [inputStyles["disabled"]]: disabled,
     });
-    const innerInputRef = useRef(null);
-    const combinedRef = useCombinedRefs<HTMLInputElement>([ref, innerInputRef]);
+    const inputRef = useRef<HTMLInputElement>(null);
     const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
-      addClassToElement(combinedRef.current, inputStyles["focus"]);
+      addClassToElement(inputRef.current, inputStyles["focus"]);
       onFocus && onFocus(event);
     };
+
+    useImperativeHandle(ref, () => ({
+      get input() {
+        return inputRef.current;
+      },
+    }));
+
     const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-      removeClassFromElement(combinedRef.current, inputStyles["focus"]);
-      removeClassFromElement(combinedRef.current, inputStyles["typing"], fillable);
-      if (combinedRef.current?.value) {
-        addClassToElement(combinedRef.current, inputStyles["filled"], fillable);
+      removeClassFromElement(inputRef.current, inputStyles["focus"]);
+      removeClassFromElement(inputRef.current, inputStyles["typing"], isFillable);
+      if (inputRef.current?.value) {
+        addClassToElement(inputRef.current, inputStyles["filled"], isFillable);
       } else {
-        removeClassFromElement(combinedRef.current, inputStyles["filled"], fillable);
+        removeClassFromElement(inputRef.current, inputStyles["filled"], isFillable);
       }
       onBlur && onBlur(event);
     };
     const handleInput = (event: React.FormEvent<HTMLInputElement>) => {
-      fillable && addClassToElement(combinedRef.current, inputStyles["typing"], fillable);
+      isFillable && addClassToElement(inputRef.current, inputStyles["typing"], isFillable);
       onInput && onInput(event);
     };
     return (
       <input
-        ref={combinedRef}
-        type={type}
-        id={id}
-        name={name}
+        ref={inputRef}
         className={inputClassName}
-        value={value}
-        placeholder={placeholder}
-        maxLength={maxLength}
-        minLength={minLength}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onInput={handleInput}
-        onChange={onChange}
-        onClick={onClick}
+        value={value}
         disabled={disabled}
+        type={type}
+        id={id}
+        name={name}
+        {...props}
       />
     );
   }

@@ -1,21 +1,47 @@
-import React, { memo, useRef } from "react";
+import classNames from "classnames";
+import React, { useRef } from "react";
 
-import { Radio } from "../../atoms/radio";
-import { Label } from "../../atoms/label";
 import { HiddenInputFieldProps } from "../../types";
+import { Typography } from "../../atoms/typography";
+import { InputBase } from "../../atoms/input-base";
+import { addClassToElement } from "../../helpers";
 
-import styles from "./radio-field.module.css";
+import radioFieldStyles from "./radio-field.module.css";
 
-const RadioField: React.FC<HiddenInputFieldProps> = ({ id, name, disabled, label, onChange }) => {
-  const labelRef = useRef<HTMLLabelElement>(null);
+const RadioField: React.FC<HiddenInputFieldProps> = ({ disabled, label, onChange, ...props }) => {
+  const wrapperClassName = classNames(radioFieldStyles["wrapper"], {
+    [radioFieldStyles["wrapper--enabled"]]: !disabled,
+    [radioFieldStyles["wrapper--disabled"]]: disabled,
+  });
+  const labelFontColor = !disabled ? "carbon-900" : "carbon-mid-400";
+
+  const wrapperRef = useRef(null);
+  const handleInputOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      addClassToElement(wrapperRef.current, radioFieldStyles["wrapper--checked"]);
+    }
+    onChange && onChange(event);
+  };
   return (
-    <div className={styles["wrapper"]}>
-      <Radio id={id} name={name} disabled={disabled} onChange={onChange} />
-      <Label ref={labelRef} htmlFor={id} variant={"radio-field"} lineHeight={"body-sm"}>
+    <label ref={wrapperRef} className={wrapperClassName}>
+      <span className={radioFieldStyles["control-wrapper"]}>
+        <InputBase type="radio" variant={"hidden"} disabled={disabled} onChange={handleInputOnChange} {...props} />
+        <span className={radioFieldStyles["control"]}>
+          <span className={radioFieldStyles["control__circle"]} />
+        </span>
+      </span>
+      <Typography
+        data-testid={"radio-label"}
+        variant={"body-md"}
+        component={"span"}
+        color={labelFontColor}
+        weight={"medium"}
+        lineHeight={"body-sm"}
+      >
         {label}
-      </Label>
-    </div>
+      </Typography>
+    </label>
   );
 };
 
-export default memo(RadioField);
+export default RadioField;
