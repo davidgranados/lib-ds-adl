@@ -17,6 +17,7 @@ export default {
     variant: { options: validVariants, control: "select" },
     size: { options: validSizes, control: "select" },
     disabled: { control: "boolean" },
+    fullWidth: { control: "boolean" },
     onFocus: { action: "focused" },
     onBlur: { action: "blurred" },
     onClick: { action: "clicked" },

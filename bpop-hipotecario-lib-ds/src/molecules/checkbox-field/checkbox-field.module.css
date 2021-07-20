@@ -5,8 +5,8 @@
 
 .wrapper .label {
   padding-left: 0.5rem;
-  color: var(--color-carbon-900);
-  font-family: var(--font-family-sans-inter);
-  font-size: var(--font-size-3xs);
-  font-weight: var(--font-weight-medium);
+  color: black;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
 }

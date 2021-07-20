@@ -1,6 +1,6 @@
 {
   "name": "@avaldigitallabs/bpop-hipotecario-lib-ds",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "private": false,
   "main": "./dist/lib.js",
@@ -10,9 +10,9 @@
     "dist"
   ],
   "scripts": {
-    "prettier:list": "prettier --list-different \"./{test,src}/**/*.js\" || ECHO .",
-    "prettier:write": "prettier --write  \"./{test,src}/**/*.js\"",
-    "prettier": "prettier --check  \"./{test,src}/**/*.js\"",
+    "prettier:list": "prettier --list-different \"./{test,src}/**/*.ts\" || ECHO .",
+    "prettier:write": "prettier --write  \"./{test,src}/**/*.ts\"",
+    "prettier": "prettier --check  \"./{test,src}/**/*.ts\"",
     "lint:css:prettier:fix": "yarn lint:css:prettier --write",
     "lint:css:prettier": "prettier '**/*.css' --list-different --ignore-path .gitignore",
     "lint:css:stylelint:fix": "yarn lint:css:stylelint --fix",
@@ -37,7 +37,6 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build:cra": "react-scripts build",
     "build:storybook": "build-storybook -s public",
-    "build:tokens": "style-dictionary build -c ./src/tokens/config.json",
     "prebuild": "rm -rf dist",
     "build:lib": "rollup -c",
     "build": "run-s prebuild build:lib"
@@ -97,7 +96,6 @@
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-typescript2": "^0.30.0",
     "sonar-scanner": "^3.1.0",
-    "style-dictionary": "^3.0.1",
     "stylelint": "^13.13.1",
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-standard": "^22.0.0"

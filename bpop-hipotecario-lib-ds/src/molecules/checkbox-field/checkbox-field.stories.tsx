@@ -8,7 +8,7 @@ export default {
   component: CheckboxField,
   args: {
     id: "id",
-    label: "This is a label",
+    label: "This is a input-field-label",
     disabled: false,
     children: "label",
   },

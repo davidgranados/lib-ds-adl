@@ -12,7 +12,7 @@ describe("<NumberField />", () => {
   const caption = "test caption";
   const props = {
     id: "test-number-field-old-id",
-    label: "test number field label",
+    label: "test number field input-field-label",
     type: type,
     maxLength: 10,
     placeholder: "test placeholder",
@@ -33,22 +33,14 @@ describe("<NumberField />", () => {
       // then
       expect(wrapper).toMatchSnapshot();
     });
-    describe("<label />", () => {
+    describe("<input-field-label />", () => {
       it("should render correctly", () => {
         // when
         const labelElement = wrapper.find("label");
         // then
         expect(labelElement.exists()).toBe(true);
         expect(labelElement.prop("htmlFor")).toEqual(props.id);
-      });
-    });
-    describe("<span /> inside <label />", () => {
-      it("should render correctly", () => {
-        // when
-        const spanElement = wrapper.find('[data-testid="span-inside-label"]');
-        // then
-        expect(spanElement.exists()).toBe(true);
-        expect(spanElement.prop("children")).toEqual(props.label);
+        expect(labelElement.prop("children")).toEqual(props.label);
       });
     });
     describe("<input />", () => {
@@ -65,10 +57,10 @@ describe("<NumberField />", () => {
         expect(inputElement.hasClass(`filled`)).toBe(true);
       });
     });
-    describe("<span />", () => {
+    describe("caption <span />", () => {
       it("should render correctly", () => {
         // when
-        const spanElement = wrapper.find('[data-testid="field-caption"]');
+        const spanElement = wrapper.find("span");
         // then
         expect(spanElement.exists()).toBe(true);
         expect(spanElement.prop("children")).toEqual(caption);
@@ -94,10 +86,10 @@ describe("<NumberField />", () => {
         expect(inputElement.prop("value")).toEqual("");
       });
     });
-    describe("<span />", () => {
+    describe("caption <span />", () => {
       it("shouldn't render", () => {
         // when
-        const spanElement = wrapper.find('[data-testid="field-caption"]');
+        const spanElement = wrapper.find("span");
         // then
         expect(spanElement.exists()).toBe(false);
       });
@@ -121,13 +113,13 @@ describe("<NumberField />", () => {
         expect(inputElement.hasClass("error")).toBe(true);
       });
     });
-    describe("<span />", () => {
+    describe("caption <span />", () => {
       it("should render correctly", () => {
         // when
-        const spanElement = wrapper.find('[data-testid="field-caption"]');
+        const spanElement = wrapper.find("span");
         // then
         expect(spanElement.exists()).toBe(true);
-        expect(spanElement.prop("status")).toEqual("error");
+        expect(spanElement.hasClass("error")).toBe(true);
         expect(spanElement.prop("children")).toEqual(caption);
       });
     });

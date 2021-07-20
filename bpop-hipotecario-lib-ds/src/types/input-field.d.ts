@@ -26,7 +26,7 @@ export declare interface InputTextBaseProps extends InputBaseProps {
   onInput?: FormEventHandler<HTMLInputElement>;
 }
 
-export declare interface InputFieldBaseProps extends Omit<InputTextBaseProps, "specialStatus" | "variant"> {
+export declare interface InputTextFieldBaseProps extends Omit<InputTextBaseProps, "specialStatus" | "variant"> {
   label: string;
   hasError?: boolean;
   caption?: string;
@@ -34,13 +34,13 @@ export declare interface InputFieldBaseProps extends Omit<InputTextBaseProps, "s
   validateInputValue?: validateInput;
 }
 
-export declare type TextFieldProps = Omit<InputFieldBaseProps, "type" | "onInput">;
+export declare type TextFieldProps = Omit<InputTextFieldBaseProps, "type" | "onInput">;
 
 export declare interface NumberFieldProps extends Omit<TextFieldProps, "validateInputValue"> {
   value?: number;
 }
 
-export declare interface RadioFieldProps extends InputBaseProps {
+export declare interface RadioButtonProps extends InputBaseProps {
   label: string;
 }
 
@@ -57,9 +57,6 @@ export declare interface DateFieldProps {
   caption?: string;
   hasError?: boolean;
   value?: { day: number; month: number; year: number };
+  disabled?: boolean;
   onChange: (v: { day: number; month: number; year: number }) => void;
 }
-
-export declare type InputRef = {
-  input: HTMLInputElement | null;
-};

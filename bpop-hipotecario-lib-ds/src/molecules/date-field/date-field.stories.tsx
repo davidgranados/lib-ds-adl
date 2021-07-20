@@ -10,6 +10,7 @@ export default {
     id: "date-field-birthday",
     caption: "This is a caption",
     hasError: false,
+    disabled: false,
   },
   argTypes: {
     onChange: { action: "changed" },

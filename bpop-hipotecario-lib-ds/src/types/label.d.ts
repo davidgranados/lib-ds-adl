@@ -1,14 +1,7 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
-import { TypographyLineHeight, TypographyWeight } from "../types";
-
-export declare type LabelVariant = "input-field-base";
-
-export declare interface LabelProps {
+export declare interface InputFieldLabelProps {
   htmlFor?: string;
-  variant?: LabelVariant;
-  fontWeight?: TypographyWeight;
-  lineHeight?: TypographyLineHeight;
   children?: ReactNode;
   onClick?: MouseEventHandler<HTMLLabelElement>;
 }

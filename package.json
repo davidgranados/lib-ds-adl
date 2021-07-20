@@ -22,6 +22,7 @@
     "prettier:write": "subpkg run prettier:write",
     "prettier": "subpkg run prettier",
     "storybook": "subpkg run storybook",
+    "check:pipeline": "npm run lint && npm run prettier && npm run test && npm run build",
     "customScript": "echo 'Developed with all ❤️ in the world by ADL DevOps team'"
   },
   "subPackages": [

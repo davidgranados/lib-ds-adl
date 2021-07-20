@@ -28,10 +28,10 @@ const months = [
 export const Default = Template.bind({});
 Default.args = {
   id: "default-dropdown-id",
-  label: "This is a test label",
+  label: "This is a test input-field-label",
   caption: "This is a caption",
   placeholder: "Placeholder",
-  isDisabled: false,
+  disabled: false,
   hasError: false,
   items: months.map((v, i) => ({ label: v, value: i })),
   onChange: (v) => console.log(v),

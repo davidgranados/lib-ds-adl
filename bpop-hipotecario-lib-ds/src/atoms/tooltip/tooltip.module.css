@@ -1,6 +1,7 @@
 .wrapper {
   position: relative;
   display: inline-block;
+  box-sizing: border-box;
 }
 
 .tooltip-wrapper {
@@ -35,24 +36,24 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  color: #fff;
   cursor: pointer;
   user-select: none;
 }
 
-.icon-wrapper i {
+.icon-close {
+  color: #fff;
   font-size: 32px;
 }
 
 .tooltip-text {
   display: flex;
   flex-direction: column;
-  padding: 24px 32px 24px 28px;
+  padding: 32px 24px 28px 24px;
   color: #fff;
   font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
   font-weight: 600;
-  gap: 1rem;
-  line-height: 16px;
+  gap: 16px;
 }
 
 .tooltip-wrapper.visible {

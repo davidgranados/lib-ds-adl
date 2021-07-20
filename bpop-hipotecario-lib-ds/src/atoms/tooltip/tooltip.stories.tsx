@@ -17,9 +17,10 @@ export default {
 } as ComponentMeta<typeof Tooltip>;
 
 const Template: ComponentStory<typeof Tooltip> = (args) => (
-  <div style={{ marginTop: "250px", marginLeft: "100px" }}>
+  <div style={{ marginTop: "250px", marginLeft: "200px" }}>
+    Click the icon!
     <Tooltip {...args}>
-      <Icon name={"close"} />
+      <Icon name={"exclamation-open-circle"} />
     </Tooltip>
   </div>
 );

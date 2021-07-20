@@ -14,13 +14,3 @@
 .wrapper .inputs .input.year {
   flex: 1 1 64px;
 }
-
-.wrapper .caption {
-  color: var(--color-carbon-900);
-  font-family: var(--font-family-sans-inter);
-  font-size: var(--font-size-3xs);
-}
-
-.wrapper .caption.error {
-  color: var(--color-semantic-error-600);
-}

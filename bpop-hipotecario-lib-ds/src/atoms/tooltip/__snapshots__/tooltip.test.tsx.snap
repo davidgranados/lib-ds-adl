@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tooltip /> should match snapshot 1`] = `
+<div
+  className="wrapper"
+  onClick={[Function]}
+>
+  Click Me!
+  <div
+    className="tooltip-wrapper"
+  >
+    <div
+      className="tooltip-body"
+    >
+      <span
+        className="icon-wrapper"
+        onClick={[Function]}
+      >
+        <span
+          className="icon icon-close icon-close"
+        />
+      </span>
+      <div
+        className="tooltip-text"
+      >
+        <span>
+          tooltip title
+        </span>
+        <span>
+          tooltip body
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

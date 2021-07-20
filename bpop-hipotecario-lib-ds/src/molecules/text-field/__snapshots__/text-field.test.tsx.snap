@@ -3,14 +3,10 @@
 exports[`<TextField /> with error should match snapshot 1`] = `
 <div>
   <label
-    className="default input-field-base"
+    className="default"
     htmlFor="test-number-field-old-id"
   >
-    <span
-      className="default body-sm weight-medium carbon-900"
-    >
-      test number field label
-    </span>
+    test number field input-field-label
   </label>
   <input
     className="default size-md error"
@@ -18,14 +14,14 @@ exports[`<TextField /> with error should match snapshot 1`] = `
     maxLength={10}
     onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
+    onFocus={[MockFunction]}
     onInput={[Function]}
     placeholder="test placeholder"
     type="text"
     value=""
   />
   <span
-    className="default body-sm weight-regular error-600 line-height-body-sm"
+    className="default error"
   >
     test caption
   </span>
@@ -35,14 +31,10 @@ exports[`<TextField /> with error should match snapshot 1`] = `
 exports[`<TextField /> with initial value and caption should match snapshot 1`] = `
 <div>
   <label
-    className="default input-field-base"
+    className="default"
     htmlFor="test-number-field-old-id"
   >
-    <span
-      className="default body-sm weight-medium carbon-900"
-    >
-      test number field label
-    </span>
+    test number field input-field-label
   </label>
   <input
     className="default size-md filled"
@@ -50,14 +42,14 @@ exports[`<TextField /> with initial value and caption should match snapshot 1`] 
     maxLength={10}
     onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
+    onFocus={[MockFunction]}
     onInput={[Function]}
     placeholder="test placeholder"
     type="text"
     value="initial value"
   />
   <span
-    className="default body-sm weight-regular carbon-900 line-height-body-sm"
+    className="default"
   >
     test caption
   </span>
@@ -67,14 +59,10 @@ exports[`<TextField /> with initial value and caption should match snapshot 1`] 
 exports[`<TextField /> without initial value or caption should match snapshot 1`] = `
 <div>
   <label
-    className="default input-field-base"
+    className="default"
     htmlFor="test-number-field-old-id"
   >
-    <span
-      className="default body-sm weight-medium carbon-900"
-    >
-      test number field label
-    </span>
+    test number field input-field-label
   </label>
   <input
     className="default size-md"
@@ -82,7 +70,7 @@ exports[`<TextField /> without initial value or caption should match snapshot 1`
     maxLength={10}
     onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
+    onFocus={[MockFunction]}
     onInput={[Function]}
     placeholder="test placeholder"
     type="text"

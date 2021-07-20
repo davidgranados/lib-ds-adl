@@ -1,9 +1,9 @@
 import React from "react";
 
+import { Checkbox } from "../../atoms/checkbox";
 import { CheckboxFieldProps } from "../../types";
 
 import styles from "./checkbox-field.module.css";
-import { Checkbox } from "../../atoms/checkbox";
 
 const CheckboxField: React.FC<CheckboxFieldProps> = ({ id, disabled, children, onChange }) => {
   return (
@@ -14,4 +14,4 @@ const CheckboxField: React.FC<CheckboxFieldProps> = ({ id, disabled, children, o
   );
 };
 
-export default React.memo(CheckboxField);
+export default CheckboxField;

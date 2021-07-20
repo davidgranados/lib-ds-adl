@@ -2,17 +2,7 @@
 
 exports[`<Button /> should match snapshot 1`] = `
 <button
-  className="default font-size-md default primary size-md"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[MockFunction]}
-  onFocus={[Function]}
-  onMouseDown={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}
+  className="default primary size-md"
   type="button"
 >
   button

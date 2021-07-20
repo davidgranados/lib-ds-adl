@@ -18,16 +18,15 @@ exports[`<Modal /> Should match snapshot 1`] = `
         className="close"
       >
         <span
-          className="icon icon-close"
+          className="icon icon-close icon"
+          data-testid="modal-icon-close"
           onClick={[Function]}
         />
       </div>
       <div
         className="title"
       >
-        <h6
-          className="default h6 weight-bold carbon-900 line-height-h6"
-        >
+        <h6>
           title
         </h6>
       </div>
@@ -39,17 +38,9 @@ exports[`<Modal /> Should match snapshot 1`] = `
       className="footer"
     >
       <button
-        className="default font-size-lg default primary size-lg"
+        className="default primary size-lg"
         disabled={false}
-        onBlur={[Function]}
         onClick={[Function]}
-        onFocus={[Function]}
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
         type="button"
       >
         ok

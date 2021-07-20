@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputTextBase /> should match snapshot 1`] = `
+<input
+  className="default size-lg"
+  id="input-test-id"
+  onBlur={[Function]}
+  onFocus={[MockFunction]}
+  onInput={[Function]}
+/>
+`;
