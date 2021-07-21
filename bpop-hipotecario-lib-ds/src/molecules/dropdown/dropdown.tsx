@@ -5,6 +5,7 @@ import { InputFieldCaption } from "../../atoms/input-field-caption";
 import { DropdownProps } from "../../types";
 
 import styles from "./dropdown.module.css";
+import { Icon } from "../../atoms/icon";
 
 const Dropdown: React.FC<DropdownProps> = ({
   id,
@@ -16,6 +17,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   placeholder,
   value,
   onChange,
+  onFocus,
 }) => {
   const [open, setOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(value);
@@ -30,7 +32,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className={styles["wrapper"]}>
+    <div className={styles["wrapper"]} onClick={onFocus}>
       <InputFieldLabel data-testid="dropdown-label" htmlFor={id} onClick={() => toggleOpen()}>
         {label}
       </InputFieldLabel>
@@ -43,6 +45,9 @@ const Dropdown: React.FC<DropdownProps> = ({
       >
         <div className={styles["content"]}>
           <span className={styles["name"]}>{selectedLabel() || placeholder}</span>
+          <div className={styles["icon"]}>
+            <Icon name={"simple-arrow"} />
+          </div>
         </div>
         <div data-testid="expanded-content" className={styles["expanded-section"]}>
           <div className={styles["expanded-content"]}>

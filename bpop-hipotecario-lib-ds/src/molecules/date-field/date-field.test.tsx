@@ -19,7 +19,7 @@ test("DateField should renders ok", async () => {
 
 test("DateField day and year emits null", async () => {
   let result;
-  const expectedResult = { day: 0, month: 0, year: 0 };
+  const expectedResult = { day: 0, month: 99, year: 0 };
   const x = render(
     <DateField caption="This is a caption" id="date-field-birthday" onChange={(v: unknown) => (result = v)} />
   );

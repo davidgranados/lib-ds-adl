@@ -50,6 +50,7 @@ export declare interface CheckboxProps extends InputBaseProps {
 
 export declare interface CheckboxFieldProps extends InputBaseProps {
   children: ReactNode;
+  name: string;
 }
 
 export declare interface DateFieldProps {
@@ -58,5 +59,7 @@ export declare interface DateFieldProps {
   hasError?: boolean;
   value?: { day: number; month: number; year: number };
   disabled?: boolean;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
   onChange: (v: { day: number; month: number; year: number }) => void;
 }
