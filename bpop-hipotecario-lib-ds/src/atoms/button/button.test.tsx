@@ -1,90 +1,53 @@
 import React from "react";
-import { mount, ReactWrapper } from "enzyme";
+import { mount } from "enzyme";
 
 import Button from "./button";
 
 describe("<Button />", () => {
-  let wrapper: ReactWrapper<typeof Button>;
-  const variant = "primary";
   const text = "button";
-  const onFocus = jest.fn();
-  const onBlur = jest.fn();
-  const onClick = jest.fn();
-  const onMouseEnter = jest.fn();
-  const onMouseLeave = jest.fn();
-  const onMouseDown = jest.fn();
-  const onMouseUp = jest.fn();
-  const onTouchStart = jest.fn();
-  const onTouchEnd = jest.fn();
-  beforeEach(() => {
-    jest.clearAllMocks();
-    // given
-    wrapper = mount<typeof Button>(
-      <Button
-        text={text}
-        variant={variant}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onMouseDown={onMouseDown}
-        onMouseUp={onMouseUp}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onClick={onClick}
-      />
-    );
-  });
-
   it("should match snapshot", () => {
+    // given
+    const wrapper = mount<typeof Button>(<Button text={text} variant={"primary"} />);
+    // then
     expect(wrapper).toMatchSnapshot();
   });
-
-  it("should handle hover", () => {
-    // when
-    wrapper.find("button").simulate("mouseenter");
-    wrapper.find("button").simulate("mouseleave");
+  it("should render correctly", () => {
+    // given
+    const wrapper = mount<typeof Button>(<Button text={text} />);
+    const button = wrapper.find("button");
     // then
-    expect(onMouseEnter).toBeCalled();
-    expect(onMouseLeave).toBeCalled();
+    expect(button.exists()).toBe(true);
+    expect(button.prop("children")).toEqual(text);
+    expect(button.prop("type")).toEqual("button");
+    expect(button.hasClass("primary")).toBe(true);
+    expect(button.hasClass("size-md")).toBe(true);
   });
-
-  it("should handle mouse down/up events", () => {
-    // when
-    wrapper.find("button").simulate("mousedown");
-    wrapper.find("button").simulate("mouseup");
+  it("should be secondary", () => {
+    // given
+    const wrapper = mount<typeof Button>(<Button text={text} variant={"secondary"} />);
+    const button = wrapper.find("button");
     // then
-    expect(onMouseDown).toBeCalled();
-    expect(onMouseUp).toBeCalled();
+    expect(button.hasClass("secondary")).toBe(true);
   });
-
-  it("should handle touch start/end events", () => {
-    // when
-    wrapper.find("button").simulate("touchstart");
-    wrapper.find("button").simulate("touchend");
+  it("should be type submit", () => {
+    // given
+    const wrapper = mount<typeof Button>(<Button text={text} type={"submit"} />);
+    const button = wrapper.find("button");
     // then
-    expect(onTouchStart).toBeCalled();
-    expect(onTouchEnd).toBeCalled();
+    expect(button.prop("type")).toEqual("submit");
   });
-
-  it("should handle focus", () => {
-    // when
-    wrapper.find("button").simulate("focus");
+  it("should be lg size", () => {
+    // given
+    const wrapper = mount<typeof Button>(<Button text={text} size={"lg"} />);
+    const button = wrapper.find("button");
     // then
-    expect(onFocus).toBeCalled();
+    expect(button.hasClass("size-lg")).toBe(true);
   });
-
-  it("should handle blur", () => {
-    // when
-    wrapper.find("button").simulate("blur");
+  it("should be fullwidth", () => {
+    // given
+    const wrapper = mount<typeof Button>(<Button text={text} fullWidth={true} />);
+    const button = wrapper.find("button");
     // then
-    expect(onBlur).toBeCalled();
-  });
-
-  it("should handle click", () => {
-    // when
-    wrapper.find("button").simulate("click");
-    // then
-    expect(onClick).toBeCalled();
+    expect(button.hasClass("full-width")).toBe(true);
   });
 });

@@ -2,31 +2,27 @@ import React, { FC, useRef } from "react";
 
 import { removeClassFromElement, toggleClassFromElement } from "../../helpers";
 import { TooltipProps } from "../../types";
-import "../../icons/icomoon.css";
+import { Icon } from "../icon";
 
-import tooltipStyles from "./tooltip.module.css";
+import styles from "./tooltip.module.css";
 
 const Tooltip: FC<TooltipProps> = ({ children, textTitle, textBody }) => {
   const tooltipRef = useRef(null);
   const handleOnClickToggle = () => {
-    if (tooltipRef.current) {
-      toggleClassFromElement(tooltipRef.current, tooltipStyles["visible"]);
-    }
+    toggleClassFromElement(tooltipRef.current, styles["visible"]);
   };
   const handleOnClickClose = () => {
-    if (tooltipRef.current) {
-      removeClassFromElement(tooltipRef.current, tooltipStyles["visible"]);
-    }
+    removeClassFromElement(tooltipRef.current, styles["visible"]);
   };
   return (
-    <div className={tooltipStyles["wrapper"]}>
-      <div onClick={handleOnClickToggle}>{children}</div>
-      <div ref={tooltipRef} className={tooltipStyles["tooltip-wrapper"]}>
-        <div className={tooltipStyles["tooltip-body"]}>
-          <span className={tooltipStyles["icon-wrapper"]} onClick={handleOnClickClose}>
-            <i className={"icon-close"} />
+    <div className={styles["wrapper"]} onClick={handleOnClickToggle}>
+      {children}
+      <div ref={tooltipRef} className={styles["tooltip-wrapper"]}>
+        <div className={styles["tooltip-body"]}>
+          <span className={styles["icon-wrapper"]} onClick={handleOnClickClose}>
+            <Icon name={"close"} className={styles["icon-close"]} />
           </span>
-          <div className={tooltipStyles["tooltip-text"]}>
+          <div className={styles["tooltip-text"]}>
             <span>{textTitle}</span>
             <span>{textBody}</span>
           </div>

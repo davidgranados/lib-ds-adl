@@ -1,72 +1,79 @@
 .default {
-  border: solid var(--border-width-button) var(--color-base-transparent);
-  border-radius: var(--border-radius-button);
+  box-sizing: border-box;
+  border: solid 1px transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .primary {
-  background-color: var(--background-color-button-primary-enabled);
-  color: var(--font-color-button-primary-enabled);
+  background-color: #11b719;
+  color: white;
 }
 
-.primary--focus {
-  border: solid var(--border-width-button) var(--border-color-button-primary);
-  background-color: var(--background-color-button-primary-focus);
+.primary:focus {
+  border-color: #148c1a;
 }
 
-.primary--hover {
-  background-color: var(--background-color-button-primary-hover);
-  color: var(--font-color-button-primary-hover);
-}
-
-.primary--active {
-  background-color: var(--background-color-button-primary-active);
+.primary:hover,
+.primary:active {
+  background-color: #148c1a;
 }
 
 .primary:disabled {
-  background-color: var(--background-color-button-primary-disabled);
-  color: var(--font-color-button-primary-disabled);
+  background-color: #9d9d9d;
+  cursor: not-allowed;
 }
 
 .secondary {
-  background-color: var(--background-color-button-secondary-enabled);
-  color: var(--font-color-button-secondary-enabled);
+  background-color: #c4e9c0;
+  color: #11b719;
 }
 
-.secondary--focus {
-  border: solid var(--border-width-button) var(--border-color-button-secondary);
-  background-color: var(--background-color-button-secondary-focus);
+.secondary:focus {
+  border-color: #11b719;
 }
 
-.secondary--hover {
-  background-color: var(--background-color-button-secondary-hover);
-  color: var(--font-color-button-secondary-hover);
+.secondary:hover {
+  background-color: #11b719;
+  color: white;
 }
 
-.secondary--active {
-  background-color: var(--background-color-button-secondary-active);
+.secondary:active {
+  background-color: #11b719;
 }
 
 .secondary:disabled {
-  background-color: var(--background-color-button-secondary-disabled);
-  color: var(--font-color-button-secondary-disabled);
+  background-color: #d9d9d9;
+  color: white;
+  cursor: not-allowed;
 }
 
 .size-xs {
   height: 32px;
   padding: 8px 16px;
+  font-size: 0.75rem;
 }
 
 .size-sm {
   height: 40px;
   padding: 8px 24px;
+  font-size: 0.875rem;
 }
 
 .size-md {
   height: 48px;
   padding: 12px 32px;
+  font-size: 0.875rem;
 }
 
 .size-lg {
   height: 56px;
   padding: 16px 32px;
+  font-size: 0.938rem;
 }

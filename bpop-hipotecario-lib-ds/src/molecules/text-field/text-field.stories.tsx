@@ -2,7 +2,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { validSizes } from "../../atoms/input-base";
+import { validSizes } from "../../atoms/input-text-base";
 
 import TextField from "./text-field";
 

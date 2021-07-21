@@ -15,7 +15,7 @@ Default.args = {
   title: "Autorización para el tratamiento de datos personales",
   buttonText: "OK",
   isDisabledButton: false,
-  show: false,
+  show: true,
   children: `En adición y complemento de las autorizaciones previamente otorgadas, autorizo de manera expresa y previa sin
   lugar a pagos ni retribuciones al BANCO POPULAR S.A. (en adelante “EL BANCO”), a sus cesionarios o a quien
   represente los derechos, para que efectúe el Tratamiento de mis Datos Personales de la manera y para las

@@ -15,7 +15,7 @@ describe("<Modal />", () => {
     expect(mount(component)).toMatchSnapshot();
   });
 
-  it("Modal should toggle when click in button", () => {
+  it("should toggle when click in button", () => {
     let show = false;
     const wrapper = shallow(component);
     wrapper.setProps({ show: show, onToggle: (s: boolean) => (show = s) });
@@ -23,7 +23,7 @@ describe("<Modal />", () => {
     expect(show).toBe(true);
   });
 
-  it("Modal should toggle when click in overflow", () => {
+  it("should toggle when click in overflow", () => {
     let show = false;
     const wrapper = shallow(component);
     wrapper.setProps({ show: show, onToggle: (s: boolean) => (show = s) });
@@ -31,11 +31,11 @@ describe("<Modal />", () => {
     expect(show).toBe(true);
   });
 
-  it("Modal should toggle when click in icon close", () => {
+  it("should toggle when click in icon close", () => {
     let show = false;
     const wrapper = shallow(component);
     wrapper.setProps({ show: show, onToggle: (s: boolean) => (show = s) });
-    wrapper.find(".icon-close").simulate("click");
+    wrapper.find('[data-testid="modal-icon-close"]').simulate("click");
     expect(show).toBe(true);
   });
 });

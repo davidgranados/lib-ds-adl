@@ -1,3 +1,3 @@
 export { default as Button } from "./button";
 
-export { fontSizeMapping, validSizes, validVariants } from "./helpers";
+export { validSizes, validVariants } from "./helpers";

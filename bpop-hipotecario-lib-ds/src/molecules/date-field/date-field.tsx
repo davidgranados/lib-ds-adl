@@ -3,24 +3,26 @@ import React, { useState, useEffect } from "react";
 import { Dropdown } from "../dropdown/";
 import { NumberField } from "../number-field";
 
-import { DateFieldProps } from "../../types";
+import { DateFieldProps, InputFieldCaptionStatus } from "../../types";
+import { InputFieldCaption } from "../../atoms/input-field-caption";
 
 import styles from "./date-field.module.css";
 
-const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) => {
+const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, disabled }) => {
+  const captionStatus: InputFieldCaptionStatus = hasError ? "error" : "default";
   const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
   ];
 
   const [day, setDay] = useState<number>(0);
@@ -42,11 +44,12 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) =>
           <NumberField
             data-testid="date-field-day"
             id="date-field-day"
-            label="Day"
+            label="Día"
             maxLength={2}
-            placeholder="Day"
+            placeholder="DD"
             size={"lg"}
             hasError={hasError}
+            disabled={disabled}
             onChange={(v) => handleDayChange(parseInt(v.target.value))}
           />
         </div>
@@ -54,25 +57,27 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange }) =>
           <Dropdown
             id="date-field-month"
             items={months.map((v, i) => ({ label: v, value: i }))}
-            label="Month"
+            label="Mes"
             value={month}
             hasError={hasError}
+            disabled={disabled}
             onChange={(v) => handleMonthChange(v)}
           />
         </div>
         <div className={`${styles["input"]} ${styles["year"]}`}>
           <NumberField
             id="date-field-year"
-            label="Year"
+            label="Año"
             maxLength={4}
-            placeholder="Year"
+            placeholder="AAAA"
             size={"lg"}
             hasError={hasError}
+            disabled={disabled}
             onChange={(v) => handleYearChange(parseInt(v.target.value))}
           />
         </div>
       </div>
-      {caption && <span className={`${styles["caption"]} ${hasError && styles["error"]}`}>{caption}</span>}
+      {caption && <InputFieldCaption status={captionStatus}>{caption}</InputFieldCaption>}
     </div>
   );
 };

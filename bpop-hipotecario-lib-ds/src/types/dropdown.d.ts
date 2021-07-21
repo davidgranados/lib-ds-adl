@@ -2,7 +2,7 @@ export declare interface DropdownProps {
   id: string;
   label: string;
   items: { label: string; value: string | number }[];
-  isDisabled?: boolean;
+  disabled?: boolean;
   hasError?: boolean;
   caption?: string;
   placeholder?: string;

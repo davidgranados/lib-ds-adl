@@ -30,10 +30,6 @@ export default {
     copy({
       targets: [
         {
-          src: "src/styles/tokens.css",
-          dest: "dist",
-        },
-        {
           src: "src/icons/",
           dest: "dist",
         },

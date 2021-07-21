@@ -14,7 +14,7 @@ test("DateField should renders ok", async () => {
   fireEvent.change(dayInput, { target: { value: 1 } });
   fireEvent.change(yearInput, { target: { value: 1997 } });
   fireEvent.click(firstDropdownItem);
-  expect(screen.getByText("Day")).toBeInTheDocument();
+  expect(screen.getByText("Día")).toBeInTheDocument();
 });
 
 test("DateField day and year emits null", async () => {

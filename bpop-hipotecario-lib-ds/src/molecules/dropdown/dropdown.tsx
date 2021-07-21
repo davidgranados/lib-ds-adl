@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { Label } from "../../atoms/label";
-import { FieldCaption } from "../../atoms/caption-field";
+import { InputFieldLabel } from "../../atoms/input-field-label";
+import { InputFieldCaption } from "../../atoms/input-field-caption";
 import { DropdownProps } from "../../types";
 
 import styles from "./dropdown.module.css";
@@ -9,7 +9,7 @@ import styles from "./dropdown.module.css";
 const Dropdown: React.FC<DropdownProps> = ({
   id,
   label,
-  isDisabled,
+  disabled,
   items,
   hasError,
   caption,
@@ -22,7 +22,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   const captionStatus = hasError ? "error" : undefined;
 
   const isSelected = (v: string | number) => v === selectedValue;
-  const toggleOpen = () => !isDisabled && setOpen(!open);
+  const toggleOpen = () => !disabled && setOpen(!open);
   const selectedLabel = () => items.find((v) => v.value === selectedValue)?.label;
   const selectValue = (item: { label: string; value: string | number }) => {
     setSelectedValue(item.value);
@@ -30,12 +30,12 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div>
-      <Label data-testid="dropdown-label" htmlFor={id} onClick={() => toggleOpen()}>
+    <div className={styles["wrapper"]}>
+      <InputFieldLabel data-testid="dropdown-label" htmlFor={id} onClick={() => toggleOpen()}>
         {label}
-      </Label>
+      </InputFieldLabel>
       <div
-        className={`${styles["dropdown"]} ${open && styles["open"]} ${isDisabled && styles["disabled"]} ${
+        className={`${styles["dropdown"]} ${open && styles["open"]} ${disabled && styles["disabled"]} ${
           hasError && styles["error"]
         }`}
         data-testid="dropdown-element"
@@ -61,7 +61,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
         </div>
       </div>
-      {caption && <FieldCaption status={captionStatus}>{caption}</FieldCaption>}
+      {caption && <InputFieldCaption status={captionStatus}>{caption}</InputFieldCaption>}
     </div>
   );
 };

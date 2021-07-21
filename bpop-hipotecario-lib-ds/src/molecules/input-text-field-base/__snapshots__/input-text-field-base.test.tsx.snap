@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputTextFieldBase /> with error should match snapshot 1`] = `
+<div>
+  <label
+    className="default"
+    htmlFor="test-number-field-old-id"
+  >
+    test number field input-field-label
+  </label>
+  <input
+    className="default size-md error"
+    id="test-number-field-old-id"
+    maxLength={10}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[MockFunction]}
+    onInput={[Function]}
+    placeholder="test placeholder"
+    type="text"
+    value=""
+  />
+  <span
+    className="default error"
+  >
+    test caption
+  </span>
+</div>
+`;
+
+exports[`<InputTextFieldBase /> with initial value and caption should match snapshot 1`] = `
+<div>
+  <label
+    className="default"
+    htmlFor="test-number-field-old-id"
+  >
+    test number field input-field-label
+  </label>
+  <input
+    className="default size-md filled"
+    id="test-number-field-old-id"
+    maxLength={10}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[MockFunction]}
+    onInput={[Function]}
+    placeholder="test placeholder"
+    type="text"
+    value="initial value"
+  />
+  <span
+    className="default"
+  >
+    test caption
+  </span>
+</div>
+`;
+
+exports[`<InputTextFieldBase /> without initial value or caption should match snapshot 1`] = `
+<div>
+  <label
+    className="default"
+    htmlFor="test-number-field-old-id"
+  >
+    test number field input-field-label
+  </label>
+  <input
+    className="default size-md"
+    id="test-number-field-old-id"
+    maxLength={10}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[MockFunction]}
+    onInput={[Function]}
+    placeholder="test placeholder"
+    type="text"
+    value=""
+  />
+</div>
+`;

@@ -15,7 +15,7 @@ test("DateField should renders ok", async () => {
       value={99}
       caption="Fake caption"
       hasError={true}
-      isDisabled={true}
+      disabled={true}
       placeholder="Placeholder"
       onChange={() => null}
     />

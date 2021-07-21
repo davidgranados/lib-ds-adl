@@ -1,11 +1,11 @@
 import React from "react";
 
 import { CheckboxProps } from "../../types";
-import "../../icons/icomoon.css";
+import { Icon } from "../icon";
 
 import styles from "./checkbox.module.css";
 
-const Checkbox: React.FC<CheckboxProps> = ({ id, disabled, hasError, onChange }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ id, disabled, hasError, onChange, ...props }) => {
   return (
     <label
       className={`${styles["wrapper"]} ${disabled ? styles["disabled"] : styles["enabled"]} ${
@@ -13,9 +13,9 @@ const Checkbox: React.FC<CheckboxProps> = ({ id, disabled, hasError, onChange })
       }`}
       data-testid="checkbox-label"
     >
-      <input id={id} className={styles["input"]} type="checkbox" disabled={disabled} onChange={onChange} />
+      <input id={id} className={styles["input"]} type="checkbox" disabled={disabled} onChange={onChange} {...props} />
       <span className={styles["checkmark"]}>
-        <i className={`icon-check ${styles["icon-check"]}`}></i>
+        <Icon name={"check"} className={styles["icon-check"]} />
       </span>
     </label>
   );
