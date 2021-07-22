@@ -17,7 +17,6 @@ const Dropdown: React.FC<DropdownProps> = ({
   placeholder,
   value,
   onChange,
-  onFocus,
 }) => {
   const [open, setOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(value);
@@ -32,7 +31,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className={styles["wrapper"]} onClick={onFocus}>
+    <div className={styles["wrapper"]}>
       <InputFieldLabel data-testid="dropdown-label" htmlFor={id} onClick={() => toggleOpen()}>
         {label}
       </InputFieldLabel>

@@ -7,6 +7,5 @@ export declare interface DropdownProps {
   caption?: string;
   placeholder?: string;
   value?: string | number;
-  onFocus?: FocusEventHandler<HTMLInputElement>;
   onChange: (v: string | number) => void;
 }
