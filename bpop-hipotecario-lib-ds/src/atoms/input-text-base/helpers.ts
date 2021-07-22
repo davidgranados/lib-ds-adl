@@ -1,4 +1,4 @@
-import { InputBaseSize, InputBaseStatus } from "../../types";
+import { InputTextBaseSize, InputTextBaseSpecialStatus } from "../../types";
 
-export const validSizes: InputBaseSize[] = ["md", "lg"];
-export const validStatuses: InputBaseStatus[] = ["success", "warning", "error"];
+export const validSizes: InputTextBaseSize[] = ["md", "lg"];
+export const validStatuses: InputTextBaseSpecialStatus[] = ["success", "warning", "error"];
