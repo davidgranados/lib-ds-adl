@@ -60,6 +60,5 @@ export declare interface DateFieldProps {
   value?: { day: number; month: number; year: number };
   disabled?: boolean;
   onBlur?: FocusEventHandler<HTMLInputElement>;
-  onFocus?: FocusEventHandler<HTMLInputElement>;
   onChange: (v: { day: number; month: number; year: number }) => void;
 }

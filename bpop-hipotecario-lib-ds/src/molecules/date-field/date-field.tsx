@@ -8,7 +8,7 @@ import { InputFieldCaption } from "../../atoms/input-field-caption";
 
 import styles from "./date-field.module.css";
 
-const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBlur, onFocus, disabled }) => {
+const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBlur, disabled }) => {
   const captionStatus: InputFieldCaptionStatus = hasError ? "error" : "default";
   const months = [
     "Enero",
@@ -49,7 +49,6 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBl
             placeholder="DD"
             size={"lg"}
             onBlur={onBlur}
-            onFocus={onFocus}
             hasError={hasError}
             disabled={disabled}
             onChange={(v) => handleDayChange(parseInt(v.target.value))}
@@ -61,7 +60,6 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBl
             items={months.map((v, i) => ({ label: v, value: i }))}
             label="Mes"
             value={month}
-            onFocus={onFocus}
             placeholder={"Selecciona un mes"}
             hasError={hasError}
             disabled={disabled}
@@ -76,7 +74,6 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBl
             placeholder="AAAA"
             size={"lg"}
             onBlur={onBlur}
-            onFocus={onFocus}
             hasError={hasError}
             disabled={disabled}
             onChange={(v) => handleYearChange(parseInt(v.target.value))}
