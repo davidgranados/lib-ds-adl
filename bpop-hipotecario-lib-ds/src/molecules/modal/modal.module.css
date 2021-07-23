@@ -34,19 +34,18 @@
   z-index: 999;
   display: flex;
   position: fixed;
-  display: flex;
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  animation-fill-mode: forwards;
   animation-name: closeModal;
+  animation-fill-mode: forwards;
   font-family: "Inter", sans-serif;
 }
 
 .wrapper.show {
   animation-duration: 0.5s;
-  animation-fill-mode: forwards;
   animation-name: openModal;
+  animation-fill-mode: forwards;
 }
 
 .wrapper.close {
@@ -61,8 +60,8 @@
 }
 
 .wrapper .overflow {
-  position: absolute;
   width: 100vw;
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -144,4 +143,36 @@
   display: flex;
   justify-content: center;
   margin: 0 0 32px 0;
+}
+
+@media screen and (max-width: 599px) {
+  .wrapper .modal {
+    max-height: calc(100% - 48px);
+  }
+
+  .wrapper .modal .header .close .icon {
+    font-size: 1.5rem;
+  }
+
+  .wrapper .modal .header .title {
+    margin: 50px 24px 8px 24px;
+  }
+
+  .wrapper .modal .header .title h6 {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .wrapper .modal .content {
+    margin: 0 20px 20px 20px;
+    overflow-y: scroll;
+  }
+
+  .wrapper .modal .footer {
+    margin: 0 24px 24px 24px;
+  }
+
+  .wrapper .modal .footer button {
+    width: 100%;
+  }
 }

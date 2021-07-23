@@ -42,6 +42,7 @@ export declare interface NumberFieldProps extends Omit<TextFieldProps, "validate
 
 export declare interface RadioButtonProps extends InputBaseProps {
   label: string;
+  checked?: boolean;
 }
 
 export declare interface CheckboxProps extends InputBaseProps {
@@ -57,6 +58,7 @@ export declare interface DateFieldProps {
   id: string;
   caption?: string;
   hasError?: boolean;
+  label?: string;
   value?: { day: number; month: number; year: number };
   disabled?: boolean;
   onBlur?: FocusEventHandler<HTMLInputElement>;
