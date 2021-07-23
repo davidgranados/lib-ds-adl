@@ -11,15 +11,12 @@ const Tooltip: FC<TooltipProps> = ({ children, textTitle, textBody }) => {
   const handleOnClickToggle = () => {
     toggleClassFromElement(tooltipRef.current, styles["visible"]);
   };
-  const handleOnClickClose = () => {
-    removeClassFromElement(tooltipRef.current, styles["visible"]);
-  };
   return (
     <div className={styles["wrapper"]} onClick={handleOnClickToggle}>
       {children}
       <div ref={tooltipRef} className={styles["tooltip-wrapper"]}>
         <div className={styles["tooltip-body"]}>
-          <span className={styles["icon-wrapper"]} onClick={handleOnClickClose}>
+          <span className={styles["icon-wrapper"]}>
             <Icon name={"close"} className={styles["icon-close"]} />
           </span>
           <div className={styles["tooltip-text"]}>

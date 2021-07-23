@@ -19,6 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   onChange,
 }) => {
   const [open, setOpen] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
   const [selectedValue, setSelectedValue] = useState(value);
   const captionStatus = hasError ? "error" : undefined;
 
@@ -26,6 +27,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   const toggleOpen = () => !disabled && setOpen(!open);
   const selectedLabel = () => items.find((v) => v.value === selectedValue)?.label;
   const selectValue = (item: { label: string; value: string | number }) => {
+    setIsFilled(true);
     setSelectedValue(item.value);
     onChange(item.value);
   };
@@ -38,12 +40,14 @@ const Dropdown: React.FC<DropdownProps> = ({
       <div
         className={`${styles["dropdown"]} ${open && styles["open"]} ${disabled && styles["disabled"]} ${
           hasError && styles["error"]
-        }`}
+        } ${isFilled && styles["filled"]}`}
         data-testid="dropdown-element"
         onClick={() => toggleOpen()}
       >
         <div className={styles["content"]}>
-          <span className={styles["name"]}>{selectedLabel() || placeholder}</span>
+          <span className={styles["name"]}>
+            {selectedLabel() || <span className={styles["placeholder"]}>{placeholder}</span>}
+          </span>
           <div className={styles["icon"]}>
             <Icon name={"simple-arrow"} />
           </div>

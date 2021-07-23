@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 
+import styles from "./date-field.module.css";
+import { DateFieldProps, InputFieldCaptionStatus } from "../../types";
 import { Dropdown } from "../dropdown/";
 import { NumberField } from "../number-field";
-
-import { DateFieldProps, InputFieldCaptionStatus } from "../../types";
 import { InputFieldCaption } from "../../atoms/input-field-caption";
+import { InputFieldLabel } from "../../atoms/input-field-label";
 
-import styles from "./date-field.module.css";
-
-const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBlur, disabled }) => {
+const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBlur, disabled, label }) => {
   const captionStatus: InputFieldCaptionStatus = hasError ? "error" : "default";
   const months = [
     "Enero",
@@ -39,6 +38,11 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBl
 
   return (
     <div className={styles["wrapper"]}>
+      {!!label && (
+        <InputFieldLabel data-testid="datefield-label" htmlFor={"date-field-day"}>
+          {label}
+        </InputFieldLabel>
+      )}
       <div className={styles["inputs"]}>
         <div className={`${styles["input"]} ${styles["day"]}`}>
           <NumberField

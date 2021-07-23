@@ -1,9 +1,9 @@
 .default {
   display: block;
-  color: black;
+  color: #555555;
   margin: 4px 0 0 0;
-  font-family: "Inter", sans-serif;
   font-size: 0.75rem;
+  font-family: "Inter", sans-serif;
 }
 
 .error {
