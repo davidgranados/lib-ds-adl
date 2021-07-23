@@ -7,12 +7,18 @@
   display: flex;
   max-width: max-content;
   height: 48px;
+  box-sizing: border-box;
   align-items: center;
   padding: 0 12px;
   border: 1px solid #d9d9d9;
-  border-radius: 8px;
   background-color: white;
+  border-radius: 8px;
   cursor: pointer;
+}
+
+.full-width {
+  width: 100%;
+  max-width: 100%;
 }
 
 .control-wrapper {
@@ -68,7 +74,7 @@
 
 .wrapper--enabled:hover .control {
   border-color: var(--color-primary);
-  background-color: rgba(var(--color-secondary-rgb) 0.24);
+  background-color: rgba(var(--color-secondary-rgb), 0.24);
 }
 
 .wrapper--enabled.wrapper--checked {

@@ -1,6 +1,6 @@
 import React, { FC, useRef } from "react";
 
-import { removeClassFromElement, toggleClassFromElement } from "../../helpers";
+import { toggleClassFromElement } from "../../helpers";
 import { TooltipProps } from "../../types";
 import { Icon } from "../icon";
 
