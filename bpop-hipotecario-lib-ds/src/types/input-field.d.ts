@@ -42,6 +42,7 @@ export declare interface NumberFieldProps extends Omit<TextFieldProps, "validate
 
 export declare interface RadioButtonProps extends InputBaseProps {
   label: string;
+  fullWidth?: boolean;
   checked?: boolean;
 }
 

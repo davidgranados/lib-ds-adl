@@ -45,18 +45,6 @@
       }
     },
     {
-      "files": "src/tokens/**/*.js",
-      "rules": {
-        "quote-props": [
-          "error",
-          "always",
-          {
-            "numbers": true
-          }
-        ]
-      }
-    },
-    {
       "files": "*.d.ts",
       "rules": {
         "spaced-comment": "off"

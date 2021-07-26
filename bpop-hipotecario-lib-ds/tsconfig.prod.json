@@ -6,7 +6,6 @@
     "storybook-static",
     "src/**/*.stories.tsx",
     "src/**/*.test.tsx",
-    "src/tokens",
     "src/setupTests.ts"
   ]
 }

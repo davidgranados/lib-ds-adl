@@ -1,8 +1,8 @@
 .wrapper {
   position: relative;
   width: 1.5rem;
-  flex: 0 0 auto;
   height: 1.5rem;
+  flex: 0 0 auto;
   cursor: pointer;
   -ms-user-select: none;
   -moz-user-select: none;
