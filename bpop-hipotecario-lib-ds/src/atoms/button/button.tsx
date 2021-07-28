@@ -5,13 +5,28 @@ import { ButtonProps } from "../../types";
 
 import styles from "./button.module.css";
 
-const Button: FC<ButtonProps> = ({ text, fullWidth, type = "button", variant = "primary", size = "md", ...props }) => {
+const Button: FC<ButtonProps> = ({
+  text,
+  fullWidth,
+  dataTestId,
+  id,
+  type = "button",
+  variant = "primary",
+  size = "md",
+  ...props
+}) => {
   const buttonClassName = classNames(styles["default"], styles[variant], styles[`size-${size}`], {
     [styles["full-width"]]: fullWidth,
   });
 
   return (
-    <button className={buttonClassName} type={type} {...props}>
+    <button
+      id={id || `button-${type}-${text}`}
+      data-testid={dataTestId || id || `button-${type}-${text}`}
+      className={buttonClassName}
+      type={type}
+      {...props}
+    >
       {text}
     </button>
   );

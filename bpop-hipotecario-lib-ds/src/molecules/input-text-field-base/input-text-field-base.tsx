@@ -6,14 +6,21 @@ import { InputFieldCaption } from "../../atoms/input-field-caption";
 import { InputTextBase } from "../../atoms/input-text-base";
 
 const InputTextFieldBase: React.FC<InputTextFieldBaseProps> = ({
-  onChange,
-  id,
   label,
   caption,
+  labelId,
+  wrapperId,
+  captionId,
+  dataTestId,
+  labelDataTestId,
+  wrapperDataTestId,
+  captionDataTestId,
   validateInputValue,
-  type = "text",
-  value = "",
+  onChange,
   hasError = false,
+  value = "",
+  type = "text",
+  id = "input-text-field-base",
   ...props
 }) => {
   const inputStatus = hasError ? "error" : undefined;
@@ -28,17 +35,24 @@ const InputTextFieldBase: React.FC<InputTextFieldBaseProps> = ({
     onChange && onChange(event);
   };
   return (
-    <div>
-      <InputFieldLabel htmlFor={id}>{label}</InputFieldLabel>
+    <div id={wrapperId || `${id}-wrapper`} data-testid={wrapperDataTestId || wrapperId || `${id}-wrapper`}>
+      <InputFieldLabel id={labelId || `${id}-label`} dataTestId={labelDataTestId} htmlFor={id}>
+        {label}
+      </InputFieldLabel>
       <InputTextBase
         id={id}
+        dataTestId={dataTestId}
         type={type}
         specialStatus={inputStatus}
-        onChange={handleChange}
         value={localValue}
+        onChange={handleChange}
         {...props}
       />
-      {caption && <InputFieldCaption status={captionStatus}>{caption}</InputFieldCaption>}
+      {caption && (
+        <InputFieldCaption id={captionId || `${id}-caption`} dataTestId={captionDataTestId} status={captionStatus}>
+          {caption}
+        </InputFieldCaption>
+      )}
     </div>
   );
 };

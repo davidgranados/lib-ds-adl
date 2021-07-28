@@ -10,7 +10,7 @@ export default {
   title: "Molecules/TextField",
   component: TextField,
   args: {
-    id: "default-text-field-id",
+    id: "text-field-history",
     label: "Label",
     caption: "Caption Message",
     maxLength: 30,

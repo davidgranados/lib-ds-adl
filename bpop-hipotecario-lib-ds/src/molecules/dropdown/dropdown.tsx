@@ -8,7 +8,6 @@ import styles from "./dropdown.module.css";
 import { Icon } from "../../atoms/icon";
 
 const Dropdown: React.FC<DropdownProps> = ({
-  id,
   label,
   disabled,
   items,
@@ -16,6 +15,14 @@ const Dropdown: React.FC<DropdownProps> = ({
   caption,
   placeholder,
   value,
+  wrapperId,
+  labelId,
+  captionId,
+  dataTestId,
+  wrapperDataTestId,
+  labelDataTestId,
+  captionDataTestId,
+  id = "dropdown-element",
   onChange,
 }) => {
   const [open, setOpen] = useState(false);
@@ -33,31 +40,54 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className={styles["wrapper"]}>
-      <InputFieldLabel data-testid="dropdown-label" htmlFor={id} onClick={() => toggleOpen()}>
+    <div
+      id={wrapperId || `${id}-wrapper`}
+      data-testid={wrapperDataTestId || wrapperId || `${id}-wrapper`}
+      className={styles["wrapper"]}
+    >
+      <InputFieldLabel
+        id={labelId || `${id}-label`}
+        dataTestId={labelDataTestId}
+        htmlFor={id}
+        onClick={() => toggleOpen()}
+      >
         {label}
       </InputFieldLabel>
       <div
+        id={id}
+        data-testid={dataTestId || id}
         className={`${styles["dropdown"]} ${open && styles["open"]} ${disabled && styles["disabled"]} ${
           hasError && styles["error"]
         } ${isFilled && styles["filled"]}`}
-        data-testid="dropdown-element"
         onClick={() => toggleOpen()}
       >
-        <div className={styles["content"]}>
-          <span className={styles["name"]}>
-            {selectedLabel() || <span className={styles["placeholder"]}>{placeholder}</span>}
+        <div id={`${id}-content`} data-testid={`${id}-content`} className={styles["content"]}>
+          <span id={`${id}-name`} data-testid={`${id}-name`} className={styles["name"]}>
+            {selectedLabel() || (
+              <span id={`${id}-placeholder`} data-testid={`${id}-placeholder`} className={styles["placeholder"]}>
+                {placeholder}
+              </span>
+            )}
           </span>
           <div className={styles["icon"]}>
             <Icon name={"simple-arrow"} />
           </div>
         </div>
-        <div data-testid="expanded-content" className={styles["expanded-section"]}>
-          <div className={styles["expanded-content"]}>
+        <div
+          id={`${id}-expanded-section`}
+          data-testid={`${id}-expanded-section`}
+          className={styles["expanded-section"]}
+        >
+          <div
+            id={`${id}-expanded-content`}
+            data-testid={`${id}-expanded-content`}
+            className={styles["expanded-content"]}
+          >
             {items.map((item) => (
               <div
-                data-testid="expanded-content-item"
-                key={`dp-item-${item.label}`}
+                id={`${id}-expanded-content-item-${item.value}`}
+                data-testid={`${id}-expanded-content-item-${item.value}`}
+                key={`${id}-dp-item-${item.label}`}
                 className={styles["item"]}
                 onClick={() => selectValue(item)}
               >
@@ -69,7 +99,11 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
         </div>
       </div>
-      {caption && <InputFieldCaption status={captionStatus}>{caption}</InputFieldCaption>}
+      {caption && (
+        <InputFieldCaption id={captionId || `${id}-caption`} dataTestId={captionDataTestId} status={captionStatus}>
+          {caption}
+        </InputFieldCaption>
+      )}
     </div>
   );
 };

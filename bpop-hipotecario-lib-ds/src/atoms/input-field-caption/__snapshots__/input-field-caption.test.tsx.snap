@@ -3,6 +3,8 @@
 exports[`<InputFieldCaption /> should match snapshot 1`] = `
 <span
   className="default"
+  data-testid="input-field-caption"
+  id="input-field-caption"
 >
   caption
 </span>

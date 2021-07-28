@@ -1,15 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<InputTextFieldBase /> with error should match snapshot 1`] = `
-<div>
+<div
+  data-testid="test-number-field-old-id-wrapper"
+  id="test-number-field-old-id-wrapper"
+>
   <label
     className="default"
+    data-testid="test-number-field-old-id-label"
     htmlFor="test-number-field-old-id"
+    id="test-number-field-old-id-label"
   >
     test number field input-field-label
   </label>
   <input
     className="default size-md error"
+    data-testid="test-number-field-old-id"
     id="test-number-field-old-id"
     maxLength={10}
     onBlur={[Function]}
@@ -22,6 +28,8 @@ exports[`<InputTextFieldBase /> with error should match snapshot 1`] = `
   />
   <span
     className="default error"
+    data-testid="test-number-field-old-id-caption"
+    id="test-number-field-old-id-caption"
   >
     test caption
   </span>
@@ -29,15 +37,21 @@ exports[`<InputTextFieldBase /> with error should match snapshot 1`] = `
 `;
 
 exports[`<InputTextFieldBase /> with initial value and caption should match snapshot 1`] = `
-<div>
+<div
+  data-testid="test-number-field-old-id-wrapper"
+  id="test-number-field-old-id-wrapper"
+>
   <label
     className="default"
+    data-testid="test-number-field-old-id-label"
     htmlFor="test-number-field-old-id"
+    id="test-number-field-old-id-label"
   >
     test number field input-field-label
   </label>
   <input
     className="default size-md filled"
+    data-testid="test-number-field-old-id"
     id="test-number-field-old-id"
     maxLength={10}
     onBlur={[Function]}
@@ -50,6 +64,8 @@ exports[`<InputTextFieldBase /> with initial value and caption should match snap
   />
   <span
     className="default"
+    data-testid="test-number-field-old-id-caption"
+    id="test-number-field-old-id-caption"
   >
     test caption
   </span>
@@ -57,15 +73,21 @@ exports[`<InputTextFieldBase /> with initial value and caption should match snap
 `;
 
 exports[`<InputTextFieldBase /> without initial value or caption should match snapshot 1`] = `
-<div>
+<div
+  data-testid="test-number-field-old-id-wrapper"
+  id="test-number-field-old-id-wrapper"
+>
   <label
     className="default"
+    data-testid="test-number-field-old-id-label"
     htmlFor="test-number-field-old-id"
+    id="test-number-field-old-id-label"
   >
     test number field input-field-label
   </label>
   <input
     className="default size-md"
+    data-testid="test-number-field-old-id"
     id="test-number-field-old-id"
     maxLength={10}
     onBlur={[Function]}

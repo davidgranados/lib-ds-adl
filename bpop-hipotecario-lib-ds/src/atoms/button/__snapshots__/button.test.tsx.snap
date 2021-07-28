@@ -3,6 +3,8 @@
 exports[`<Button /> should match snapshot 1`] = `
 <button
   className="default primary size-md"
+  data-testid="button-button-button"
+  id="button-button-button"
   type="button"
 >
   button

@@ -6,7 +6,23 @@ import { addClassToElement, removeClassFromElement } from "../../helpers";
 
 import styles from "./radio-button.module.css";
 
-const RadioButton: React.FC<RadioButtonProps> = ({ disabled, label, checked, onChange, name, fullWidth, ...props }) => {
+const RadioButton: React.FC<RadioButtonProps> = ({
+  disabled,
+  label,
+  checked,
+  onChange,
+  name,
+  fullWidth,
+  wrapperId,
+  labelId,
+  controlId,
+  dataTestId,
+  wrapperDataTestId,
+  labelDataTestId,
+  controlDataTestId,
+  id = "radio-button",
+  ...props
+}) => {
   const wrapperClassName = classNames(styles["wrapper"], {
     [styles["wrapper--enabled"]]: !disabled,
     [styles["wrapper--disabled"]]: disabled,
@@ -35,9 +51,16 @@ const RadioButton: React.FC<RadioButtonProps> = ({ disabled, label, checked, onC
   }, [checked, handleInputOnChange]);
 
   return (
-    <label ref={wrapperRef} className={wrapperClassName}>
+    <label
+      id={wrapperId || `${id}-wrapper`}
+      data-testid={wrapperDataTestId || wrapperId || `${id}-wrapper`}
+      ref={wrapperRef}
+      className={wrapperClassName}
+    >
       <span className={styles["control-wrapper"]}>
         <input
+          id={id}
+          data-testid={dataTestId || id}
           className={styles["input"]}
           type="radio"
           name={name}
@@ -46,11 +69,21 @@ const RadioButton: React.FC<RadioButtonProps> = ({ disabled, label, checked, onC
           onChange={handleInputOnChange}
           {...props}
         />
-        <span className={styles["control"]}>
+        <span
+          id={controlId || `${id}-control`}
+          data-testid={controlDataTestId || controlId || `${id}-control`}
+          className={styles["control"]}
+        >
           <span className={styles["control__circle"]} />
         </span>
       </span>
-      <span className={styles["label"]}>{label}</span>
+      <span
+        id={labelId || `${id}-label`}
+        data-testid={labelDataTestId || labelId || `${id}-label`}
+        className={styles["label"]}
+      >
+        {label}
+      </span>
     </label>
   );
 };

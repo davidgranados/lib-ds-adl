@@ -5,8 +5,8 @@ import { InputTextFieldBase } from "../input-text-field-base";
 
 import { validateNumberFieldValue } from "./helpers";
 
-const NumberField: FC<NumberFieldProps> = ({ value = "", ...props }) => {
-  return <InputTextFieldBase type={"tel"} value={value} validateInputValue={validateNumberFieldValue} {...props} />;
+const NumberField: FC<NumberFieldProps> = ({ id = "number-field", ...props }) => {
+  return <InputTextFieldBase id={id} type={"tel"} validateInputValue={validateNumberFieldValue} {...props} />;
 };
 
 export default NumberField;

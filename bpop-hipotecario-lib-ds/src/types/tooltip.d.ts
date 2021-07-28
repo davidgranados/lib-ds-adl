@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 
-export declare interface TooltipProps {
+import { Testable } from "./global";
+
+export declare interface TooltipProps extends Testable {
   children: ReactNode;
   textTitle: string;
   textBody: string;

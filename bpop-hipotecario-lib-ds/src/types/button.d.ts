@@ -1,9 +1,11 @@
 import { ChangeEventHandler, FocusEventHandler, MouseEventHandler, ReactNode, TouchEventHandler } from "react";
 
+import { Testable } from "./global";
+
 export declare type ButtonVariant = "primary" | "secondary";
 export declare type ButtonSize = "xs" | "sm" | "md" | "lg";
 
-export declare interface ButtonProps {
+export declare interface ButtonProps extends Testable {
   variant?: ButtonVariant;
   size?: ButtonSize;
   type?: "button" | "submit" | "reset";

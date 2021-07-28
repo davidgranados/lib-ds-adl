@@ -27,7 +27,7 @@ const months = [
 
 export const Default = Template.bind({});
 Default.args = {
-  id: "default-dropdown-id",
+  id: "dropdown-story",
   label: "This is a test input-field-label",
   caption: "This is a caption",
   placeholder: "Placeholder",

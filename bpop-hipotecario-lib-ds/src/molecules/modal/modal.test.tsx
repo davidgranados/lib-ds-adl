@@ -33,7 +33,7 @@ describe("<Modal />", () => {
 
   it("should toggle when click in icon close", () => {
     let show = false;
-    const wrapper = shallow(component);
+    const wrapper = mount(component);
     wrapper.setProps({ show: show, onToggle: (s: boolean) => (show = s) });
     wrapper.find('[data-testid="modal-icon-close"]').simulate("click");
     expect(show).toBe(true);

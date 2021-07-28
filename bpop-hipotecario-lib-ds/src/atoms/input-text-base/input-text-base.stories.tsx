@@ -9,7 +9,7 @@ export default {
   title: "Atoms/InputTextBase",
   component: InputTextBase,
   args: {
-    id: "input-id",
+    id: "input-text-base-story",
     name: "input-name",
     specialStatus: undefined,
     disabled: false,

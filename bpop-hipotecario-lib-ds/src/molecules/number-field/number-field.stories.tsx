@@ -10,7 +10,7 @@ export default {
   title: "Molecules/NumberField",
   component: NumberField,
   args: {
-    id: "default-text-field-id",
+    id: "number-field-story",
     label: "Label",
     caption: "Caption Message",
     hasError: false,

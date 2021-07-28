@@ -7,7 +7,6 @@ import { InputTextBaseProps } from "../../types";
 import styles from "./input-text-base.module.css";
 
 const InputTextBase: FC<InputTextBaseProps> = ({
-  id,
   name,
   value,
   type,
@@ -15,6 +14,8 @@ const InputTextBase: FC<InputTextBaseProps> = ({
   onBlur,
   onInput,
   disabled,
+  dataTestId,
+  id = "input-text-base",
   size = "lg",
   ...props
 }) => {
@@ -40,11 +41,12 @@ const InputTextBase: FC<InputTextBaseProps> = ({
   };
   return (
     <input
-      ref={inputRef}
-      className={inputClassName}
       id={id}
+      data-testid={dataTestId || id}
       name={name}
       type={type}
+      ref={inputRef}
+      className={inputClassName}
       value={value}
       disabled={disabled}
       onBlur={handleBlur}
