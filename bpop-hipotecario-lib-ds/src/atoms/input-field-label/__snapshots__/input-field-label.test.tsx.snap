@@ -3,6 +3,8 @@
 exports[`<InputFieldLabel /> should match snapshot 1`] = `
 <label
   className="default"
+  data-testid="input-field-label"
+  id="input-field-label"
 >
   label
 </label>

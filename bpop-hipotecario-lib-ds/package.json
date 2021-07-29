@@ -1,6 +1,6 @@
 {
   "name": "@avaldigitallabs/bpop-hipotecario-lib-ds",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "license": "MIT",
   "private": false,
   "main": "./dist/lib.js",
@@ -39,7 +39,8 @@
     "build:storybook": "build-storybook -s public",
     "prebuild": "rm -rf dist",
     "build:lib": "rollup -c",
-    "build": "run-s prebuild build:lib"
+    "build": "run-s prebuild build:lib",
+    "check:pipeline": "run-s lint:all:fix lint prettier test build"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.1",

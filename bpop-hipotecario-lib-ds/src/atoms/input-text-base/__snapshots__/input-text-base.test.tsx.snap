@@ -3,6 +3,7 @@
 exports[`<InputTextBase /> should match snapshot 1`] = `
 <input
   className="default size-lg"
+  data-testid="input-test-id"
   id="input-test-id"
   onBlur={[Function]}
   onFocus={[MockFunction]}

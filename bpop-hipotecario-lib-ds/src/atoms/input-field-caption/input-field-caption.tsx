@@ -5,9 +5,19 @@ import { InputFieldCaptionProps } from "../../types";
 
 import styles from "./input-field-caption.module.css";
 
-const InputFieldCaption: FC<InputFieldCaptionProps> = ({ children, status = "default" }) => {
+const InputFieldCaption: FC<InputFieldCaptionProps> = ({
+  children,
+  dataTestId,
+  status = "default",
+  id = "input-field-caption",
+  ...props
+}) => {
   const captionClassName = classNames(styles["default"], { [styles[status]]: status !== "default" });
-  return <span className={captionClassName}>{children}</span>;
+  return (
+    <span id={id} data-testid={dataTestId || id} className={captionClassName} {...props}>
+      {children}
+    </span>
+  );
 };
 
 export default InputFieldCaption;

@@ -10,7 +10,7 @@ export default {
   title: "Molecules/InputTextFieldBase",
   component: InputTextFieldBase,
   args: {
-    id: "default-input-field-id",
+    id: "text-field-base-story",
     label: "Label",
     caption: "Caption Message",
     hasError: false,

@@ -1,12 +1,13 @@
 import { ChangeEventHandler, FocusEventHandler, FormEventHandler, MouseEventHandler, ReactNode } from "react";
 
+import { Testable } from "./global";
+
 export declare type InputTextBaseSize = "md" | "lg";
 export declare type InputTextBaseSpecialStatus = "success" | "warning" | "error";
 export declare type InputFieldType = "text" | "tel";
 export declare type validateInput = (value?: string | number) => boolean;
 
-export declare interface InputBaseProps {
-  id?: string;
+export declare interface InputBaseProps extends Testable {
   type?: string;
   name?: string;
   value?: string | number | readonly string[];
@@ -28,9 +29,15 @@ export declare interface InputTextBaseProps extends InputBaseProps {
 
 export declare interface InputTextFieldBaseProps extends Omit<InputTextBaseProps, "specialStatus" | "variant"> {
   label: string;
-  hasError?: boolean;
   caption?: string;
+  labelId?: string;
+  labelDataTestId?: string;
+  wrapperId?: string;
+  wrapperDataTestId?: string;
+  captionId?: string;
+  captionDataTestId?: string;
   type?: InputFieldType;
+  hasError?: boolean;
   validateInputValue?: validateInput;
 }
 
@@ -40,23 +47,43 @@ export declare interface NumberFieldProps extends Omit<TextFieldProps, "validate
   value?: number;
 }
 
-export declare interface RadioButtonProps extends InputBaseProps {
-  label: string;
-  fullWidth?: boolean;
+export declare interface ControlledInput extends InputBaseProps {
+  wrapperId?: string;
+  controlId?: string;
+  wrapperDataTestId?: string;
+  controlDataTestId?: string;
   checked?: boolean;
 }
 
-export declare interface CheckboxProps extends InputBaseProps {
+export declare interface RadioButtonProps extends ControlledInput {
+  label: string;
+  labelId?: string;
+  labelDataTestId?: string;
+  fullWidth?: boolean;
+}
+
+export declare interface CheckboxProps extends ControlledInput {
   hasError?: boolean;
 }
 
-export declare interface CheckboxFieldProps extends InputBaseProps {
+export declare interface CheckboxFieldProps extends CheckboxProps {
   children: ReactNode;
   name: string;
+  fieldWrapperId?: string;
+  fieldWrapperDataTestId?: string;
 }
 
-export declare interface DateFieldProps {
-  id: string;
+export declare interface DateFieldProps extends Testable {
+  labelId?: string;
+  labelDataTestId?: string;
+  captionId?: string;
+  captionDataTestId?: string;
+  dayFieldId?: string;
+  dayFieldDataTestId?: string;
+  monthFieldId?: string;
+  monthFieldDataTestId?: string;
+  yearFieldId?: string;
+  yearFieldDataTestId?: string;
   caption?: string;
   hasError?: boolean;
   label?: string;

@@ -7,7 +7,26 @@ import { NumberField } from "../number-field";
 import { InputFieldCaption } from "../../atoms/input-field-caption";
 import { InputFieldLabel } from "../../atoms/input-field-label";
 
-const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBlur, disabled, label }) => {
+const DateField: React.FC<DateFieldProps> = ({
+  caption,
+  hasError,
+  onChange,
+  onBlur,
+  disabled,
+  label,
+  labelId,
+  captionId,
+  dayFieldId,
+  monthFieldId,
+  yearFieldId,
+  dataTestId,
+  labelDataTestId,
+  captionDataTestId,
+  dayFieldDataTestId,
+  monthFieldDataTestId,
+  yearFieldDataTestId,
+  id = "date-field",
+}) => {
   const captionStatus: InputFieldCaptionStatus = hasError ? "error" : "default";
   const months = [
     "Enero",
@@ -30,24 +49,24 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBl
 
   useEffect(() => {
     onChange({ day, month, year });
-  }, [day, month, year]);
+  }, [day, month, year, onChange]);
 
   const handleDayChange = (v: number | null) => setDay(v || 0);
   const handleMonthChange = (v: string | number) => setMonth(+v);
   const handleYearChange = (v: number | null) => setYear(v || 0);
 
   return (
-    <div className={styles["wrapper"]}>
+    <div id={id} data-testid={dataTestId || id} className={styles["wrapper"]}>
       {!!label && (
-        <InputFieldLabel data-testid="datefield-label" htmlFor={"date-field-day"}>
+        <InputFieldLabel id={labelId || `${id}-label`} dataTestId={labelDataTestId} htmlFor={"date-field-day"}>
           {label}
         </InputFieldLabel>
       )}
       <div className={styles["inputs"]}>
         <div className={`${styles["input"]} ${styles["day"]}`}>
           <NumberField
-            data-testid="date-field-day"
-            id="date-field-day"
+            id={dayFieldId || `${id}-day`}
+            dataTestId={dayFieldDataTestId}
             label="Día"
             maxLength={2}
             placeholder="DD"
@@ -55,12 +74,13 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBl
             onBlur={onBlur}
             hasError={hasError}
             disabled={disabled}
-            onChange={(v) => handleDayChange(parseInt(v.target.value))}
+            onChange={(event) => handleDayChange(parseInt(event.target.value))}
           />
         </div>
         <div className={`${styles["input"]} ${styles["month"]}`}>
           <Dropdown
-            id="date-field-month"
+            id={monthFieldId || `${id}-month`}
+            dataTestId={monthFieldDataTestId || monthFieldId}
             items={months.map((v, i) => ({ label: v, value: i }))}
             label="Mes"
             value={month}
@@ -72,7 +92,8 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBl
         </div>
         <div className={`${styles["input"]} ${styles["year"]}`}>
           <NumberField
-            id="date-field-year"
+            id={yearFieldId || `${id}-year`}
+            dataTestId={yearFieldDataTestId}
             label="Año"
             maxLength={4}
             placeholder="AAAA"
@@ -80,11 +101,15 @@ const DateField: React.FC<DateFieldProps> = ({ caption, hasError, onChange, onBl
             onBlur={onBlur}
             hasError={hasError}
             disabled={disabled}
-            onChange={(v) => handleYearChange(parseInt(v.target.value))}
+            onChange={(event) => handleYearChange(parseInt(event.target.value))}
           />
         </div>
       </div>
-      {caption && <InputFieldCaption status={captionStatus}>{caption}</InputFieldCaption>}
+      {caption && (
+        <InputFieldCaption id={captionId || `${id}-caption`} dataTestId={captionDataTestId} status={captionStatus}>
+          {caption}
+        </InputFieldCaption>
+      )}
     </div>
   );
 };

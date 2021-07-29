@@ -4,7 +4,7 @@ export type { InputFieldCaptionProps, InputFieldCaptionStatus } from "./caption"
 
 export type { DropdownProps } from "./dropdown";
 
-export type { CombinedRef } from "./global";
+export type { Testable } from "./global";
 
 export type { IconProps } from "./icon";
 

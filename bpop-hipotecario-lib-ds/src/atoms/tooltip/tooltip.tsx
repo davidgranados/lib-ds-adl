@@ -6,20 +6,37 @@ import { Icon } from "../icon";
 
 import styles from "./tooltip.module.css";
 
-const Tooltip: FC<TooltipProps> = ({ children, textTitle, textBody }) => {
+const Tooltip: FC<TooltipProps> = ({ children, textTitle, textBody, dataTestId, id = "tooltip" }) => {
   const tooltipRef = useRef(null);
   const handleOnClickToggle = () => {
     toggleClassFromElement(tooltipRef.current, styles["visible"]);
   };
   return (
-    <div className={styles["wrapper"]} onClick={handleOnClickToggle}>
+    <div
+      id={`${id}-wrapper`}
+      data-testid={dataTestId ? `${dataTestId}-wrapper}` : `${id}-wrapper`}
+      className={styles["wrapper"]}
+      onClick={handleOnClickToggle}
+    >
       {children}
-      <div ref={tooltipRef} className={styles["tooltip-wrapper"]}>
-        <div className={styles["tooltip-body"]}>
-          <span className={styles["icon-wrapper"]}>
-            <Icon name={"close"} className={styles["icon-close"]} />
+      <div id={id} data-testid={dataTestId || id} ref={tooltipRef} className={styles["content-wrapper"]}>
+        <div
+          id={`${id}-content-body`}
+          data-testid={dataTestId ? `${dataTestId}-content-body` : `${id}-content-body`}
+          className={styles["content-body"]}
+        >
+          <span
+            id={`${id}-icon-wrapper`}
+            data-testid={dataTestId ? `${dataTestId}-icon-wrapper` : `${id}-icon-wrapper`}
+            className={styles["icon-wrapper"]}
+          >
+            <Icon id={`${id}-close-icon`} name={"close"} className={styles["icon-close"]} />
           </span>
-          <div className={styles["tooltip-text"]}>
+          <div
+            id={`${id}-content-text`}
+            data-testid={dataTestId ? `${dataTestId}-content-text` : `${id}-content-text`}
+            className={styles["content-text"]}
+          >
             <span>{textTitle}</span>
             <span>{textBody}</span>
           </div>
