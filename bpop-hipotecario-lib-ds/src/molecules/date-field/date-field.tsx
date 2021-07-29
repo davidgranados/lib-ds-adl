@@ -49,7 +49,8 @@ const DateField: React.FC<DateFieldProps> = ({
 
   useEffect(() => {
     onChange({ day, month, year });
-  }, [day, month, year, onChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [day, month, year]);
 
   const handleDayChange = (v: number | null) => setDay(v || 0);
   const handleMonthChange = (v: string | number) => setMonth(+v);

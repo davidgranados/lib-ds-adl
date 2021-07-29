@@ -1,6 +1,5 @@
 .wrapper {
   --arrow-height: 12px;
-  --arrow-height-margin-top: calc(var(--arrow-height) * 2);
 
   position: relative;
   display: inline-block;
@@ -10,7 +9,7 @@
 .content-wrapper {
   position: absolute;
   z-index: 1;
-  bottom: calc(100% + var(--arrow-height-margin-top));
+  bottom: calc(100% + var(--arrow-height));
   background-color: #00c000;
   border-radius: 8px;
   visibility: hidden;
@@ -25,7 +24,7 @@
 
 .wrapper-arrow::before {
   position: absolute;
-  top: calc(var(--arrow-height-margin-top) * -1);
+  top: calc(var(--arrow-height) * -1);
   left: 50%;
   border-width: var(--arrow-height);
   border-style: solid;
@@ -64,10 +63,4 @@
 
 .content-wrapper.visible {
   visibility: visible;
-}
-
-@media (max-width: 599px) {
-  .wrapper {
-    --arrow-height-margin-top: var(--arrow-height);
-  }
 }
