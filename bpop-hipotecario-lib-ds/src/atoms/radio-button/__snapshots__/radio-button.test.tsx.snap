@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton /> should match snapshot 1`] = `
+<label
+  className="wrapper wrapper--enabled"
+  data-testid="radio-button-wrapper"
+  id="radio-button-wrapper"
+>
+  <span
+    className="control-wrapper"
+  >
+    <input
+      className="input"
+      data-testid="radio-button"
+      id="radio-button"
+      onChange={[Function]}
+      type="radio"
+    />
+    <span
+      className="control"
+      data-testid="radio-button-control"
+      id="radio-button-control"
+    >
+      <span
+        className="control__circle"
+      />
+    </span>
+  </span>
+  <span
+    className="label"
+    data-testid="radio-button-label"
+    id="radio-button-label"
+  >
+    radio-button
+  </span>
+</label>
+`;

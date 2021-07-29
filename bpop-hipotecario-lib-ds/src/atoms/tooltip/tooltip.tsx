@@ -1,25 +1,55 @@
-import React, { FC, useRef } from "react";
+import React, { FC, useRef, useState } from "react";
 
 import { toggleClassFromElement } from "../../helpers";
 import { TooltipProps } from "../../types";
 import { Icon } from "../icon";
 
 import styles from "./tooltip.module.css";
+import classNames from "classnames";
 
-const Tooltip: FC<TooltipProps> = ({ children, textTitle, textBody, dataTestId, id = "tooltip" }) => {
+const Tooltip: FC<TooltipProps> = ({
+  children,
+  textTitle,
+  textBody,
+  dataTestId,
+  marginLeft = 0,
+  marginRight = 0,
+  id = "tooltip",
+  fullWidth = false,
+}) => {
+  const contentWrapperClassName = classNames(styles["content-wrapper"], {
+    [styles["content-wrapper--static-width"]]: !fullWidth,
+  });
+  const [showArrow, setShowArrow] = useState(false);
+  const [tooltipFullWidthInlineStyles, setTooltipFullWidthInlineStyles] = useState({
+    width: `calc(calc(100vw - ${marginLeft}px) - ${marginRight}px)`,
+  });
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef(null);
   const handleOnClickToggle = () => {
+    if (fullWidth && wrapperRef.current) {
+      setTooltipFullWidthInlineStyles((prevState) => {
+        return { ...prevState, left: `calc(${marginLeft}px - ${wrapperRef.current?.getBoundingClientRect().x}px)` };
+      });
+    }
     toggleClassFromElement(tooltipRef.current, styles["visible"]);
+    setShowArrow((prevState) => !prevState);
   };
   return (
     <div
+      ref={wrapperRef}
       id={`${id}-wrapper`}
-      data-testid={dataTestId ? `${dataTestId}-wrapper}` : `${id}-wrapper`}
+      data-testid={dataTestId ? `${dataTestId}-wrapper` : `${id}-wrapper`}
       className={styles["wrapper"]}
       onClick={handleOnClickToggle}
     >
-      {children}
-      <div id={id} data-testid={dataTestId || id} ref={tooltipRef} className={styles["content-wrapper"]}>
+      <div
+        id={id}
+        data-testid={dataTestId || id}
+        ref={tooltipRef}
+        className={contentWrapperClassName}
+        style={fullWidth ? tooltipFullWidthInlineStyles : undefined}
+      >
         <div
           id={`${id}-content-body`}
           data-testid={dataTestId ? `${dataTestId}-content-body` : `${id}-content-body`}
@@ -42,6 +72,8 @@ const Tooltip: FC<TooltipProps> = ({ children, textTitle, textBody, dataTestId, 
           </div>
         </div>
       </div>
+      {showArrow && <span className={styles["wrapper-arrow"]} />}
+      {children}
     </div>
   );
 };
