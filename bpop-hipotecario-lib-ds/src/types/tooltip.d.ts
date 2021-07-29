@@ -6,4 +6,7 @@ export declare interface TooltipProps extends Testable {
   children: ReactNode;
   textTitle: string;
   textBody: string;
+  fullWidth?: boolean;
+  marginLeft?: number;
+  marginRight?: number;
 }

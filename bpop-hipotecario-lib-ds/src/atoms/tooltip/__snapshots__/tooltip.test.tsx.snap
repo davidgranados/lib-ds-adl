@@ -7,9 +7,8 @@ exports[`<Tooltip /> should match snapshot 1`] = `
   id="tooltip-wrapper"
   onClick={[Function]}
 >
-  Click Me!
   <div
-    className="content-wrapper"
+    className="content-wrapper content-wrapper--static-width"
     data-testid="tooltip"
     id="tooltip"
   >
@@ -43,5 +42,57 @@ exports[`<Tooltip /> should match snapshot 1`] = `
       </div>
     </div>
   </div>
+  Click Me!
+</div>
+`;
+
+exports[`<Tooltip /> should match snapshot fullwidth 1`] = `
+<div
+  className="wrapper"
+  data-testid="tooltip-wrapper"
+  id="tooltip-wrapper"
+  onClick={[Function]}
+>
+  <div
+    className="content-wrapper"
+    data-testid="tooltip"
+    id="tooltip"
+    style={
+      Object {
+        "width": "calc(calc(100vw - 20px) - 20px)",
+      }
+    }
+  >
+    <div
+      className="content-body"
+      data-testid="tooltip-content-body"
+      id="tooltip-content-body"
+    >
+      <span
+        className="icon-wrapper"
+        data-testid="tooltip-icon-wrapper"
+        id="tooltip-icon-wrapper"
+      >
+        <span
+          className="icon icon-close icon-close"
+          data-testid="tooltip-close-icon"
+          id="tooltip-close-icon"
+        />
+      </span>
+      <div
+        className="content-text"
+        data-testid="tooltip-content-text"
+        id="tooltip-content-text"
+      >
+        <span>
+          tooltip title
+        </span>
+        <span>
+          tooltip body
+        </span>
+      </div>
+    </div>
+  </div>
+  Click Me!
 </div>
 `;

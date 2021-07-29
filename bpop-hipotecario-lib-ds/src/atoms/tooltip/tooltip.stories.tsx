@@ -26,3 +26,9 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
 );
 
 export const Default = Template.bind({});
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  fullWidth: true,
+  marginRight: 20,
+  marginLeft: 20,
+};
