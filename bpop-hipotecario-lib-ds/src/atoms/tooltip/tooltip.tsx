@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { FC, useRef, useState } from "react";
 
 import { toggleClassFromElement } from "../../helpers";
@@ -5,7 +6,6 @@ import { TooltipProps } from "../../types";
 import { Icon } from "../icon";
 
 import styles from "./tooltip.module.css";
-import classNames from "classnames";
 
 const Tooltip: FC<TooltipProps> = ({
   children,
