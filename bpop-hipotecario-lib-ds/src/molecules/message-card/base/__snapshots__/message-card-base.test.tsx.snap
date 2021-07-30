@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MessageCardBase /> should match snapshot 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="content-wrapper"
+  >
+    <img
+      alt="icon alt text"
+      className="main-icon"
+      src="80-warning.svg"
+      title="icon title"
+    />
+    <div
+      className="text-wrapper"
+    >
+      <h6
+        className="title"
+      >
+        Lo sentimos, no es posible continuar
+      </h6>
+      <p
+        className="subtitle"
+      >
+        Esta solicitud no es viable
+      </p>
+    </div>
+  </div>
+  <div
+    className="button-container"
+  >
+    <div
+      className="button-wrapper"
+    >
+      <button
+        className="default primary size-md full-width"
+        data-testid="button-button-Salir de esta solicitud"
+        id="button-button-Salir de esta solicitud"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Salir de esta solicitud
+      </button>
+    </div>
+  </div>
+</div>
+`;

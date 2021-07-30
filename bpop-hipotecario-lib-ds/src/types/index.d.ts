@@ -26,6 +26,8 @@ export type {
 
 export type { InputFieldLabelProps } from "./label";
 
+export type { MessageCardBaseProps, MessageCardWarningProps } from "./message-card";
+
 export type { ModalProps } from "./modal";
 
 export type { TooltipProps } from "./tooltip";

@@ -10,9 +10,9 @@
   position: absolute;
   z-index: 1;
   bottom: calc(100% + var(--arrow-height));
+  display: none;
   background-color: #00c000;
   border-radius: 8px;
-  visibility: hidden;
 }
 
 .content-wrapper--static-width {
@@ -63,5 +63,5 @@
 }
 
 .content-wrapper.visible {
-  visibility: visible;
+  display: block;
 }
