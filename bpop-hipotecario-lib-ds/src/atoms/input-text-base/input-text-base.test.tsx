@@ -1,5 +1,6 @@
 import React from "react";
 import { mount, ReactWrapper } from "enzyme";
+
 import InputTextBase from "./input-text-base";
 
 describe("<InputTextBase />", () => {

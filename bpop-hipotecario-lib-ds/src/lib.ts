@@ -3,6 +3,7 @@ export { CheckboxField } from "./molecules/checkbox-field";
 export { DateField } from "./molecules/date-field";
 export { Dropdown } from "./molecules/dropdown";
 export { Icon } from "./atoms/icon";
+export { MessageCardWarning } from "./molecules/message-card/warning";
 export { Modal } from "./molecules/modal";
 export { NumberField } from "./molecules/number-field";
 export { RadioButton } from "./atoms/radio-button";

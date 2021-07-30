@@ -1,14 +1,14 @@
 import React from "react";
 import { mount, ReactWrapper } from "enzyme";
 
-import { InputBaseSize, InputFieldType } from "../../types";
+import { InputTextBaseSize, InputFieldType } from "../../types";
 
 import TextField from "./text-field";
 
 describe("<TextField />", () => {
   let wrapper: ReactWrapper<typeof TextField>;
   const type: InputFieldType = "text";
-  const size: InputBaseSize = "md";
+  const size: InputTextBaseSize = "md";
   const caption = "test caption";
   const props = {
     id: "test-number-field-old-id",
