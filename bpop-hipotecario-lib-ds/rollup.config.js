@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
+import cssurl from "postcss-url";
 import copy from "rollup-plugin-copy";
 import image from "@rollup/plugin-image";
 
@@ -27,7 +28,7 @@ export default {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true, tsconfig: "./tsconfig.prod.json" }),
-    postcss({ modules: true }),
+    postcss({ modules: true, plugins: [cssurl({ url: "inline" })] }),
     image(),
     copy({
       targets: [
