@@ -2,6 +2,13 @@
 
 exports[`<Container /> should match snapshot 1`] = `
 <div
-  className="default"
-/>
+  className="default class-from-implementation"
+>
+  <h6
+    className="title title-class-from-implementation"
+  >
+    This is the title
+  </h6>
+  Im in a Container
+</div>
 `;
