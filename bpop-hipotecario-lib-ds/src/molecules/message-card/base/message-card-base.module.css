@@ -74,7 +74,7 @@
   width: 220px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 380px) {
   .wrapper {
     --main-wrapper-width: 320px;
   }
