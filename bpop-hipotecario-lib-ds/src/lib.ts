@@ -1,5 +1,6 @@
 export { Button } from "./atoms/button";
 export { CheckboxField } from "./molecules/checkbox-field";
+export { Container } from "./layout/container";
 export { DateField } from "./molecules/date-field";
 export { Dropdown } from "./molecules/dropdown";
 export { Icon } from "./atoms/icon";
