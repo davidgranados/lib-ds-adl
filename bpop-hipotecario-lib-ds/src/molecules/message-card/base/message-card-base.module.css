@@ -46,21 +46,21 @@
 }
 
 .text-wrapper {
-  z-index: 10;
+  z-index: 1;
   width: 100%;
 }
 
 .title {
   margin: 0;
   color: black;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
 }
 
 .subtitle {
   margin: 10px 0 0 0;
   color: #555;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .button-container {
@@ -88,7 +88,7 @@
   }
 
   .title {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .button-wrapper {

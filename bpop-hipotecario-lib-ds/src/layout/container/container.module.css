@@ -7,6 +7,15 @@
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  font-family: "Inter", sans-serif;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  line-height: 1.43;
 }
 
 @media (max-width: 599px) {
@@ -15,5 +24,10 @@
     margin: 24px auto auto auto;
     background-color: transparent;
     box-shadow: none;
+  }
+
+  .title {
+    font-size: 1.3125rem;
+    line-height: 1.52;
   }
 }
