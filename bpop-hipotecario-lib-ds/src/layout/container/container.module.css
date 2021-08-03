@@ -3,7 +3,7 @@
   box-sizing: border-box;
   flex: 1;
   padding: 48px;
-  margin: 40px auto auto auto;
+  margin: 40px auto 10px auto;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
@@ -21,7 +21,7 @@
 @media (max-width: 599px) {
   .default {
     padding: 0 20px;
-    margin: 24px auto auto auto;
+    margin: 24px auto 10px auto;
     background-color: transparent;
     box-shadow: none;
   }
