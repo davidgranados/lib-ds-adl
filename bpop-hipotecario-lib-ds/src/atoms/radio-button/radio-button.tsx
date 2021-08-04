@@ -2,9 +2,9 @@ import classNames from "classnames";
 import React, { useCallback, useEffect, useRef } from "react";
 
 import { RadioButtonProps } from "../../types/input-field";
-import { addClassToElement, removeClassFromElement } from "../../helpers";
 
 import styles from "./radio-button.module.css";
+import { checkThisRadio } from "./helpers";
 
 const RadioButton: React.FC<RadioButtonProps> = ({
   disabled,
@@ -29,26 +29,20 @@ const RadioButton: React.FC<RadioButtonProps> = ({
     [styles["full-width"]]: fullWidth,
   });
 
-  const wrapperRef = useRef(null);
+  const wrapperRef = useRef<HTMLLabelElement>(null);
 
-  const handleInputOnChange = useCallback(
-    (event?: React.ChangeEvent<HTMLInputElement>) => {
-      const allRadioButtonsInDOM = Array.from(document.querySelectorAll(`input[type="radio"][name="${name}"]`));
-      const allWrappersInDOM = allRadioButtonsInDOM.map((input) => {
-        return input.closest(`.${styles["wrapper"]}`);
-      });
-      allWrappersInDOM.forEach((wrapperElement) => {
-        removeClassFromElement(wrapperElement, styles["wrapper--checked"]);
-      });
-      addClassToElement(wrapperRef.current, styles["wrapper--checked"]);
-      event && onChange && onChange(event);
-    },
-    [name, onChange]
-  );
+  const _checkThisRadio = useCallback((): void => {
+    if (wrapperRef.current && name) checkThisRadio(wrapperRef.current, name);
+  }, [name]);
+
+  const handleInputOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    _checkThisRadio();
+    onChange && onChange(event);
+  };
 
   useEffect(() => {
-    if (checked) handleInputOnChange();
-  }, [checked, handleInputOnChange]);
+    if (checked) _checkThisRadio();
+  }, [_checkThisRadio, checked, name]);
 
   return (
     <label
@@ -64,8 +58,8 @@ const RadioButton: React.FC<RadioButtonProps> = ({
           className={styles["input"]}
           type="radio"
           name={name}
-          checked={checked}
           disabled={disabled}
+          defaultChecked={checked}
           onChange={handleInputOnChange}
           {...props}
         />
