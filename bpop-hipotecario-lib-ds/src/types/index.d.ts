@@ -32,4 +32,6 @@ export type { MessageCardBaseProps, MessageCardWarningProps } from "./message-ca
 
 export type { ModalProps } from "./modal";
 
+export type { ConfirmModalProps } from "./confirm-modal";
+
 export type { TooltipProps } from "./tooltip";

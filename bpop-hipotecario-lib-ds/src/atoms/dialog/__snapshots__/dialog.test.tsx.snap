@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog Dialog should renders ok 1`] = `
+<div
+  className="wrapper show false"
+  data-testid="dialog-wrapper"
+  id="dialog-wrapper"
+>
+  <div
+    className="overflow"
+    id="dialog-wrapper-overflow"
+    onClick={[Function]}
+  />
+  <div
+    className="modal"
+    data-testid="dialog"
+    id="dialog"
+    style={
+      Object {
+        "width": undefined,
+      }
+    }
+  />
+</div>
+`;

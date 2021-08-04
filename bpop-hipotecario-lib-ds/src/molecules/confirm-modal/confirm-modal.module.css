@@ -1,0 +1,85 @@
+.confirm-modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+
+.img {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 12px 0;
+  background-color: #fdeaae;
+  border-radius: 50%;
+}
+
+.icon {
+  color: #fd9700;
+  font-size: 32px;
+}
+
+.title {
+  margin: 0 0 8px 0;
+  color: #0d0d0d;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.75;
+  text-align: center;
+}
+
+.description {
+  margin: 0 0 24px 0;
+  color: #000;
+  font-size: 13px;
+  letter-spacing: normal;
+  line-height: 2.15;
+  text-align: center;
+}
+
+button {
+  margin: 0 0 24px 0;
+}
+
+.secondary-button {
+  color: #fc7121;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.71;
+  text-align: center;
+}
+
+@media screen and (max-width: 599px) {
+  .wrapper .modal {
+    max-height: calc(100% - 48px);
+  }
+
+  .wrapper .modal .header .close .icon {
+    font-size: 1.5rem;
+  }
+
+  .wrapper .modal .header .title {
+    margin: 50px 24px 8px 24px;
+  }
+
+  .wrapper .modal .header .title h6 {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .wrapper .modal .content {
+    margin: 0 20px 20px 20px;
+    overflow-y: scroll;
+  }
+
+  .wrapper .modal .footer {
+    margin: 0 24px 24px 24px;
+  }
+
+  .wrapper .modal .footer button {
+    width: 100%;
+  }
+}
