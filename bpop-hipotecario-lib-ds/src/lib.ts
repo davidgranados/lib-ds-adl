@@ -10,3 +10,5 @@ export { NumberField } from "./molecules/number-field";
 export { RadioButton } from "./atoms/radio-button";
 export { TextField } from "./molecules/text-field";
 export { Tooltip } from "./atoms/tooltip";
+export { AlertBadge } from "./molecules/alert-badge";
+export { ConfirmModal } from "./molecules/confirm-modal";
