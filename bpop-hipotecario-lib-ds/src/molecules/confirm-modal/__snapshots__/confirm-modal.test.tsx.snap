@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmModal ConfirmModal should renders ok 1`] = `
+<Dialog
+  dataTestId="confirm-modal-undefined"
+  onToggle={[Function]}
+  show={false}
+  width={320}
+>
+  <div
+    className="confirm-modal-wrapper"
+  >
+    <div
+      className="img"
+    >
+      <span
+        className="icon icon-exclamation-open-circle"
+      />
+    </div>
+    <div
+      className="title"
+    >
+      Modal title
+    </div>
+    <div
+      className="description"
+    />
+    <Button
+      fullWidth={true}
+      id="confirm-modal-primary-button"
+      onClick={[Function]}
+      size="md"
+      text="main"
+      variant="primary"
+    />
+    <span
+      className="secondary-button"
+      id="secondary-button"
+      onClick={[Function]}
+    >
+      second
+    </span>
+  </div>
+</Dialog>
+`;
