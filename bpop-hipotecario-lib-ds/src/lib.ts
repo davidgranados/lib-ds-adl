@@ -1,4 +1,5 @@
 export { Button } from "./atoms/button";
+export { BooleanRadioField } from "./molecules/boolean-radio-field";
 export { CheckboxField } from "./molecules/checkbox-field";
 export { Container } from "./layout/container";
 export { DateField } from "./molecules/date-field";
