@@ -67,8 +67,8 @@ const Tooltip: FC<TooltipProps> = ({
             data-testid={dataTestId ? `${dataTestId}-content-text` : `${id}-content-text`}
             className={styles["content-text"]}
           >
-            <span>{textTitle}</span>
-            <span>{textBody}</span>
+            {!!textTitle && <span>{textTitle}</span>}
+            {!!textBody && <span>{textBody}</span>}
           </div>
         </div>
       </div>
