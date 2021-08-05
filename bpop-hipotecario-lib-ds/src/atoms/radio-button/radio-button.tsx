@@ -42,7 +42,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
 
   useEffect(() => {
     if (checked) _checkThisRadio();
-  }, [_checkThisRadio, checked, name]);
+  }, [_checkThisRadio, checked]);
 
   return (
     <label
