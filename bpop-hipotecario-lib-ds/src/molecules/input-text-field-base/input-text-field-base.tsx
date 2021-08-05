@@ -4,6 +4,7 @@ import { InputFieldCaptionStatus, InputTextFieldBaseProps } from "../../types";
 import { InputFieldLabel } from "../../atoms/input-field-label";
 import { InputFieldCaption } from "../../atoms/input-field-caption";
 import { InputTextBase } from "../../atoms/input-text-base";
+import { TooltipIcon } from "../../atoms/tooltip-icon";
 
 const InputTextFieldBase: React.FC<InputTextFieldBaseProps> = ({
   label,
@@ -18,6 +19,12 @@ const InputTextFieldBase: React.FC<InputTextFieldBaseProps> = ({
   validateInputValue,
   onChange,
   hasError = false,
+  tooltipIcon,
+  tooltipTextTitle,
+  tooltipTextBody,
+  tooltipMarginLeft,
+  tooltipMarginRight,
+  withTooltip = false,
   value = "",
   type = "text",
   id = "input-text-field-base",
@@ -39,6 +46,15 @@ const InputTextFieldBase: React.FC<InputTextFieldBaseProps> = ({
       <InputFieldLabel id={labelId || `${id}-label`} dataTestId={labelDataTestId} htmlFor={id}>
         {label}
       </InputFieldLabel>
+      {withTooltip && (
+        <TooltipIcon
+          icon={tooltipIcon}
+          textTitle={tooltipTextTitle}
+          textBody={tooltipTextBody}
+          marginLeft={tooltipMarginLeft}
+          marginRight={tooltipMarginRight}
+        />
+      )}
       <InputTextBase
         id={id}
         dataTestId={dataTestId}

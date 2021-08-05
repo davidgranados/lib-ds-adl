@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BooleanRadioField /> should match snapshot 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="label"
+  >
+    ¿Realiza operaciones internacionales?
+    Array [
+      <span
+        className="mobile-inline-only"
+      >
+        <div
+          className="wrapper"
+          data-testid="tooltip-wrapper"
+          id="tooltip-wrapper"
+          onClick={[Function]}
+        >
+          <div
+            className="content-wrapper"
+            data-testid="tooltip"
+            id="tooltip"
+            style={
+              Object {
+                "width": "calc(calc(100vw - 0px) - 0px)",
+              }
+            }
+          >
+            <div
+              className="content-body"
+              data-testid="tooltip-content-body"
+              id="tooltip-content-body"
+            >
+              <span
+                className="icon-wrapper"
+                data-testid="tooltip-icon-wrapper"
+                id="tooltip-icon-wrapper"
+              >
+                <span
+                  className="icon icon-close icon-close"
+                  data-testid="tooltip-close-icon"
+                  id="tooltip-close-icon"
+                />
+              </span>
+              <div
+                className="content-text"
+                data-testid="tooltip-content-text"
+                id="tooltip-content-text"
+              >
+                <span>
+                  Son los movimientos financieros que realizas en otros países a través de cuentas en el exterior a tu nombre. No son compras por internet, suscripciones a servicios o remesas/giros.
+                </span>
+              </div>
+            </div>
+          </div>
+          <span
+            className="icon icon-exclamation-open-circle trigger"
+            data-testid="icon-exclamation-open-circle"
+            id="icon-exclamation-open-circle"
+          />
+        </div>
+      </span>,
+      <span
+        className="desktop-inline-only"
+      >
+        <div
+          className="wrapper"
+          data-testid="tooltip-wrapper"
+          id="tooltip-wrapper"
+          onClick={[Function]}
+        >
+          <div
+            className="content-wrapper content-wrapper--static-width"
+            data-testid="tooltip"
+            id="tooltip"
+          >
+            <div
+              className="content-body"
+              data-testid="tooltip-content-body"
+              id="tooltip-content-body"
+            >
+              <span
+                className="icon-wrapper"
+                data-testid="tooltip-icon-wrapper"
+                id="tooltip-icon-wrapper"
+              >
+                <span
+                  className="icon icon-close icon-close"
+                  data-testid="tooltip-close-icon"
+                  id="tooltip-close-icon"
+                />
+              </span>
+              <div
+                className="content-text"
+                data-testid="tooltip-content-text"
+                id="tooltip-content-text"
+              >
+                <span>
+                  Son los movimientos financieros que realizas en otros países a través de cuentas en el exterior a tu nombre. No son compras por internet, suscripciones a servicios o remesas/giros.
+                </span>
+              </div>
+            </div>
+          </div>
+          <span
+            className="icon icon-exclamation-open-circle trigger"
+            data-testid="icon-exclamation-open-circle"
+            id="icon-exclamation-open-circle"
+          />
+        </div>
+      </span>,
+    ]
+  </div>
+  <div
+    className="radio-buttons-wrapper"
+  >
+    <label
+      className="wrapper wrapper--enabled"
+      data-testid="boolean-radio-field-false-wrapper"
+      id="boolean-radio-field-false-wrapper"
+    >
+      <span
+        className="control-wrapper"
+      >
+        <input
+          className="input"
+          data-testid="boolean-radio-field-false"
+          defaultChecked={true}
+          id="boolean-radio-field-false"
+          name="international-payments"
+          onChange={[Function]}
+          type="radio"
+          value="false"
+        />
+        <span
+          className="control"
+          data-testid="boolean-radio-field-false-control"
+          id="boolean-radio-field-false-control"
+        >
+          <span
+            className="control__circle"
+          />
+        </span>
+      </span>
+      <span
+        className="label"
+        data-testid="boolean-radio-field-false-label"
+        id="boolean-radio-field-false-label"
+      >
+        No
+      </span>
+    </label>
+    <label
+      className="wrapper wrapper--enabled"
+      data-testid="boolean-radio-field-true-wrapper"
+      id="boolean-radio-field-true-wrapper"
+    >
+      <span
+        className="control-wrapper"
+      >
+        <input
+          className="input"
+          data-testid="boolean-radio-field-true"
+          defaultChecked={false}
+          id="boolean-radio-field-true"
+          name="international-payments"
+          onChange={[Function]}
+          type="radio"
+          value="true"
+        />
+        <span
+          className="control"
+          data-testid="boolean-radio-field-true-control"
+          id="boolean-radio-field-true-control"
+        >
+          <span
+            className="control__circle"
+          />
+        </span>
+      </span>
+      <span
+        className="label"
+        data-testid="boolean-radio-field-true-label"
+        id="boolean-radio-field-true-label"
+      >
+        Si
+      </span>
+    </label>
+  </div>
+</div>
+`;

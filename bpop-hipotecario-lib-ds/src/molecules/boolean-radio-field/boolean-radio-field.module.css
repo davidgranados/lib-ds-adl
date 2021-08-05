@@ -1,0 +1,14 @@
+.wrapper {
+  font-family: "Inter", sans-serif;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.radio-buttons-wrapper {
+  display: flex;
+  margin-top: 16px;
+  gap: 16px;
+}

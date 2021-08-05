@@ -1,0 +1,33 @@
+.mobile-inline-only {
+  display: none;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-inline-only {
+  display: inline-block;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 599px) {
+  .mobile-inline-only {
+    display: inline-block;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-inline-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}

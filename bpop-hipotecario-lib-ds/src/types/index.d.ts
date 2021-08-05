@@ -9,6 +9,7 @@ export type { Testable } from "./global";
 export type { IconProps } from "./icon";
 
 export type {
+  BooleanRadioFieldProps,
   CheckboxFieldProps,
   CheckboxProps,
   DateFieldProps,
@@ -34,4 +35,4 @@ export type { ModalProps } from "./modal";
 
 export type { ConfirmModalProps } from "./confirm-modal";
 
-export type { TooltipProps } from "./tooltip";
+export type { TooltipProps, TooltipIconProps, WithTooltip, WithTooltipIcon } from "./tooltip";
