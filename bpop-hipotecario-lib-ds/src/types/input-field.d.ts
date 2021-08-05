@@ -1,6 +1,7 @@
 import { ChangeEventHandler, FocusEventHandler, FormEventHandler, MouseEventHandler, ReactNode } from "react";
 
 import { Testable } from "./global";
+import { WithTooltipIcon } from "./tooltip";
 
 export declare type InputTextBaseSize = "md" | "lg";
 export declare type InputTextBaseSpecialStatus = "success" | "warning" | "error";
@@ -27,7 +28,9 @@ export declare interface InputTextBaseProps extends InputBaseProps {
   onInput?: FormEventHandler<HTMLInputElement>;
 }
 
-export declare interface InputTextFieldBaseProps extends Omit<InputTextBaseProps, "specialStatus" | "variant"> {
+export declare interface InputTextFieldBaseProps
+  extends Omit<InputTextBaseProps, "specialStatus" | "variant">,
+    WithTooltipIcon {
   label: string;
   caption?: string;
   labelId?: string;
@@ -91,4 +94,15 @@ export declare interface DateFieldProps extends Testable {
   disabled?: boolean;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   onChange: (v: { day: number; month: number; year: number }) => void;
+}
+
+export declare interface BooleanRadioFieldProps extends Testable, WithTooltipIcon {
+  name: string;
+  initialValue: boolean;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  labelText: string;
+  falseValueLabel?: string;
+  trueValueLabel?: string;
+  falseValueId?: string;
+  trueValueId?: string;
 }

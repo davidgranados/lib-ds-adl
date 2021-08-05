@@ -18,6 +18,11 @@ export default {
     placeholder: "Input Base",
     size: "md",
     maxLength: 10,
+    withTooltip: true,
+    tooltipTextTitle: "tooltip title",
+    tooltipTextBody: "tooltip text body",
+    tooltipMarginLeft: 20,
+    tooltipMarginRight: 20,
   },
   argTypes: {
     hasError: { control: "boolean" },
@@ -28,8 +33,15 @@ export default {
     onInput: { action: "typing" },
     onChange: { action: "changed" },
   },
+  parameters: {
+    layout: "centered",
+  },
 } as ComponentMeta<typeof InputTextFieldBase>;
 
-const Template: ComponentStory<typeof InputTextFieldBase> = (args) => <InputTextFieldBase {...args} />;
+const Template: ComponentStory<typeof InputTextFieldBase> = (args) => (
+  <div>
+    <InputTextFieldBase {...args} />
+  </div>
+);
 
 export const Default = Template.bind({});
