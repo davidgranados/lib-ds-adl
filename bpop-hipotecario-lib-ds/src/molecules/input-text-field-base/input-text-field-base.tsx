@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { getSuffixedId } from "../../helpers";
 import { InputFieldCaptionStatus, InputTextFieldBaseProps } from "../../types";
 import { InputFieldLabel } from "../../atoms/input-field-label";
 import { InputFieldCaption } from "../../atoms/input-field-caption";
@@ -9,13 +10,7 @@ import { TooltipIcon } from "../../atoms/tooltip-icon";
 const InputTextFieldBase: React.FC<InputTextFieldBaseProps> = ({
   label,
   caption,
-  labelId,
-  wrapperId,
-  captionId,
   dataTestId,
-  labelDataTestId,
-  wrapperDataTestId,
-  captionDataTestId,
   validateInputValue,
   onChange,
   hasError = false,
@@ -42,12 +37,13 @@ const InputTextFieldBase: React.FC<InputTextFieldBaseProps> = ({
     onChange && onChange(event);
   };
   return (
-    <div id={wrapperId || `${id}-wrapper`} data-testid={wrapperDataTestId || wrapperId || `${id}-wrapper`}>
-      <InputFieldLabel id={labelId || `${id}-label`} dataTestId={labelDataTestId} htmlFor={id}>
+    <div {...getSuffixedId(id, "wrapper", dataTestId)}>
+      <InputFieldLabel {...getSuffixedId(id, "label", dataTestId, true)} htmlFor={id}>
         {label}
       </InputFieldLabel>
       {withTooltip && (
         <TooltipIcon
+          {...getSuffixedId(id, "tooltip-icon", dataTestId, true)}
           icon={tooltipIcon}
           textTitle={tooltipTextTitle}
           textBody={tooltipTextBody}
@@ -65,7 +61,7 @@ const InputTextFieldBase: React.FC<InputTextFieldBaseProps> = ({
         {...props}
       />
       {caption && (
-        <InputFieldCaption id={captionId || `${id}-caption`} dataTestId={captionDataTestId} status={captionStatus}>
+        <InputFieldCaption {...getSuffixedId(id, "caption", dataTestId, true)} status={captionStatus}>
           {caption}
         </InputFieldCaption>
       )}

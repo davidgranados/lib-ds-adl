@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { FC, useRef } from "react";
 
-import { addClassToElement, removeClassFromElement } from "../../helpers";
+import { addClassToElement, getId, removeClassFromElement } from "../../helpers";
 import { InputTextBaseProps } from "../../types";
 
 import styles from "./input-text-base.module.css";
@@ -41,8 +41,7 @@ const InputTextBase: FC<InputTextBaseProps> = ({
   };
   return (
     <input
-      id={id}
-      data-testid={dataTestId || id}
+      {...getId(id, dataTestId)}
       name={name}
       type={type}
       ref={inputRef}

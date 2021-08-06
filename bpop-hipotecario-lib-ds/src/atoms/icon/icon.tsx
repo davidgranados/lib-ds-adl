@@ -2,6 +2,7 @@ import classNames from "classnames";
 import React from "react";
 
 import { IconProps } from "../../types";
+
 import "../../icons/icomoon.css";
 
 const Icon: React.FC<IconProps> = ({ name, className, dataTestId, id, ...props }) => {

@@ -8,7 +8,7 @@ export default {
   title: "Molecules/BooleanRadioField",
   component: BooleanRadioField,
   args: {
-    id: "text-field-base-story",
+    id: "boolean-radio-field-story",
     withTooltip: true,
     name: "international-payments",
     initialValue: false,

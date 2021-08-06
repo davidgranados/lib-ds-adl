@@ -33,12 +33,6 @@ export declare interface InputTextFieldBaseProps
     WithTooltipIcon {
   label: string;
   caption?: string;
-  labelId?: string;
-  labelDataTestId?: string;
-  wrapperId?: string;
-  wrapperDataTestId?: string;
-  captionId?: string;
-  captionDataTestId?: string;
   type?: InputFieldType;
   hasError?: boolean;
   validateInputValue?: validateInput;
@@ -51,17 +45,11 @@ export declare interface NumberFieldProps extends Omit<TextFieldProps, "validate
 }
 
 export declare interface ControlledInput extends InputBaseProps {
-  wrapperId?: string;
-  controlId?: string;
-  wrapperDataTestId?: string;
-  controlDataTestId?: string;
   checked?: boolean;
 }
 
 export declare interface RadioButtonProps extends ControlledInput {
   label: string;
-  labelId?: string;
-  labelDataTestId?: string;
   fullWidth?: boolean;
 }
 
@@ -72,21 +60,9 @@ export declare interface CheckboxProps extends ControlledInput {
 export declare interface CheckboxFieldProps extends CheckboxProps {
   children: ReactNode;
   name: string;
-  fieldWrapperId?: string;
-  fieldWrapperDataTestId?: string;
 }
 
 export declare interface DateFieldProps extends Testable {
-  labelId?: string;
-  labelDataTestId?: string;
-  captionId?: string;
-  captionDataTestId?: string;
-  dayFieldId?: string;
-  dayFieldDataTestId?: string;
-  monthFieldId?: string;
-  monthFieldDataTestId?: string;
-  yearFieldId?: string;
-  yearFieldDataTestId?: string;
   caption?: string;
   hasError?: boolean;
   label?: string;
@@ -103,6 +79,4 @@ export declare interface BooleanRadioFieldProps extends Testable, WithTooltipIco
   labelText: string;
   falseValueLabel?: string;
   trueValueLabel?: string;
-  falseValueId?: string;
-  trueValueId?: string;
 }

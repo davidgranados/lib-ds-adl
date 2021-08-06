@@ -3,6 +3,8 @@
 exports[`<MessageCardWarning /> should match snapshot 1`] = `
 <div
   className="wrapper"
+  data-testid="message-card-warning"
+  id="message-card-warning"
 >
   <div
     className="content-wrapper"
@@ -36,8 +38,6 @@ exports[`<MessageCardWarning /> should match snapshot 1`] = `
     >
       <button
         className="default primary size-md full-width"
-        data-testid="button-button-Salir de esta solicitud"
-        id="button-button-Salir de esta solicitud"
         onClick={[MockFunction]}
         type="button"
       >

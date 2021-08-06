@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { FC, useRef, useState } from "react";
 
-import { toggleClassFromElement } from "../../helpers";
+import { getId, getSuffixedId, toggleClassFromElement } from "../../helpers";
 import { TooltipProps } from "../../types";
 import { Icon } from "../icon";
 
@@ -38,35 +38,25 @@ const Tooltip: FC<TooltipProps> = ({
   return (
     <div
       ref={wrapperRef}
-      id={`${id}-wrapper`}
-      data-testid={dataTestId ? `${dataTestId}-wrapper` : `${id}-wrapper`}
+      {...getSuffixedId(id, "wrapper", dataTestId)}
       className={styles["wrapper"]}
       onClick={handleOnClickToggle}
     >
       <div
-        id={id}
-        data-testid={dataTestId || id}
+        {...getId(id, dataTestId)}
         ref={tooltipRef}
         className={contentWrapperClassName}
         style={fullWidth ? tooltipFullWidthInlineStyles : undefined}
       >
-        <div
-          id={`${id}-content-body`}
-          data-testid={dataTestId ? `${dataTestId}-content-body` : `${id}-content-body`}
-          className={styles["content-body"]}
-        >
-          <span
-            id={`${id}-icon-wrapper`}
-            data-testid={dataTestId ? `${dataTestId}-icon-wrapper` : `${id}-icon-wrapper`}
-            className={styles["icon-wrapper"]}
-          >
-            <Icon id={`${id}-close-icon`} name={"close"} className={styles["icon-close"]} />
+        <div className={styles["content-body"]}>
+          <span className={styles["icon-wrapper"]}>
+            <Icon
+              {...getSuffixedId(id, "icon-close", dataTestId, true)}
+              name={"close"}
+              className={styles["icon-close"]}
+            />
           </span>
-          <div
-            id={`${id}-content-text`}
-            data-testid={dataTestId ? `${dataTestId}-content-text` : `${id}-content-text`}
-            className={styles["content-text"]}
-          >
+          <div className={styles["content-text"]}>
             {!!textTitle && <span>{textTitle}</span>}
             {!!textBody && <span>{textBody}</span>}
           </div>

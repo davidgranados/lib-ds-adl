@@ -1,6 +1,10 @@
+export type { AlertBadgeProps } from "./alert-badge";
+
 export type { ButtonProps, ButtonSize, ButtonVariant } from "./button";
 
 export type { InputFieldCaptionProps, InputFieldCaptionStatus } from "./caption";
+
+export type { DialogProps } from "./dialog";
 
 export type { DropdownProps } from "./dropdown";
 

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-import styles from "./date-field.module.css";
 import { DateFieldProps, InputFieldCaptionStatus } from "../../types";
 import { Dropdown } from "../dropdown/";
-import { NumberField } from "../number-field";
+import { getId, getSuffixedId } from "../../helpers";
 import { InputFieldCaption } from "../../atoms/input-field-caption";
 import { InputFieldLabel } from "../../atoms/input-field-label";
+import { NumberField } from "../number-field";
+
+import styles from "./date-field.module.css";
 
 const DateField: React.FC<DateFieldProps> = ({
   caption,
@@ -14,17 +16,7 @@ const DateField: React.FC<DateFieldProps> = ({
   onBlur,
   disabled,
   label,
-  labelId,
-  captionId,
-  dayFieldId,
-  monthFieldId,
-  yearFieldId,
   dataTestId,
-  labelDataTestId,
-  captionDataTestId,
-  dayFieldDataTestId,
-  monthFieldDataTestId,
-  yearFieldDataTestId,
   id = "date-field",
 }) => {
   const captionStatus: InputFieldCaptionStatus = hasError ? "error" : "default";
@@ -57,17 +49,16 @@ const DateField: React.FC<DateFieldProps> = ({
   const handleYearChange = (v: number | null) => setYear(v || 0);
 
   return (
-    <div id={id} data-testid={dataTestId || id} className={styles["wrapper"]}>
+    <div {...getId(id, dataTestId)} className={styles["wrapper"]}>
       {!!label && (
-        <InputFieldLabel id={labelId || `${id}-label`} dataTestId={labelDataTestId} htmlFor={"date-field-day"}>
+        <InputFieldLabel {...getSuffixedId(id, "label", dataTestId, true)} htmlFor={"date-field-day"}>
           {label}
         </InputFieldLabel>
       )}
       <div className={styles["inputs"]}>
         <div className={`${styles["input"]} ${styles["day"]}`}>
           <NumberField
-            id={dayFieldId || `${id}-day`}
-            dataTestId={dayFieldDataTestId}
+            {...getSuffixedId(id, "day", dataTestId, true)}
             label="Día"
             maxLength={2}
             placeholder="DD"
@@ -80,8 +71,7 @@ const DateField: React.FC<DateFieldProps> = ({
         </div>
         <div className={`${styles["input"]} ${styles["month"]}`}>
           <Dropdown
-            id={monthFieldId || `${id}-month`}
-            dataTestId={monthFieldDataTestId || monthFieldId}
+            {...getSuffixedId(id, "month", dataTestId, true)}
             items={months.map((v, i) => ({ label: v, value: i }))}
             label="Mes"
             value={month}
@@ -93,8 +83,7 @@ const DateField: React.FC<DateFieldProps> = ({
         </div>
         <div className={`${styles["input"]} ${styles["year"]}`}>
           <NumberField
-            id={yearFieldId || `${id}-year`}
-            dataTestId={yearFieldDataTestId}
+            {...getSuffixedId(id, "year", dataTestId, true)}
             label="Año"
             maxLength={4}
             placeholder="AAAA"
@@ -107,7 +96,7 @@ const DateField: React.FC<DateFieldProps> = ({
         </div>
       </div>
       {caption && (
-        <InputFieldCaption id={captionId || `${id}-caption`} dataTestId={captionDataTestId} status={captionStatus}>
+        <InputFieldCaption {...getSuffixedId(id, "caption", dataTestId, true)} status={captionStatus}>
           {caption}
         </InputFieldCaption>
       )}

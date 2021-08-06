@@ -1,10 +1,11 @@
 import React, { useCallback } from "react";
 
-import { ConfirmModalProps } from "../../types";
 import { Button } from "../../atoms/button";
+import { ConfirmModalProps } from "../../types";
+import { Dialog } from "../../atoms/dialog";
+import { getSuffixedId } from "../../helpers";
 
 import styles from "./confirm-modal.module.css";
-import Dialog from "../../atoms/dialog/dialog";
 
 const ConfirmModal: React.FC<ConfirmModalProps> = ({
   show,
@@ -29,22 +30,26 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
   }, [onSecondaryButtonClick, onToggle, show]);
 
   return (
-    <Dialog show={show} width={320} onToggle={onToggle} dataTestId={`${id}-${dataTestId}`}>
-      <div className={styles["confirm-modal-wrapper"]}>
+    <Dialog {...getSuffixedId(id, "dialog", dataTestId, true)} show={show} width={320} onToggle={onToggle}>
+      <div {...getSuffixedId(id, "wrapper", dataTestId)} className={styles["confirm-modal-wrapper"]}>
         <div className={styles["img"]}>
-          <span className={`${styles["icon"]} icon-exclamation-open-circle`}></span>
+          <span className={`${styles["icon"]} icon-exclamation-open-circle`} />
         </div>
         <div className={styles["title"]}>{title}</div>
         <div className={styles["description"]}>{description}</div>
         <Button
+          {...getSuffixedId(id, "primary-button", dataTestId, true)}
           size="md"
           fullWidth
           variant="primary"
           text={mainButtonText}
-          id={`${id}-primary-button`}
           onClick={() => handleMainClick()}
         />
-        <span id="secondary-button" className={styles["secondary-button"]} onClick={() => handleSecondaryClick()}>
+        <span
+          {...getSuffixedId(id, "secondary-button", dataTestId)}
+          className={styles["secondary-button"]}
+          onClick={() => handleSecondaryClick()}
+        >
           {secondaryButtonText}
         </span>
       </div>
