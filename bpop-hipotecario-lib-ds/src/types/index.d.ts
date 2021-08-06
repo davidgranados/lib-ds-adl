@@ -6,7 +6,7 @@ export type { InputFieldCaptionProps, InputFieldCaptionStatus } from "./caption"
 
 export type { DialogProps } from "./dialog";
 
-export type { DropdownProps } from "./dropdown";
+export type { DropdownItems, DropdownOnChange, DropdownProps, DropdownValue } from "./dropdown";
 
 export type { Testable } from "./global";
 
