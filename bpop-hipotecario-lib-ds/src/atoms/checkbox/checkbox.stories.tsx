@@ -7,6 +7,7 @@ export default {
   title: "Atoms/Checkbox",
   component: Checkbox,
   args: {
+    id: "checkbox-story",
     disabled: false,
     hasError: false,
   },

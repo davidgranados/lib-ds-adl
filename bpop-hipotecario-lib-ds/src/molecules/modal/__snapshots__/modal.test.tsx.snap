@@ -17,13 +17,9 @@ exports[`<Modal /> Should match snapshot 1`] = `
   >
     <div
       className="header"
-      data-testid="modal-header"
-      id="modal-header"
     >
       <div
         className="close"
-        data-testid="modal-close"
-        id="modal-close"
       >
         <span
           className="icon icon-close icon"
@@ -34,8 +30,6 @@ exports[`<Modal /> Should match snapshot 1`] = `
       </div>
       <div
         className="title"
-        data-testid="modal-title"
-        id="modal-title"
       >
         <h6>
           title
@@ -44,13 +38,9 @@ exports[`<Modal /> Should match snapshot 1`] = `
     </div>
     <div
       className="content"
-      data-testid="modal-content"
-      id="modal-content"
     />
     <div
       className="footer"
-      data-testid="modal-footer"
-      id="modal-footer"
     >
       <button
         className="default primary size-lg"

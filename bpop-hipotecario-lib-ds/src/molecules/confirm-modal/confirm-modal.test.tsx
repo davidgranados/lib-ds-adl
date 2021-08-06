@@ -12,6 +12,7 @@ describe("ConfirmModal", () => {
   let isSecondaryButtonClicked = false;
   const component = shallow(
     <ConfirmModal
+      id={"confirm-modal"}
       show={show}
       title={"Modal title"}
       mainButtonText={"main"}
@@ -39,7 +40,7 @@ describe("ConfirmModal", () => {
 
   test("ConfirmModal should click on secondary button ok", () => {
     const expected = true;
-    component.find("#secondary-button").simulate("click");
+    component.find("#confirm-modal-secondary-button").simulate("click");
     expect(isSecondaryButtonClicked).toBe(expected);
   });
 });

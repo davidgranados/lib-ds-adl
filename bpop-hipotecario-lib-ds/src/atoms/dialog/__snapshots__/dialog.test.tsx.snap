@@ -8,13 +8,12 @@ exports[`Dialog Dialog should renders ok 1`] = `
 >
   <div
     className="overflow"
+    data-testid="dialog-wrapper-overflow"
     id="dialog-wrapper-overflow"
     onClick={[Function]}
   />
   <div
     className="modal"
-    data-testid="dialog"
-    id="dialog"
     style={
       Object {
         "width": undefined,

@@ -2,23 +2,14 @@ import React from "react";
 
 import { Checkbox } from "../../atoms/checkbox";
 import { CheckboxFieldProps } from "../../types";
+import { getId, getSuffixedId } from "../../helpers";
 
 import styles from "./checkbox-field.module.css";
 
-const CheckboxField: React.FC<CheckboxFieldProps> = ({
-  children,
-  fieldWrapperId,
-  fieldWrapperDataTestId,
-  id = "checkbox",
-  ...props
-}) => {
+const CheckboxField: React.FC<CheckboxFieldProps> = ({ children, dataTestId, id = "checkbox", ...props }) => {
   return (
-    <div
-      id={fieldWrapperId || `${id}-wrapper`}
-      data-testid={fieldWrapperDataTestId || fieldWrapperId || `${id}-wrapper`}
-      className={styles["wrapper"]}
-    >
-      <Checkbox id={id} {...props} />
+    <div {...getSuffixedId(id, "wrapper", dataTestId)} className={styles["wrapper"]}>
+      <Checkbox {...getId(id, dataTestId, true)} {...props} />
       <div className={styles["label"]}>{children}</div>
     </div>
   );

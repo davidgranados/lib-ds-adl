@@ -18,8 +18,6 @@ exports[`<RadioButton /> should match snapshot 1`] = `
     />
     <span
       className="control"
-      data-testid="radio-button-control"
-      id="radio-button-control"
     >
       <span
         className="control__circle"
@@ -28,8 +26,6 @@ exports[`<RadioButton /> should match snapshot 1`] = `
   </span>
   <span
     className="label"
-    data-testid="radio-button-label"
-    id="radio-button-label"
   >
     radio-button
   </span>

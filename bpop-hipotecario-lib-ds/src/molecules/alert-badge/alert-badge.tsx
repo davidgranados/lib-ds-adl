@@ -1,15 +1,22 @@
 import React from "react";
 
-import styles from "./alert-badge.module.css";
-import { AlertBadgeProps } from "../../types/alert-badge";
+import { AlertBadgeProps } from "../../types";
+import { getId, getSuffixedId } from "../../helpers";
+import { Icon } from "../../atoms/icon";
 
-const AlertBadge: React.FC<AlertBadgeProps> = ({ children, type = "info" }) => {
+import styles from "./alert-badge.module.css";
+
+const AlertBadge: React.FC<AlertBadgeProps> = ({ children, dataTestId, id = "alert-badge", type = "info" }) => {
   return (
-    <div className={`${styles["alert-badge-wrapper"]} ${styles[type]}`}>
+    <div {...getId(id, dataTestId)} className={`${styles["wrapper"]} ${styles[type]}`}>
       <div className={styles["icon-section"]}>
-        <div className={styles["left-line"]}></div>
+        <div className={styles["left-line"]} />
         <div className={styles["img"]}>
-          <span className={`${styles["icon"]} icon-exclamation-open-circle`}></span>
+          <Icon
+            {...getSuffixedId(id, "icon", dataTestId, true)}
+            name={"exclamation-open-circle"}
+            className={styles["icon"]}
+          />
         </div>
       </div>
       <div className={styles["text"]}>{children}</div>

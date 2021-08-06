@@ -1,6 +1,8 @@
 import { MouseEventHandler } from "react";
 
-export declare interface MessageCardBaseProps {
+import { Testable } from "./global";
+
+export declare interface MessageCardBaseProps extends Testable {
   iconURL: string;
   title: string;
   subtitle: string;

@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import { BooleanRadioFieldProps } from "../../types";
 import { RadioButton } from "../../atoms/radio-button";
 import { TooltipIcon } from "../../atoms/tooltip-icon";
+import { getSuffixedId } from "../../helpers";
 
 import styles from "./boolean-radio-field.module.css";
 
@@ -16,18 +17,19 @@ const BooleanRadioField: FC<BooleanRadioFieldProps> = ({
   tooltipTextBody,
   tooltipMarginLeft,
   tooltipMarginRight,
+  dataTestId,
   withTooltip = false,
   falseValueLabel = "No",
   trueValueLabel = "Si",
-  falseValueId = "boolean-radio-field-false",
-  trueValueId = "boolean-radio-field-true",
+  id = "boolean-radio-field",
 }) => {
   return (
-    <div className={styles["wrapper"]}>
+    <div {...getSuffixedId(id, "wrapper", dataTestId)} className={styles["wrapper"]}>
       <div className={styles["label"]}>
         {labelText}
         {withTooltip && (
           <TooltipIcon
+            {...getSuffixedId(id, "tooltip-icon", dataTestId, true)}
             icon={tooltipIcon}
             marginLeft={tooltipMarginLeft}
             marginRight={tooltipMarginRight}
@@ -38,7 +40,7 @@ const BooleanRadioField: FC<BooleanRadioFieldProps> = ({
       </div>
       <div className={styles["radio-buttons-wrapper"]}>
         <RadioButton
-          id={falseValueId}
+          {...getSuffixedId(id, "false-radio", dataTestId, true)}
           name={name}
           value={"false"}
           label={falseValueLabel}
@@ -46,7 +48,7 @@ const BooleanRadioField: FC<BooleanRadioFieldProps> = ({
           onChange={onChange}
         />
         <RadioButton
-          id={trueValueId}
+          {...getSuffixedId(id, "true-radio", dataTestId, true)}
           name={name}
           value={"true"}
           label={trueValueLabel}

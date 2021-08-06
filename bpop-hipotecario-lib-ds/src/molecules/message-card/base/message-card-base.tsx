@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 
-import { MessageCardBaseProps } from "../../../types";
 import { Button } from "../../../atoms/button";
+import { getId } from "../../../helpers";
+import { MessageCardBaseProps } from "../../../types";
 
 import styles from "./message-card-base.module.css";
 
@@ -13,9 +14,11 @@ const MessageCardBase: FC<MessageCardBaseProps> = ({
   iconTitleAttribute,
   subtitle,
   onClick,
+  dataTestId,
+  id = "message-card",
 }) => {
   return (
-    <div className={styles["wrapper"]}>
+    <div {...getId(id, dataTestId)} className={styles["wrapper"]}>
       <div className={styles["content-wrapper"]}>
         <img src={iconURL} className={styles["main-icon"]} alt={iconAltAttribute} title={iconTitleAttribute} />
         <div className={styles["text-wrapper"]}>

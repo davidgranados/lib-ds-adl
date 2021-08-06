@@ -2,9 +2,11 @@ import classNames from "classnames";
 import React, { useCallback, useEffect, useRef } from "react";
 
 import { RadioButtonProps } from "../../types/input-field";
+import { getId, getSuffixedId } from "../../helpers";
+
+import { checkThisRadio } from "./helpers";
 
 import styles from "./radio-button.module.css";
-import { checkThisRadio } from "./helpers";
 
 const RadioButton: React.FC<RadioButtonProps> = ({
   disabled,
@@ -13,13 +15,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   onChange,
   name,
   fullWidth,
-  wrapperId,
-  labelId,
-  controlId,
   dataTestId,
-  wrapperDataTestId,
-  labelDataTestId,
-  controlDataTestId,
   id = "radio-button",
   ...props
 }) => {
@@ -45,16 +41,10 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   }, [_checkThisRadio, checked]);
 
   return (
-    <label
-      id={wrapperId || `${id}-wrapper`}
-      data-testid={wrapperDataTestId || wrapperId || `${id}-wrapper`}
-      ref={wrapperRef}
-      className={wrapperClassName}
-    >
+    <label {...getSuffixedId(id, "wrapper", dataTestId)} ref={wrapperRef} className={wrapperClassName}>
       <span className={styles["control-wrapper"]}>
         <input
-          id={id}
-          data-testid={dataTestId || id}
+          {...getId(id, dataTestId)}
           className={styles["input"]}
           type="radio"
           name={name}
@@ -63,21 +53,11 @@ const RadioButton: React.FC<RadioButtonProps> = ({
           onChange={handleInputOnChange}
           {...props}
         />
-        <span
-          id={controlId || `${id}-control`}
-          data-testid={controlDataTestId || controlId || `${id}-control`}
-          className={styles["control"]}
-        >
+        <span className={styles["control"]}>
           <span className={styles["control__circle"]} />
         </span>
       </span>
-      <span
-        id={labelId || `${id}-label`}
-        data-testid={labelDataTestId || labelId || `${id}-label`}
-        className={styles["label"]}
-      >
-        {label}
-      </span>
+      <span className={styles["label"]}>{label}</span>
     </label>
   );
 };

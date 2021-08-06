@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 
-import { Testable } from "./global";
 import { Icon } from "../atoms/icon";
+
+import { Testable } from "./global";
 
 export declare interface TooltipProps extends Testable {
   children: ReactNode;
@@ -12,7 +13,7 @@ export declare interface TooltipProps extends Testable {
   marginRight?: number;
 }
 
-export declare interface TooltipIconProps extends Omit<TooltipProps, "children"> {
+export declare interface TooltipIconProps extends Testable, Omit<TooltipProps, "children"> {
   icon?: typeof Icon;
 }
 

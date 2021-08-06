@@ -5,6 +5,10 @@ import { CheckboxField } from ".";
 afterEach(cleanup);
 
 test("CheckboxField should renders ok", () => {
-  const x = render(<CheckboxField id="id" label="Hi" disabled={false} onChange={() => null} />);
+  const x = render(
+    <CheckboxField id="id" name="checkbox-name" disabled={false} onChange={() => null}>
+      Hi
+    </CheckboxField>
+  );
   expect(x.container).toBeInTheDocument();
 });

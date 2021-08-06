@@ -2,13 +2,16 @@
 
 exports[`ConfirmModal ConfirmModal should renders ok 1`] = `
 <Dialog
-  dataTestId="confirm-modal-undefined"
+  dataTestId="confirm-modal-dialog"
+  id="confirm-modal-dialog"
   onToggle={[Function]}
   show={false}
   width={320}
 >
   <div
     className="confirm-modal-wrapper"
+    data-testid="confirm-modal-wrapper"
+    id="confirm-modal-wrapper"
   >
     <div
       className="img"
@@ -26,6 +29,7 @@ exports[`ConfirmModal ConfirmModal should renders ok 1`] = `
       className="description"
     />
     <Button
+      dataTestId="confirm-modal-primary-button"
       fullWidth={true}
       id="confirm-modal-primary-button"
       onClick={[Function]}
@@ -35,7 +39,8 @@ exports[`ConfirmModal ConfirmModal should renders ok 1`] = `
     />
     <span
       className="secondary-button"
-      id="secondary-button"
+      data-testid="confirm-modal-secondary-button"
+      id="confirm-modal-secondary-button"
       onClick={[Function]}
     >
       second
