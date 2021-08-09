@@ -39,7 +39,8 @@
   text-align: center;
 }
 
-button {
+.button {
+  width: 100%;
   margin: 0 0 24px 0;
 }
 
@@ -50,36 +51,4 @@ button {
   font-weight: 600;
   line-height: 1.71;
   text-align: center;
-}
-
-@media screen and (max-width: 599px) {
-  .wrapper .modal {
-    max-height: calc(100% - 48px);
-  }
-
-  .wrapper .modal .header .close .icon {
-    font-size: 1.5rem;
-  }
-
-  .wrapper .modal .header .title {
-    margin: 50px 24px 8px 24px;
-  }
-
-  .wrapper .modal .header .title h6 {
-    font-size: 1rem;
-    line-height: 1.75;
-  }
-
-  .wrapper .modal .content {
-    margin: 0 20px 20px 20px;
-    overflow-y: scroll;
-  }
-
-  .wrapper .modal .footer {
-    margin: 0 24px 24px 24px;
-  }
-
-  .wrapper .modal .footer button {
-    width: 100%;
-  }
 }

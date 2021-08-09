@@ -28,15 +28,19 @@ exports[`ConfirmModal ConfirmModal should renders ok 1`] = `
     <div
       className="description"
     />
-    <Button
-      dataTestId="confirm-modal-primary-button"
-      fullWidth={true}
-      id="confirm-modal-primary-button"
-      onClick={[Function]}
-      size="md"
-      text="main"
-      variant="primary"
-    />
+    <div
+      className="button"
+    >
+      <Button
+        dataTestId="confirm-modal-primary-button"
+        fullWidth={true}
+        id="confirm-modal-primary-button"
+        onClick={[Function]}
+        size="md"
+        text="main"
+        variant="primary"
+      />
+    </div>
     <span
       className="secondary-button"
       data-testid="confirm-modal-secondary-button"
