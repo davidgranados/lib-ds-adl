@@ -13,4 +13,5 @@ export declare interface DropdownProps extends Testable {
   placeholder?: string;
   value?: DropdownValue;
   onChange: DropdownOnChange;
+  onBlur?: FocusEvent<HTMLDivElement>;
 }
