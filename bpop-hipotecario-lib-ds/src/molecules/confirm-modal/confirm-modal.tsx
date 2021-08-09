@@ -37,14 +37,16 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
         </div>
         <div className={styles["title"]}>{title}</div>
         <div className={styles["description"]}>{description}</div>
-        <Button
-          {...getSuffixedId(id, "primary-button", dataTestId, true)}
-          size="md"
-          fullWidth
-          variant="primary"
-          text={mainButtonText}
-          onClick={() => handleMainClick()}
-        />
+        <div className={styles["button"]}>
+          <Button
+            {...getSuffixedId(id, "primary-button", dataTestId, true)}
+            size="md"
+            fullWidth
+            variant="primary"
+            text={mainButtonText}
+            onClick={() => handleMainClick()}
+          />
+        </div>
         <span
           {...getSuffixedId(id, "secondary-button", dataTestId)}
           className={styles["secondary-button"]}
