@@ -18,7 +18,6 @@ const Dropdown: React.FC<DropdownProps> = ({
   value,
   dataTestId,
   onChange,
-  onBlur,
   id = "dropdown-element",
 }) => {
   const [open, setOpen] = useState(false);
@@ -36,7 +35,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div {...getSuffixedId(id, "wrapper", dataTestId)} className={styles["wrapper"]} onBlur={onBlur}>
+    <div {...getSuffixedId(id, "wrapper", dataTestId)} className={styles["wrapper"]}>
       <InputFieldLabel {...getSuffixedId(id, "label", dataTestId, true)} htmlFor={id} onClick={() => toggleOpen()}>
         {label}
       </InputFieldLabel>
