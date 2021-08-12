@@ -29,7 +29,6 @@
     "bpop-hipotecario-lib-ds"
   ],
   "devDependencies": {
-    "@testing-library/user-event": "^13.2.1",
     "subpackage": "^1.1.0"
   }
 }

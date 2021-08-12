@@ -1,0 +1,23 @@
+.default {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  caret-color: #11b719;
+  font-family: "Inter", sans-serif;
+  font-size: 1.3125rem;
+  font-weight: 500;
+  outline: none;
+  text-align: center;
+}
+
+.default::placeholder {
+  color: #7b7b7b;
+  font-size: 1.3125rem;
+  font-weight: 500;
+}
