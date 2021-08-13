@@ -4,6 +4,8 @@ export type { ButtonProps, ButtonSize, ButtonVariant } from "./button";
 
 export type { InputFieldCaptionProps, InputFieldCaptionStatus } from "./caption";
 
+export type { ConfirmModalProps } from "./confirm-modal";
+
 export type { DialogProps } from "./dialog";
 
 export type { DropdownItems, DropdownOnChange, DropdownProps, DropdownValue } from "./dropdown";
@@ -37,6 +39,6 @@ export type { MessageCardBaseProps, MessageCardWarningProps } from "./message-ca
 
 export type { ModalProps } from "./modal";
 
-export type { ConfirmModalProps } from "./confirm-modal";
+export type { OtpInputFieldProps, OtpInputProps } from "./otp";
 
 export type { TooltipProps, TooltipIconProps, WithTooltip, WithTooltipIcon } from "./tooltip";

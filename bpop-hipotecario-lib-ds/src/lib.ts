@@ -8,6 +8,7 @@ export { Icon } from "./atoms/icon";
 export { MessageCardWarning } from "./molecules/message-card/warning";
 export { Modal } from "./molecules/modal";
 export { NumberField } from "./molecules/number-field";
+export { OtpInputField } from "./molecules/otp-input-field";
 export { RadioButton } from "./atoms/radio-button";
 export { TextField } from "./molecules/text-field";
 export { Tooltip } from "./atoms/tooltip";
