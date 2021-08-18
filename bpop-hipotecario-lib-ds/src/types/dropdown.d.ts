@@ -1,3 +1,4 @@
+import { FocusEventHandler } from "react";
 import { Testable } from "./global";
 
 export declare type DropdownItems = { label: string; value: string | number }[];
@@ -13,4 +14,6 @@ export declare interface DropdownProps extends Testable {
   placeholder?: string;
   value?: DropdownValue;
   onChange: DropdownOnChange;
+  onFocus?: FocusEventHandler<HTMLDivElement>;
+  onBlur?: FocusEventHandler<HTMLDivElement>;
 }
