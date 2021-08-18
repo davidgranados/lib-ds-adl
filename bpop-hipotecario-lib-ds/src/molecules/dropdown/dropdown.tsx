@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FocusEvent, useState } from "react";
 
 import { DropdownProps } from "../../types";
 import { getId, getSuffixedId } from "../../helpers";
@@ -18,6 +18,8 @@ const Dropdown: React.FC<DropdownProps> = ({
   value,
   dataTestId,
   onChange,
+  onFocus,
+  onBlur,
   id = "dropdown-element",
 }) => {
   const [open, setOpen] = useState(false);
@@ -33,9 +35,19 @@ const Dropdown: React.FC<DropdownProps> = ({
     setSelectedValue(item.value);
     onChange(item.value);
   };
+  const handleMainBlur = (e: FocusEvent<HTMLDivElement>) => {
+    !disabled && setOpen(false);
+    onBlur && onBlur(e);
+  };
 
   return (
-    <div {...getSuffixedId(id, "wrapper", dataTestId)} className={styles["wrapper"]}>
+    <div
+      {...getSuffixedId(id, "wrapper", dataTestId)}
+      className={styles["wrapper"]}
+      tabIndex={0}
+      onFocus={onFocus}
+      onBlur={handleMainBlur}
+    >
       <InputFieldLabel {...getSuffixedId(id, "label", dataTestId, true)} htmlFor={id} onClick={() => toggleOpen()}>
         {label}
       </InputFieldLabel>
