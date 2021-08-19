@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { ChangeEvent, KeyboardEvent, FC, useState, useRef, useEffect } from "react";
+import React, { ChangeEvent, KeyboardEvent, FC, useState, useRef, useEffect, useMemo, useCallback } from "react";
 
 import { OtpInput } from "../../atoms/otp-input";
 import { InputFieldCaptionStatus, OtpInputFieldProps } from "../../types";
@@ -28,116 +28,126 @@ const OtpInputField: FC<OtpInputFieldProps> = ({
   const inputsWrapperRef = useRef<HTMLDivElement>(null);
   const [activeInput, setActiveInput] = useState(0);
   const [otp, setOtp] = useState(value ? value.toString().split("") : []);
-  // Helper to return OTP from input
-  const handleOtpChange = (otp: string[]) => {
-    const otpValue = otp.join("");
-    onChange && onChange(otpValue);
-  };
+
   const isInputValueValid = (value: string): boolean => {
     const isTypeValid = !isNaN(parseInt(value, 10));
     return isTypeValid && value.trim().length === 1;
   };
+
   // Focus on input by index
-  const focusInput = (index: number) => {
-    const activeInput = Math.max(Math.min(numInputs - 1, index), 0);
-    setActiveInput(activeInput);
-  };
+  const focusInput = useCallback(
+    (index: number) => {
+      const activeInput = Math.max(Math.min(numInputs - 1, index), 0);
+      setActiveInput(activeInput);
+    },
+    [numInputs]
+  );
   // Focus on next input
-  const focusNextInput = () => {
+  const focusNextInput = useCallback(() => {
     focusInput(activeInput + 1);
-  };
+  }, [activeInput, focusInput]);
   // Focus on previous input
-  const focusPrevInput = () => {
+  const focusPrevInput = useCallback(() => {
     focusInput(activeInput - 1);
-  };
-  const handleFilledState = (otp: string[]) => {
+  }, [activeInput, focusInput]);
+  const handleFilledState = useCallback((otp: string[]) => {
     if (otp.length) {
       addClassToElement(inputsWrapperRef.current, inputTextBaseStyles["filled"]);
     } else {
       removeClassFromElement(inputsWrapperRef.current, inputTextBaseStyles["filled"]);
     }
-  };
+  }, []);
   // Change OTP value at focused input
-  const changeCodeAtFocus = (value: string) => {
-    setOtp((prevOtp) => {
-      if (value) {
-        prevOtp[activeInput] = value[0];
-      } else {
-        prevOtp[activeInput] = "";
+  const changeCodeAtFocusedInput = useCallback(
+    (value: string) => {
+      setOtp((prevOtp) => {
+        const newOtp = prevOtp.slice();
+        if (value) {
+          newOtp[activeInput] = value[0];
+        } else {
+          newOtp[activeInput] = "";
+        }
+        return newOtp;
+      });
+    },
+    [activeInput]
+  );
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const { value } = event.target;
+      if (isInputValueValid(value)) {
+        changeCodeAtFocusedInput(value);
       }
-      const newOtp = prevOtp.slice();
-      handleOtpChange(newOtp);
-      return newOtp;
-    });
-  };
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    if (isInputValueValid(value)) {
-      changeCodeAtFocus(value);
-    }
-  };
+    },
+    [changeCodeAtFocusedInput]
+  );
   // Handle cases of backspace, delete, left arrow, right arrow, space
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Backspace") {
-      event.preventDefault();
-      changeCodeAtFocus("");
-      focusPrevInput();
-    } else if (event.key === "Delete") {
-      event.preventDefault();
-      changeCodeAtFocus("");
-      focusNextInput();
-    } else if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      focusPrevInput();
-    } else if (event.key === "ArrowRight") {
-      event.preventDefault();
-      focusNextInput();
-    } else if (event.key === " " || event.key === "Spacebar" || event.key === "Space") {
-      event.preventDefault();
-    }
-  };
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === "Backspace") {
+        event.preventDefault();
+        changeCodeAtFocusedInput("");
+        focusPrevInput();
+      } else if (event.key === "Delete") {
+        event.preventDefault();
+        changeCodeAtFocusedInput("");
+        focusNextInput();
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        focusPrevInput();
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        focusNextInput();
+      } else if (event.key === " " || event.key === "Spacebar" || event.key === "Space") {
+        event.preventDefault();
+      }
+    },
+    [changeCodeAtFocusedInput, focusNextInput, focusPrevInput]
+  );
   // The content may not have changed, but some input took place hence change the focus
-  const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
-    if (isInputValueValid(event.target.value)) {
-      focusNextInput();
-    }
-  };
+  const handleInput = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      if (isInputValueValid(event.target.value)) {
+        focusNextInput();
+      }
+    },
+    [focusNextInput]
+  );
   const handleFocus = (index: number) => {
     return () => {
       setActiveInput(index);
     };
   };
-  const handleBlur = () => {
-    setActiveInput(-1);
-  };
-  const getInputsProps = () => {
-    const inputsProps = [];
-    for (let i = 0; i < numInputs; i++) {
-      inputsProps.push({
-        key: i,
-        value: otp && otp[i],
-        focus: activeInput === i,
-        disabled: disabled,
-        onChange: handleChange,
-        onKeyDown: handleKeyDown,
-        onInput: handleInput,
-        onFocus: handleFocus(i),
-        onBlur: handleBlur,
-      });
-    }
-    return inputsProps;
-  };
+
   useEffect(() => {
     handleFilledState(otp);
-  }, [otp]);
+    onChange && onChange(otp.join(""));
+  }, [handleFilledState, onChange, otp]);
+
+  const renderInputs = useMemo(() => {
+    const inputs = [];
+    for (let i = 0; i < numInputs; i++) {
+      inputs.push(
+        <div key={`item-${i}`} {...getSuffixedId(id, `item-wrapper-${i}`, dataTestId)}>
+          <OtpInput
+            {...getSuffixedId(id, `item-${i}`, dataTestId)}
+            value={otp && otp[i]}
+            focus={activeInput === i}
+            disabled={disabled}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            onInput={handleInput}
+            onFocus={handleFocus(i)}
+          />
+        </div>
+      );
+    }
+    return inputs;
+  }, [activeInput, dataTestId, disabled, handleChange, handleInput, handleKeyDown, id, numInputs, otp]);
   return (
     <div {...getId(id, dataTestId)} className={styles["wrapper"]}>
       <div ref={inputsWrapperRef} className={inputsWrapperClassName}>
-        {getInputsProps().map(({ key, ...inputProps }) => (
-          <div key={`item-${key}`} {...getSuffixedId(id, `item-wrapper-${key}`, dataTestId)}>
-            <OtpInput {...getSuffixedId(id, `item-${key}`, dataTestId)} {...inputProps} />
-          </div>
-        ))}
+        {renderInputs}
       </div>
       {caption && (
         <InputFieldCaption {...getSuffixedId(id, "caption", dataTestId, true)} status={captionStatus}>
