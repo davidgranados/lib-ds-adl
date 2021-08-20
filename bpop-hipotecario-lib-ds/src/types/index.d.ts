@@ -35,7 +35,7 @@ export type { InputFieldLabelProps } from "./label";
 
 export type { ContainerProps } from "./layout";
 
-export type { MessageCardBaseProps, MessageCardWarningProps } from "./message-card";
+export type { MessageCardBaseProps, MessageCardIcon, MessageCardWarningProps } from "./message-card";
 
 export type { ModalProps } from "./modal";
 

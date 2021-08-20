@@ -6,6 +6,7 @@ import postcss from "rollup-plugin-postcss";
 import cssurl from "postcss-url";
 import copy from "rollup-plugin-copy";
 import image from "@rollup/plugin-image";
+import dotenv from "rollup-plugin-dotenv";
 
 import packageJson from "./package.json";
 
@@ -24,6 +25,7 @@ export default {
     },
   ],
   plugins: [
+    dotenv(),
     peerDepsExternal(),
     resolve(),
     commonjs(),

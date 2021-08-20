@@ -2,15 +2,14 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import warningIcon from "../../../assets/images/80-warning.svg";
-
-import MessageCardWarning from "./message-card-warning";
+import MessageCard from "./message-card-base";
+import { validIcons } from "./helpers";
 
 export default {
-  title: "Molecules/MessageCardWarning",
-  component: MessageCardWarning,
+  title: "Molecules/MessageCard",
+  component: MessageCard,
   args: {
-    iconURL: warningIcon,
+    icon: "default",
     title: "Lo sentimos, no es posible continuar",
     subtitle: "Esta solicitud no es viable",
     textButton: "Salir de esta solicitud",
@@ -18,14 +17,17 @@ export default {
     iconAltAttribute: "icon alt text",
     iconTitleAttribute: "icon title",
   },
+  argTypes: {
+    icon: { options: validIcons, control: "select" },
+  },
   parameters: {
     layout: "fullscreen",
   },
-} as ComponentMeta<typeof MessageCardWarning>;
+} as ComponentMeta<typeof MessageCard>;
 
-const Template: ComponentStory<typeof MessageCardWarning> = (args) => (
+const Template: ComponentStory<typeof MessageCard> = (args) => (
   <div style={{ display: "flex", justifyContent: "center" }}>
-    <MessageCardWarning {...args} />
+    <MessageCard {...args} />
   </div>
 );
 
