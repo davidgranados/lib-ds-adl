@@ -1,6 +1,6 @@
 {
   "name": "@avaldigitallabs/bpop-hipotecario-lib-ds",
-  "version": "1.5.3",
+  "version": "1.6.0",
   "license": "MIT",
   "private": false,
   "main": "./dist/lib.js",
@@ -90,6 +90,7 @@
     "repack-zip": "^0.2.8",
     "rollup": "^2.53.2",
     "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-dotenv": "^0.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-typescript2": "^0.30.0",

@@ -2,8 +2,11 @@ import { MouseEventHandler } from "react";
 
 import { Testable } from "./global";
 
+export declare type MessageCardIcon = "warning" | "password" | "authorized" | "default";
+
 export declare interface MessageCardBaseProps extends Testable {
-  iconURL: string;
+  icon?: MessageCardIcon;
+  iconURL?: string;
   title: string;
   subtitle: string;
   textButton: string;
