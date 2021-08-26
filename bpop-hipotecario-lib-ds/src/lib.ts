@@ -14,6 +14,7 @@ export { TextField } from "./molecules/text-field";
 export { Tooltip } from "./atoms/tooltip";
 export { AlertBadge } from "./molecules/alert-badge";
 export { ConfirmModal } from "./molecules/confirm-modal";
+export { Loader } from "./molecules/loader";
 export {
   getGlobalDataUrl,
   getGlobalDataBaseUrl,

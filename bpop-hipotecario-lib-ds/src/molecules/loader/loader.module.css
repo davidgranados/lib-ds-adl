@@ -1,0 +1,143 @@
+@keyframes openModal {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  0.1% {
+    width: 100vw;
+  }
+
+  100% {
+    width: 100vw;
+    opacity: 1;
+  }
+}
+
+@keyframes closeModal {
+  0% {
+    width: 100vw;
+    opacity: 1;
+  }
+
+  99.9% {
+    width: 100vw;
+    opacity: 0;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+.wrapper {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  animation-fill-mode: forwards;
+  animation-name: closeModal;
+  font-family: "Inter", sans-serif;
+}
+
+.wrapper.show {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: openModal;
+}
+
+.wrapper.close {
+  animation-duration: 0.5s;
+}
+
+.wrapper,
+.wrapper .overlay {
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.wrapper .overlay {
+  position: absolute;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.wrapper .content {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  width: 480px;
+  max-height: 600px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper .content .figure {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 24px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.wrapper .content .figure .img {
+  width: 28px;
+}
+
+.wrapper .content .text {
+  max-width: 360px;
+  margin: 0 0 24px 0;
+  color: #555;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.75;
+  text-align: center;
+}
+
+.wrapper .content .text.white {
+  color: #fff;
+}
+
+.wrapper .content .load-bar {
+  width: 360px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 6.5px;
+  overflow-x: hidden;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.wrapper .content .load-bar .fill {
+  width: 50%;
+  height: 100%;
+  animation: slide-left 1.5s linear infinite 0s;
+  background-image: linear-gradient(to right, #fc7121, #ffa025);
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 599px) {
+  .wrapper .content {
+    width: 320px;
+  }
+
+  .wrapper .content .text,
+  .wrapper .content .load-bar {
+    width: 280px;
+  }
+}

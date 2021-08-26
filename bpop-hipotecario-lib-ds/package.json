@@ -1,6 +1,6 @@
 {
   "name": "@avaldigitallabs/bpop-hipotecario-lib-ds",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "license": "MIT",
   "private": false,
   "main": "./dist/lib.js",
