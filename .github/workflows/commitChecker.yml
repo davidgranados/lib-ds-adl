@@ -1,0 +1,39 @@
+name: 'Commit Message Check'
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+env:
+  EM1: "bug|rotating_light|typo|loud_sound|mute|check_mark|bulb|zap|recycle|alien|"
+  EM2: "ok|package|art|green_apple|robot|penguin|web|satellite|checkered_flag|"
+  EM3: "apple|ambulance|lock|red_triangle_up|rocket|rewind|twisted_rightwards|"
+  EM4: "tada|bookmark|pencil|page_up|speech_balloon|wheelchair|children_crossing|"
+  EM5: "globe_with_meridians|chart_upwards_trend|whale|see_no_evil|european_castle|"
+  EM6: "trident|volcano|moneybag|green_heart|role_male|role_female|repository|"
+  EM7: "construction_worker|busts_in_silhouette|knife|gun|cop|sparkles|construction|"
+  EM8: "boom|lipstick|bento|fire|truck|building_construction|iphone|clown_face|"
+  EM9: "egg|wrench|plus_sign|arrow_down|arrow_up|minus_sign|pushpin|"
+  EM10: "poop|beers|alembic|hand"
+
+jobs:
+  check-commit-message:
+    name: Check Commit Message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Commits Messages
+        uses: gsactions/commit-message-checker@v1
+        with:
+          pattern: ':(${{ env.EMOJIS }}${{ env.EMOJIS2 }}):\s[A-Z]+-[0-9]+:\s([a-zA-Z0-9]+|\s)*'
+          error: 'Invalid commit. Please ajust to the standard: :emoji: jira-ticket: message'
+          excludeDescription: 'true' # optional: this excludes the description body of a pull request
+          excludeTitle: 'true' # optional: this excludes the title of a pull request
+          checkAllCommitMessages: 'true' # optional: this checks all commits associated with a pull request
+          accessToken: ${{ secrets.GITHUB_TOKEN }} # github access token is only required if checkAllCommitMessages is true
+        env:
+          EMOJIS: ${{env.EM1}}${{env.EM2}}${{env.EM3}}${{env.EM4}}${{env.EM5}}
+          EMOJIS2: ${{env.EM6}}${{env.EM7}}${{env.EM8}}${{env.EM9}}${{env.EM10}}
