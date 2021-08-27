@@ -9,9 +9,9 @@ export default {
   title: "Molecules/MessageCard",
   component: MessageCard,
   args: {
-    icon: "default",
-    title: "Lo sentimos, no es posible continuar",
-    subtitle: "Esta solicitud no es viable",
+    icon: "warning",
+    title: "Lo sentimos, tu cliente no cumple con las políticas de edad",
+    subtitle: "No es posible continuar ni atender esta solicitud.",
     textButton: "Salir de esta solicitud",
     onClick: () => console.log("button clicked"),
     iconAltAttribute: "icon alt text",

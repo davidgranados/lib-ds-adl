@@ -1,14 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
+
 import { getGlobalImageUrl, getSuffixedId } from "../../helpers";
-import { Testable } from "../../types";
+import { LoaderProps } from "../../types";
 
 import styles from "./loader.module.css";
-
-export interface LoaderProps extends Testable {
-  id: string;
-  show: boolean;
-  showOverlay: boolean;
-}
 
 const BP_SMALL_LOGO = getGlobalImageUrl("bp-small-logo.svg");
 
@@ -37,7 +32,7 @@ const Loader: React.FC<LoaderProps> = ({ id, dataTestId, show, showOverlay }) =>
           Espera unos segundos, estamos validando la información
         </p>
         <div className={styles["load-bar"]}>
-          <div className={styles["fill"]}></div>
+          <div className={styles["fill"]} />
         </div>
       </div>
     </div>

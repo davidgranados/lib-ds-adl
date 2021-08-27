@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC } from "react";
+import React, { FC } from "react";
 
 import { Button } from "../../atoms/button";
 import { getGlobalImageUrl, getId } from "../../helpers";
@@ -33,14 +33,17 @@ const MessageCardBase: FC<MessageCardBaseProps> = ({
   } else {
     iconSrc = iconMap.default;
   }
-  // TODO: Fix this machetazo
-  const contentWrapperInlineStyles = {
-    "--message-card-background-image": `url(${getGlobalImageUrl("bg-icon-message.svg")})`,
-  };
   return (
     <div {...getId(id, dataTestId)} className={styles["wrapper"]}>
-      <div className={styles["content-wrapper"]} style={contentWrapperInlineStyles as CSSProperties}>
-        <img src={iconSrc} className={styles["main-icon"]} alt={iconAltAttribute} title={iconTitleAttribute} />
+      <div className={styles["content-wrapper"]}>
+        <div className={styles["icon-wrapper"]}>
+          <img
+            src={getGlobalImageUrl("bg-icon-message.svg")}
+            className={styles["content-wrapper-background"]}
+            alt={"background"}
+          />
+          <img src={iconSrc} className={styles["main-icon"]} alt={iconAltAttribute} title={iconTitleAttribute} />
+        </div>
         <div className={styles["text-wrapper"]}>
           <h6 className={styles["title"]}>{title}</h6>
           <p className={styles["subtitle"]}>{subtitle}</p>
