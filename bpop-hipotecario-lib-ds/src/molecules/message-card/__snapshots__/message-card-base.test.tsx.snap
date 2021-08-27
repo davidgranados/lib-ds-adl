@@ -8,18 +8,22 @@ exports[`<MessageCardBase /> should match snapshot 1`] = `
 >
   <div
     className="content-wrapper"
-    style={
-      Object {
-        "--message-card-background-image": "url(undefined/bg-icon-message.svg)",
-      }
-    }
   >
-    <img
-      alt="icon alt text"
-      className="main-icon"
-      src="undefined/bp-small-logo.svg"
-      title="icon title"
-    />
+    <div
+      className="icon-wrapper"
+    >
+      <img
+        alt="background"
+        className="content-wrapper-background"
+        src="undefined/bg-icon-message.svg"
+      />
+      <img
+        alt="icon alt text"
+        className="main-icon"
+        src="undefined/bp-small-logo.svg"
+        title="icon title"
+      />
+    </div>
     <div
       className="text-wrapper"
     >

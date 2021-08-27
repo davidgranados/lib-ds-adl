@@ -42,3 +42,5 @@ export type { ModalProps } from "./modal";
 export type { OtpInputFieldProps, OtpInputProps } from "./otp";
 
 export type { TooltipProps, TooltipIconProps, WithTooltip, WithTooltipIcon } from "./tooltip";
+
+export type { LoaderProps } from "./loader";
