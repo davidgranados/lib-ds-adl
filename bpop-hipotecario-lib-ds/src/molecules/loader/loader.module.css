@@ -126,7 +126,7 @@
 .wrapper .content .load-bar .fill {
   width: 50%;
   height: 100%;
-  animation: slide-left 1.5s linear infinite 0s;
+  animation: slide-left 1s linear infinite 0s;
   background-image: linear-gradient(to right, #fc7121, #ffa025);
   border-radius: 4px;
 }

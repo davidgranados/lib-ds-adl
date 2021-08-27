@@ -14,4 +14,5 @@ export const Default = Template.bind({});
 Default.args = {
   id: "dropdown-story",
   show: true,
+  showOverlay: false,
 };
