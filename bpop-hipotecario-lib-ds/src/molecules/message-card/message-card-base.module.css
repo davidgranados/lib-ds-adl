@@ -34,7 +34,7 @@
 
   position: absolute;
   z-index: 1;
-  top: calc(50% - var(--icon-size) / 2);
+  top: calc(55% - var(--icon-size) / 2);
   left: calc(50% - var(--icon-size) / 2);
   width: var(--icon-size);
   height: var(--icon-size);
@@ -76,6 +76,8 @@
 
   .main-icon {
     --icon-size: 100px;
+
+    top: calc(60% - var(--icon-size) / 2);
   }
 
   .text-wrapper {
