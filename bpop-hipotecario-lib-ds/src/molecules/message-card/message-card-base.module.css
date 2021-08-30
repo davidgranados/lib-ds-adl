@@ -1,6 +1,7 @@
 .wrapper {
   --main-wrapper-width: 360px;
 
+  position: relative;
   width: var(--main-wrapper-width);
   box-sizing: border-box;
 }
@@ -8,6 +9,7 @@
 .content-wrapper {
   --message-card-background-image: "";
 
+  position: relative;
   overflow: hidden;
   width: 100%;
   margin-bottom: 40px;
@@ -33,7 +35,6 @@
   --icon-size: 120px;
 
   position: absolute;
-  z-index: 1;
   top: calc(50% - var(--icon-size) / 2);
   left: calc(50% - var(--icon-size) / 2);
   width: var(--icon-size);
@@ -41,6 +42,7 @@
 }
 
 .text-wrapper {
+  position: relative;
   z-index: 1;
   margin: calc(var(--main-wrapper-width) * -0.1) auto 0 auto;
 }
@@ -80,6 +82,7 @@
 
   .text-wrapper {
     width: 280px;
+    margin-top: calc(var(--main-wrapper-width) * -0.05);
   }
 
   .title {
