@@ -9,9 +9,9 @@ export default {
   title: "Molecules/MessageCard",
   component: MessageCard,
   args: {
-    icon: "warning",
-    title: "Lo sentimos, tu cliente no cumple con las políticas de edad",
-    subtitle: "No es posible continuar ni atender esta solicitud.",
+    icon: "password",
+    title: "Lo sentimos, has excedido el límite de intentos para generar el código",
+    subtitle: "Por favor continúa esta solicitud por el proceso tradicional.",
     textButton: "Salir de esta solicitud",
     onClick: () => console.log("button clicked"),
     iconAltAttribute: "icon alt text",
