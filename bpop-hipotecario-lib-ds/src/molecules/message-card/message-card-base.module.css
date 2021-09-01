@@ -52,12 +52,14 @@
   color: black;
   font-size: 1.125rem;
   font-weight: bold;
+  line-height: 1.75;
 }
 
 .subtitle {
   margin: 10px 0 0 0;
   color: #555;
   font-size: 0.875rem;
+  line-height: 2;
 }
 
 .button-container {
@@ -74,10 +76,6 @@
 @media (max-width: 380px) {
   .wrapper {
     --main-wrapper-width: 320px;
-  }
-
-  .main-icon {
-    --icon-size: 100px;
   }
 
   .text-wrapper {
