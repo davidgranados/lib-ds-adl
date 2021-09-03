@@ -41,7 +41,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   }, [_checkThisRadio, checked]);
 
   return (
-    <label {...getSuffixedId(id, "wrapper", dataTestId)} ref={wrapperRef} className={wrapperClassName}>
+    <label {...getSuffixedId(id, "label-wrapper", dataTestId)} ref={wrapperRef} className={wrapperClassName}>
       <span className={styles["control-wrapper"]}>
         <input
           {...getId(id, dataTestId)}

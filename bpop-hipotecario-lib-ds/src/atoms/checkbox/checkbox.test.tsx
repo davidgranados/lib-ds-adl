@@ -12,10 +12,10 @@ test("Checkbox should renders ok", () => {
 
 test("Checkbox should be disabled", () => {
   const x = render(<Checkbox id="checkbox" disabled={true} hasError={false} onChange={() => null} />);
-  expect(x.getByTestId("checkbox-wrapper")).toHaveClass("disabled");
+  expect(x.getByTestId("checkbox-label-wrapper")).toHaveClass("disabled");
 });
 
 test("Checkbox should has error", () => {
   const x = render(<Checkbox id="checkbox" disabled={true} hasError={true} onChange={() => null} />);
-  expect(x.getByTestId("checkbox-wrapper")).toHaveClass("error");
+  expect(x.getByTestId("checkbox-label-wrapper")).toHaveClass("error");
 });

@@ -20,7 +20,7 @@ const Button: FC<ButtonProps> = ({
   });
 
   return (
-    <button id={id} data-testid={dataTestId} className={buttonClassName} type={type} {...props}>
+    <button id={id} data-testid={dataTestId || id} className={buttonClassName} type={type} {...props}>
       {text}
     </button>
   );

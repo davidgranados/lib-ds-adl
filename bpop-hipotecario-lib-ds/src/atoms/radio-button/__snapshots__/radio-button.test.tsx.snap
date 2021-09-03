@@ -3,8 +3,8 @@
 exports[`<RadioButton /> should match snapshot 1`] = `
 <label
   className="wrapper wrapper--enabled"
-  data-testid="radio-button-wrapper"
-  id="radio-button-wrapper"
+  data-testid="radio-button-label-wrapper"
+  id="radio-button-label-wrapper"
 >
   <span
     className="control-wrapper"
