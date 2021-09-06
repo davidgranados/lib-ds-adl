@@ -9,7 +9,7 @@ import styles from "./checkbox.module.css";
 const Checkbox: React.FC<CheckboxProps> = ({ dataTestId, disabled, hasError, id = "checkbox", ...props }) => {
   return (
     <label
-      {...getSuffixedId(id, "wrapper", dataTestId)}
+      {...getSuffixedId(id, "label-wrapper", dataTestId)}
       className={`${styles["wrapper"]} ${disabled ? styles["disabled"] : styles["enabled"]} ${
         hasError ? styles["error"] : ""
       }`}

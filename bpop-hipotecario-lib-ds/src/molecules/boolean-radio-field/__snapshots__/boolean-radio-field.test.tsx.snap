@@ -111,8 +111,8 @@ exports[`<BooleanRadioField /> should match snapshot 1`] = `
   >
     <label
       className="wrapper wrapper--enabled"
-      data-testid="text-field-base-story-false-radio-wrapper"
-      id="text-field-base-story-false-radio-wrapper"
+      data-testid="text-field-base-story-false-radio-label-wrapper"
+      id="text-field-base-story-false-radio-label-wrapper"
     >
       <span
         className="control-wrapper"
@@ -143,8 +143,8 @@ exports[`<BooleanRadioField /> should match snapshot 1`] = `
     </label>
     <label
       className="wrapper wrapper--enabled"
-      data-testid="text-field-base-story-true-radio-wrapper"
-      id="text-field-base-story-true-radio-wrapper"
+      data-testid="text-field-base-story-true-radio-label-wrapper"
+      id="text-field-base-story-true-radio-label-wrapper"
     >
       <span
         className="control-wrapper"
