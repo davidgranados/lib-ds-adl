@@ -1,5 +1,147 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<MessageCardBase /> Should receive a pre defined icon 1`] = `
+<div
+  className="wrapper"
+  data-testid="message-card"
+  id="message-card"
+>
+  <div
+    className="content-wrapper"
+  >
+    <div
+      className="icon-wrapper"
+    >
+      <img
+        alt="background"
+        className="content-wrapper-background"
+        src="undefined/bg-icon-message.svg"
+      />
+      <img
+        alt="icon alt text"
+        className="main-icon"
+        src="undefined/80-authorized.svg"
+        title="icon title"
+      />
+    </div>
+    <div
+      className="text-wrapper"
+    >
+      <h6
+        className="title"
+      >
+        Lo sentimos, no es posible continuar
+      </h6>
+      <p
+        className="subtitle"
+      >
+        Esta solicitud no es viable
+      </p>
+      <p
+        className="subtitle"
+      >
+        Second sub
+      </p>
+    </div>
+  </div>
+  <div
+    className="button-container"
+  >
+    <div
+      className="button-wrapper"
+    >
+      <button
+        className="default primary size-md full-width"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Salir de esta solicitud
+      </button>
+    </div>
+    <div
+      className="button-wrapper"
+    >
+      <div
+        className="secondary-text-button"
+      >
+        Secondary button
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MessageCardBase /> Should receive urlIcon 1`] = `
+<div
+  className="wrapper"
+  data-testid="message-card"
+  id="message-card"
+>
+  <div
+    className="content-wrapper"
+  >
+    <div
+      className="icon-wrapper"
+    >
+      <img
+        alt="background"
+        className="content-wrapper-background"
+        src="undefined/bg-icon-message.svg"
+      />
+      <img
+        alt="icon alt text"
+        className="main-icon"
+        src="fakeUrl"
+        title="icon title"
+      />
+    </div>
+    <div
+      className="text-wrapper"
+    >
+      <h6
+        className="title"
+      >
+        Lo sentimos, no es posible continuar
+      </h6>
+      <p
+        className="subtitle"
+      >
+        Esta solicitud no es viable
+      </p>
+      <p
+        className="subtitle"
+      >
+        Second sub
+      </p>
+    </div>
+  </div>
+  <div
+    className="button-container"
+  >
+    <div
+      className="button-wrapper"
+    >
+      <button
+        className="default primary size-md full-width"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Salir de esta solicitud
+      </button>
+    </div>
+    <div
+      className="button-wrapper"
+    >
+      <div
+        className="secondary-text-button"
+      >
+        Secondary button
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<MessageCardBase /> should match snapshot 1`] = `
 <div
   className="wrapper"
@@ -37,6 +179,11 @@ exports[`<MessageCardBase /> should match snapshot 1`] = `
       >
         Esta solicitud no es viable
       </p>
+      <p
+        className="subtitle"
+      >
+        Second sub
+      </p>
     </div>
   </div>
   <div
@@ -52,6 +199,15 @@ exports[`<MessageCardBase /> should match snapshot 1`] = `
       >
         Salir de esta solicitud
       </button>
+    </div>
+    <div
+      className="button-wrapper"
+    >
+      <div
+        className="secondary-text-button"
+      >
+        Secondary button
+      </div>
     </div>
   </div>
 </div>

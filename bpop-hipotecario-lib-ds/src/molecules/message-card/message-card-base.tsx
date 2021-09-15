@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 
 import { Button } from "../../atoms/button";
 import { getGlobalImageUrl, getId } from "../../helpers";
@@ -22,6 +22,9 @@ const MessageCardBase: FC<MessageCardBaseProps> = ({
   iconTitleAttribute,
   subtitle,
   onClick,
+  secondSubtitle,
+  secondaryButtonText,
+  onSecondaryClick,
   dataTestId,
   id = "message-card",
 }) => {
@@ -47,15 +50,23 @@ const MessageCardBase: FC<MessageCardBaseProps> = ({
         <div className={styles["text-wrapper"]}>
           <h6 className={styles["title"]}>{title}</h6>
           <p className={styles["subtitle"]}>{subtitle}</p>
+          {secondSubtitle && <p className={styles["subtitle"]}>{secondSubtitle}</p>}
         </div>
       </div>
       <div className={styles["button-container"]}>
         <div className={styles["button-wrapper"]}>
           <Button variant={"primary"} text={textButton} onClick={onClick} fullWidth />
         </div>
+        {secondaryButtonText && (
+          <div className={styles["button-wrapper"]}>
+            <div className={styles["secondary-text-button"]} onClick={onSecondaryClick}>
+              {secondaryButtonText}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default MessageCardBase;
+export default memo(MessageCardBase);
