@@ -14,6 +14,8 @@ describe("<MessageCardBase />", () => {
     onClick: jest.fn(),
     iconAltAttribute: "icon alt text",
     iconTitleAttribute: "icon title",
+    secondSubtitle: "Second sub",
+    secondaryButtonText: "Secondary button",
   };
 
   beforeEach(() => {
@@ -22,6 +24,14 @@ describe("<MessageCardBase />", () => {
     wrapper = mount<typeof MessageCardBase>(<MessageCardBase {...props} />);
   });
   it("should match snapshot", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+  it("Should receive urlIcon", () => {
+    wrapper = mount<typeof MessageCardBase>(<MessageCardBase {...props} iconURL="fakeUrl" />);
+    expect(wrapper).toMatchSnapshot();
+  });
+  it("Should receive a pre defined icon", () => {
+    wrapper = mount<typeof MessageCardBase>(<MessageCardBase {...props} icon="authorized" />);
     expect(wrapper).toMatchSnapshot();
   });
 });

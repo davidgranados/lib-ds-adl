@@ -16,6 +16,9 @@ export default {
     onClick: () => console.log("button clicked"),
     iconAltAttribute: "icon alt text",
     iconTitleAttribute: "icon title",
+    secondaryButtonText: "Secondary text",
+    onSecondaryClick: () => console.log("Second clicked"),
+    secondSubtitle: "Other subtitle",
   },
   argTypes: {
     icon: { options: validIcons, control: "select" },

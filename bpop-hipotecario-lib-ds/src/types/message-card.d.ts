@@ -13,6 +13,9 @@ export declare interface MessageCardBaseProps extends Testable {
   onClick: MouseEventHandler<HTMLButtonElement>;
   iconAltAttribute?: string;
   iconTitleAttribute?: string;
+  secondSubtitle?: string;
+  secondaryButtonText?: string;
+  onSecondaryClick?: () => void;
 }
 
 export declare type MessageCardWarningProps = Omit<MessageCardBaseProps, "iconURL">;

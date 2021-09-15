@@ -65,12 +65,25 @@
 .button-container {
   display: flex;
   width: 100%;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-top: 40px;
 }
 
 .button-wrapper {
   width: 220px;
+}
+
+.secondary-text-button {
+  margin: 24px 0 0 0;
+  color: #fc7121;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.71;
+  text-align: center;
 }
 
 @media (max-width: 380px) {
