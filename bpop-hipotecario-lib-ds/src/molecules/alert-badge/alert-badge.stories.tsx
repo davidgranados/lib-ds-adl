@@ -14,5 +14,5 @@ export const Default = Template.bind({});
 Default.args = {
   children:
     "Tu cliente no tiene una relación de parentesco/afinidad para sumar ingresos, puedes continuar esta solicitud con tu primer cliente o cambiar tu segundo cliente.",
-  type: "info",
+  type: "danger",
 };
