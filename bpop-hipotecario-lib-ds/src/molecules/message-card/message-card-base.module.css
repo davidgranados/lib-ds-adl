@@ -86,7 +86,7 @@
   text-align: center;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 599px) {
   .wrapper {
     --main-wrapper-width: 320px;
   }
