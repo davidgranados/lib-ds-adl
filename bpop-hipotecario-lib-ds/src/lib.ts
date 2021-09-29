@@ -15,6 +15,7 @@ export { RadioButton } from "./atoms/radio-button";
 export { TextField } from "./molecules/text-field";
 export { Tooltip } from "./atoms/tooltip";
 export { ConfirmModal } from "./molecules/confirm-modal";
+export { ProgressWizard } from "./atoms/progress-wizard";
 export {
   getGlobalDataUrl,
   getGlobalDataBaseUrl,
