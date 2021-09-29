@@ -18,10 +18,11 @@ const ProgressWizard: FC<ProgressWizardProps> = ({ items, currentItem }) => {
           <div className={styles.text}>{item}</div>
         </div>
       ))}
-      <div
+      {/* <div
         className={styles["progress-bar"]}
         style={{ width: `calc((100% / ${items.length - 1}) * ${currentItem})` }}
-      ></div>
+      ></div> */}
+      <div className={styles["progress-bar"]}></div>
     </div>
   );
 };

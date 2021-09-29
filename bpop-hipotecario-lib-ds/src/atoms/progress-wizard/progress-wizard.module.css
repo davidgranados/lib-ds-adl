@@ -38,8 +38,9 @@
 }
 
 .text {
-  position: fixed;
-  top: 50px;
+  position: absolute;
+  top: 34px;
+  width: max-content;
   color: #7b7b7b;
   font-family: "Inter", sans-serif;
   font-size: 11px;
@@ -51,6 +52,7 @@
   position: absolute;
   z-index: 10;
   top: 20px;
+  width: 100%;
   height: 1px;
   background-color: #9d9d9d;
 }
