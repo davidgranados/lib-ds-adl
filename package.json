@@ -29,6 +29,7 @@
     "bpop-hipotecario-lib-ds"
   ],
   "devDependencies": {
+    "classnames": "^2.3.1",
     "subpackage": "^1.1.0"
   }
 }

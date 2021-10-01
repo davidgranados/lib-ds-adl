@@ -11,7 +11,7 @@ const ProgressWizard: FC<ProgressWizardProps> = ({ items, currentItem }) => {
     <div className={styles.wrapper}>
       {items.map((item, index) => (
         <div
-          className={`${styles["numeric-circle"]} ${currentItem >= index ? styles["fill"] : ""}`}
+          className={`border ${styles["numeric-circle"]} ${currentItem >= index ? styles["fill"] : ""}`}
           key={`numeric-circle-${item}`}
         >
           <div className={styles["numeric-circle-border"]}>{index + 1}</div>
