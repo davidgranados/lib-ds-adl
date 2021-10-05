@@ -21,9 +21,3 @@
   font-size: 1.3125rem;
   font-weight: 500;
 }
-
-@media (max-width: 599px) {
-  .default {
-    background-color: #fff;
-  }
-}
