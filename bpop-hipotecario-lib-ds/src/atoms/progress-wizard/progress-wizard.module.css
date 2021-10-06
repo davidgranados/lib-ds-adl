@@ -31,7 +31,17 @@
   line-height: 2;
 }
 
-.numeric-circle.fill .numeric-circle-border {
+.numeric-circle.checked .numeric-circle-border {
+  border: 1px solid #50b946;
+  background-color: #50b946;
+  color: #fff;
+}
+
+.numeric-circle.checked .numeric-circle-border .icon {
+  font-size: 28px;
+}
+
+.numeric-circle.current .numeric-circle-border {
   border: 1px solid #ffc12b;
   background-color: rgba(255, 235, 182, 0.6);
   color: #fc7121;
@@ -46,6 +56,15 @@
   font-size: 11px;
   font-weight: 500;
   line-height: 1.82;
+}
+
+.numeric-circle.checked .text {
+  color: #50b946;
+}
+
+.numeric-circle.current .text {
+  color: #000;
+  font-weight: 500;
 }
 
 .progress-bar {
