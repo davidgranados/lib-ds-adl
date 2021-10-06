@@ -1,0 +1,10 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  border-color: #e70000;
+  background-color: rgba(255, 199, 184, 0.32);
+}
