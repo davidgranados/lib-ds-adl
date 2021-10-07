@@ -17,6 +17,7 @@ export { Tooltip } from "./atoms/tooltip";
 export { ConfirmModal } from "./molecules/confirm-modal";
 export { ProgressWizard } from "./atoms/progress-wizard";
 export { InputMoney } from "./molecules/input-money";
+export { Autocomplete } from "./molecules/autocomplete";
 export {
   getGlobalDataUrl,
   getGlobalDataBaseUrl,

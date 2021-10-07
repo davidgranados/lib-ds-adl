@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import NumberFormat, { NumberFormatValues } from "react-number-format";
 
 import styles from "./input-money.module.css";
@@ -7,9 +7,15 @@ import { InputTextBase } from "../../atoms/input-text-base";
 import { InputFieldLabel } from "../../atoms/input-field-label";
 import { InputFieldCaption } from "../../atoms/input-field-caption";
 
+enum InputType {
+  Number = "number",
+  Percentage = "percentage",
+}
 export interface InputMoneyProps extends Omit<InputTextBaseProps, "onChange"> {
   label: string;
+  type: InputType;
   value?: number;
+  tooltip?: ReactNode;
   caption?: string;
   hasError?: boolean;
   onChange: ((values: NumberFormatValues) => void) | undefined;
@@ -21,6 +27,8 @@ const InputMoney: FC<InputMoneyProps> = ({
   hasError,
   caption,
   label,
+  type,
+  tooltip,
   minLength,
   maxLength,
   placeholder,
@@ -34,6 +42,7 @@ const InputMoney: FC<InputMoneyProps> = ({
   return (
     <div className={styles.wrapper}>
       <InputFieldLabel htmlFor={id}>{label}</InputFieldLabel>
+      {tooltip}
       <NumberFormat
         id={id}
         value={value}
@@ -49,7 +58,8 @@ const InputMoney: FC<InputMoneyProps> = ({
         customInput={InputTextBase}
         thousandSeparator={true}
         allowNegative={false}
-        prefix={"$"}
+        prefix={type === InputType.Number ? "$" : undefined}
+        suffix={type === InputType.Percentage ? "%" : undefined}
       />
       {caption && <InputFieldCaption status={captionStatus}>{caption}</InputFieldCaption>}
     </div>

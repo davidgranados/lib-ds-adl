@@ -17,6 +17,7 @@ export default {
     onBlur: () => console.log("onBlur"),
     onChange: (e) => console.log("OnChange", e),
     placeholder: "Placeholder",
+    type: "number",
   },
 } as ComponentMeta<typeof InputMoney>;
 
