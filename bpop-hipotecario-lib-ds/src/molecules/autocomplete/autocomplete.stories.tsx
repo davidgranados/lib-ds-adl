@@ -37,4 +37,7 @@ Default.args = {
   specialStatus: undefined,
   type: "text",
   items: months.map((v, i) => ({ label: v, value: `${i}` })),
+  label: "Test label",
+  caption: "Test caption",
+  hasError: false,
 };
