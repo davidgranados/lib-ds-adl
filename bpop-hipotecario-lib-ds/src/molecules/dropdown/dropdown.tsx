@@ -20,6 +20,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   onChange,
   onFocus,
   onBlur,
+  tooltip,
   id = "dropdown-element",
 }) => {
   const [open, setOpen] = useState(false);
@@ -51,6 +52,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       <InputFieldLabel {...getSuffixedId(id, "label", dataTestId, true)} htmlFor={id} onClick={() => toggleOpen()}>
         {label}
       </InputFieldLabel>
+      {tooltip}
       <div
         {...getId(id, dataTestId)}
         className={`${styles["dropdown"]} ${open && styles["open"]} ${disabled && styles["disabled"]} ${
