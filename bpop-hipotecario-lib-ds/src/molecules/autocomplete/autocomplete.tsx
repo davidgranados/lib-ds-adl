@@ -1,6 +1,8 @@
-import React, { FC, useState } from "react";
+import React, { FC, ReactNode, useState } from "react";
 
-import { InputTextBaseProps } from "../..";
+import { InputFieldCaptionStatus, InputTextBaseProps } from "../..";
+import { InputFieldCaption } from "../../atoms/input-field-caption";
+import { InputFieldLabel } from "../../atoms/input-field-label";
 import { InputTextBase } from "../../atoms/input-text-base";
 
 import styles from "./autocomplete.module.css";
@@ -9,8 +11,12 @@ export const MIN_CHARACTERS_TO_SEARCH = 3;
 
 export interface AutocompleteProps extends Omit<InputTextBaseProps, "onChange" | "onBlur" | "onInput"> {
   items: { label: string; value: string }[];
+  label?: string;
   value?: string;
+  caption?: string;
   isLoading?: boolean;
+  hasError?: boolean;
+  tooltip?: ReactNode;
   onChange: (item: { label: string; value: string }) => void;
   onBlur?: () => void;
   onInput?: (value: string) => void;
@@ -26,12 +32,17 @@ const Autocomplete: FC<AutocompleteProps> = ({
   onChange,
   disabled,
   dataTestId,
+  label,
+  caption,
+  hasError,
+  tooltip,
   id = "input-autocomplete",
   size = "lg",
 }) => {
   const [selectedValue, setSelectedValue] = useState(value);
   const [searchValue, setSearchValue] = useState(value);
   const [hasFocus, setHasFocus] = useState(false);
+  const captionStatus: InputFieldCaptionStatus = hasError ? "error" : "default";
 
   const filteredItems = () => {
     return items.filter((i) => i.label.toLowerCase().includes(searchValue.toLowerCase()));
@@ -61,6 +72,8 @@ const Autocomplete: FC<AutocompleteProps> = ({
 
   return (
     <div className={styles.wrapper} tabIndex={0} onFocus={handleFocus} onBlur={handleMainBlur}>
+      <InputFieldLabel htmlFor={id}>{label}</InputFieldLabel>
+      {tooltip}
       <InputTextBase
         id={id}
         name={name}
@@ -96,6 +109,7 @@ const Autocomplete: FC<AutocompleteProps> = ({
           )}
         </div>
       </div>
+      {caption && <InputFieldCaption status={captionStatus}>{caption}</InputFieldCaption>}
     </div>
   );
 };

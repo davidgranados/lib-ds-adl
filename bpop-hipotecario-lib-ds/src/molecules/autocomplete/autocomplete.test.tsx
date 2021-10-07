@@ -10,11 +10,24 @@ describe("<Autocomplete />", () => {
   const onChange = jest.fn();
   const onBlur = jest.fn();
   const component = (
-    <Autocomplete items={months.map((i) => ({ label: i, value: i }))} onChange={onChange} onBlur={onBlur} />
+    <Autocomplete
+      items={months.map((i) => ({ label: i, value: i }))}
+      hasError={false}
+      onChange={onChange}
+      onBlur={onBlur}
+      caption={"Test caption"}
+    />
   );
 
   it("Autocomplete should renders ok", () => {
-    const x = render(component);
+    const x = render(
+      <Autocomplete
+        items={months.map((i) => ({ label: i, value: i }))}
+        hasError={true}
+        onChange={onChange}
+        onBlur={onBlur}
+      />
+    );
     expect(x.container).toBeInTheDocument();
   });
 

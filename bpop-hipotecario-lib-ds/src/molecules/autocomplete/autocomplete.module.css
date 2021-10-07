@@ -7,7 +7,6 @@
 
 .wrapper .expanded-section {
   position: absolute;
-  top: calc(100% + 2px);
   left: 0;
   display: none;
   width: 100%;
