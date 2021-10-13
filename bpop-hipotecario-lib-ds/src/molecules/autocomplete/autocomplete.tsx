@@ -36,6 +36,7 @@ const Autocomplete: FC<AutocompleteProps> = ({
   caption,
   hasError,
   tooltip,
+  placeholder,
   id = "input-autocomplete",
   size = "lg",
 }) => {
@@ -82,6 +83,7 @@ const Autocomplete: FC<AutocompleteProps> = ({
         value={searchValue}
         onChange={handleInput}
         disabled={disabled}
+        placeholder={placeholder}
         dataTestId={dataTestId}
         specialStatus={specialStatus}
       />

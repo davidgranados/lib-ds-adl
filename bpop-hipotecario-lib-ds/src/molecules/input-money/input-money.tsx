@@ -7,13 +7,9 @@ import { InputTextBase } from "../../atoms/input-text-base";
 import { InputFieldLabel } from "../../atoms/input-field-label";
 import { InputFieldCaption } from "../../atoms/input-field-caption";
 
-enum InputType {
-  Number = "number",
-  Percentage = "percentage",
-}
-export interface InputMoneyProps extends Omit<InputTextBaseProps, "onChange"> {
+export interface InputMoneyProps extends Omit<InputTextBaseProps, "onChange" | "type"> {
   label: string;
-  type: InputType;
+  type: "number" | "percentage";
   value?: number;
   tooltip?: ReactNode;
   caption?: string;
@@ -58,8 +54,8 @@ const InputMoney: FC<InputMoneyProps> = ({
         customInput={InputTextBase}
         thousandSeparator={true}
         allowNegative={false}
-        prefix={type === InputType.Number ? "$" : undefined}
-        suffix={type === InputType.Percentage ? "%" : undefined}
+        prefix={type === "number" ? "$" : undefined}
+        suffix={type === "percentage" ? "%" : undefined}
       />
       {caption && <InputFieldCaption status={captionStatus}>{caption}</InputFieldCaption>}
     </div>
