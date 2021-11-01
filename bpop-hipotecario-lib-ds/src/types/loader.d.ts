@@ -4,4 +4,5 @@ export interface LoaderProps extends Testable {
   id: string;
   show: boolean;
   showOverlay: boolean;
+  logoUrl?: string;
 }

@@ -7,7 +7,7 @@ import styles from "./loader.module.css";
 
 const BP_SMALL_LOGO = getGlobalImageUrl("bp-small-logo.svg");
 
-const Loader: React.FC<LoaderProps> = ({ id, dataTestId, show, showOverlay }) => {
+const Loader: React.FC<LoaderProps> = ({ id, dataTestId, show, showOverlay, logoUrl }) => {
   const [wasClosed, setWasClosed] = useState(false);
 
   const handleToggle = useCallback(() => {
@@ -26,7 +26,7 @@ const Loader: React.FC<LoaderProps> = ({ id, dataTestId, show, showOverlay }) =>
       {showOverlay && <div {...getSuffixedId(id, "wrapper-overlay", dataTestId)} className={styles["overlay"]} />}
       <div className={styles["content"]}>
         <figure className={styles["figure"]}>
-          <img src={BP_SMALL_LOGO} alt="Popular bank small logo" className={styles["img"]} />
+          <img src={logoUrl || BP_SMALL_LOGO} alt="Popular bank small logo" className={styles["img"]} />
         </figure>
         <p className={`${styles["text"]} ${showOverlay && styles["white"]}`}>
           Espera unos segundos, estamos validando la información

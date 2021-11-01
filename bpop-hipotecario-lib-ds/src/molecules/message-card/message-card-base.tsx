@@ -26,6 +26,7 @@ const MessageCardBase: FC<MessageCardBaseProps> = ({
   secondaryButtonText,
   onSecondaryClick,
   dataTestId,
+  backgroundImageUrl,
   id = "message-card",
 }) => {
   let iconSrc;
@@ -41,7 +42,7 @@ const MessageCardBase: FC<MessageCardBaseProps> = ({
       <div className={styles["content-wrapper"]}>
         <div className={styles["icon-wrapper"]}>
           <img
-            src={getGlobalImageUrl("bg-icon-message.svg")}
+            src={backgroundImageUrl || getGlobalImageUrl("bg-icon-message.svg")}
             className={styles["content-wrapper-background"]}
             alt={"background"}
           />

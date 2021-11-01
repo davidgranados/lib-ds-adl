@@ -15,12 +15,12 @@ exports[`<MessageCardBase /> Should receive a pre defined icon 1`] = `
       <img
         alt="background"
         className="content-wrapper-background"
-        src="undefined/bg-icon-message.svg"
+        src="https://hipotecario-stg-popular.avaldigitallabs.com/assets/global/img/bg-icon-message.svg"
       />
       <img
         alt="icon alt text"
         className="main-icon"
-        src="undefined/80-authorized.svg"
+        src="https://hipotecario-stg-popular.avaldigitallabs.com/assets/global/img/80-authorized.svg"
         title="icon title"
       />
     </div>
@@ -86,7 +86,7 @@ exports[`<MessageCardBase /> Should receive urlIcon 1`] = `
       <img
         alt="background"
         className="content-wrapper-background"
-        src="undefined/bg-icon-message.svg"
+        src="https://hipotecario-stg-popular.avaldigitallabs.com/assets/global/img/bg-icon-message.svg"
       />
       <img
         alt="icon alt text"
@@ -157,12 +157,12 @@ exports[`<MessageCardBase /> should match snapshot 1`] = `
       <img
         alt="background"
         className="content-wrapper-background"
-        src="undefined/bg-icon-message.svg"
+        src="https://hipotecario-stg-popular.avaldigitallabs.com/assets/global/img/bg-icon-message.svg"
       />
       <img
         alt="icon alt text"
         className="main-icon"
-        src="undefined/bp-small-logo.svg"
+        src="https://hipotecario-stg-popular.avaldigitallabs.com/assets/global/img/bp-small-logo.svg"
         title="icon title"
       />
     </div>

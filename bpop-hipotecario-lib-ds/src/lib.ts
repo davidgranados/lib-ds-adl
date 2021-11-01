@@ -19,12 +19,8 @@ export { ProgressWizard } from "./atoms/progress-wizard";
 export { InputMoney } from "./molecules/input-money";
 export { Autocomplete } from "./molecules/autocomplete";
 export {
-  getGlobalDataUrl,
-  getGlobalDataBaseUrl,
-  getAssetsBaseUrl,
   getGlobalImageUrl,
   getId,
-  getGlobalImgBaseUrl,
   removeClassFromElement,
   addClassToElement,
   toggleClassFromElement,
