@@ -16,6 +16,7 @@ export declare interface MessageCardBaseProps extends Testable {
   secondSubtitle?: string;
   secondaryButtonText?: string;
   onSecondaryClick?: () => void;
+  backgroundImageUrl?: string;
 }
 
 export declare type MessageCardWarningProps = Omit<MessageCardBaseProps, "iconURL">;
