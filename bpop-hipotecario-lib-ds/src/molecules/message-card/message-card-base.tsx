@@ -10,6 +10,7 @@ const iconMap: Record<MessageCardIcon, string> = {
   warning: getGlobalImageUrl("80-warning.svg"),
   password: getGlobalImageUrl("80-password.svg"),
   authorized: getGlobalImageUrl("80-authorized.svg"),
+  target: getGlobalImageUrl("80-target-shooting.svg"),
   default: getGlobalImageUrl("bp-small-logo.svg"),
 };
 
